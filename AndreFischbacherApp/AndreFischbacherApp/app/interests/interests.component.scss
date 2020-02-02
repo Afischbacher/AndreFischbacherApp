@@ -1,0 +1,28 @@
+.interests-component {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Oswald";
+
+    }
+
+    p {
+        font-size: calc(15px + 0.25vw);
+    }
+
+    .center-spinner {
+        margin: 0 auto;
+    }
+
+    .interests-card {
+        transition: all 0.28s ease-in-out;
+    
+        &:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+    }
+}

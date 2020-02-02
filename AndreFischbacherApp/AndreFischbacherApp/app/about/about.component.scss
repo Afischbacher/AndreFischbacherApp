@@ -1,0 +1,64 @@
+.about-component {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+
+        font-family: "Oswald";
+
+    }
+
+    h3 {
+        font-size: calc(30px + 0.25vw);
+    }
+
+    p {
+        font-size: calc(15px + 0.25vw);
+    }
+
+    .center-spinner {
+        margin: 0 auto;
+    }
+
+    .icon-size {
+        font-size: calc(50px + 5vw);
+    }
+
+    .about-interests-mat-card {
+        height: calc(525px + 5vw);
+        animation: box-shadow 0.28s ease-in-out;
+
+        &:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+        }
+    }
+
+    .software-interests-icon-style {
+        font-size: calc(7em + 5vw);
+        color: white;
+    }
+
+    .technical-stack-software-interests-card-background {
+        background-color: #FF5722;
+        text-align: center
+    }
+
+    .architecture-software-interests-card-background {
+        background-color: #F44336;
+        text-align: center
+    }
+
+    .ui-software-interests-card-background {
+        background-color: #673AB7;
+        text-align: center
+    }
+
+    .agile-software-interests-card-background {
+        background-color: #4CAF50;
+        text-align: center
+    }
+}

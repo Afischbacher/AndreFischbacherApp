@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <app-toolbar></app-toolbar>
+    <div class="interests-component">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <mat-card class="my-3 py-5">
+                        
+                        <mat-card-header>
+                            <h1 class="mat-card-header-mobile-title">Interests</h1>
+                        </mat-card-header>
+
+                        <mat-card-content *ngIf="loading">
+                            <mat-progress-spinner class="center-spinner" [color]="color" [diameter]="75" [mode]="mode">
+                            </mat-progress-spinner>
+                        </mat-card-content>
+                       
+                        <mat-card-content *ngIf="!loading" class="mat-card-margin-x">
+                            <p>Here are some of the things I enjoy doing outside of my professional working time.</p>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4"
+                                    *ngFor="let interest of interestsData">
+                                    <mat-card class="my-3 py-5 interests-card">
+                                        <mat-card-header>
+                                            <h3>{{interest.title}}</h3>
+                                        </mat-card-header>
+                                        <img mat-card-image src="{{interest.imageUrl}}" />
+                                        <mat-card-content>
+                                            <p>{{interest.contents}}</p>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                        
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

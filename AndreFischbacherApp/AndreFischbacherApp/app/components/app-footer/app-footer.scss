@@ -1,0 +1,49 @@
+.app-footer {
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+    }
+
+    .icon-row {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-right: 24px;
+    }
+
+    .icon {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    a {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+
+    }
+
+    .info-icon {
+        font-size: 32px;
+        position: absolute;
+        right: 20px;
+        bottom: 19px;
+    }
+
+    @media all and (max-width: 991px) {
+        // .footer {
+        //     display: none;
+
+        // }
+    }
+
+    @media all and (max-height: 850px) {
+        // .footer {
+        //     display: none;
+
+        // }
+    }
+}

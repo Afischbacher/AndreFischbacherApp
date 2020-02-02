@@ -1,0 +1,12 @@
+.app-info-dialog {
+    .tech-icons {
+        display: flex;
+        flex-direction: row;
+        align-content: space-around;
+        justify-content: space-evenly;
+    }
+
+    .icon{
+        height: 100px;
+    }
+}

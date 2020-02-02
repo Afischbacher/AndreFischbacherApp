@@ -1,0 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+.wrapper {
+    background-repeat: no-repeat;
+    min-width: 100%;
+    min-height: 100%;
+}
+.title-name {
+
+    h1 {
+        font-family: "Oswald";
+        font-weight: 400;
+        font-size: calc(42px + 2.6vw);
+    }
+
+    h2 {
+        font-size: calc(12px + 2.6vw);
+        font-family: "Oswald";
+    }
+    
+    h3 {
+        font-size: calc(13px + 1.2vw);
+        font-family: "Oswald";
+    }
+}
+
+.home-card {
+    h3{
+        font-family: "Oswald";
+    }
+
+    .card-icon{
+        font-size: 3.5rem;
+    }
+
+    &:hover{
+        cursor: pointer;  
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+    }
+}
+
+.under-construction {
+     h3 {
+        font-size: 150%;
+        font-family: "Oswald";
+    }
+}
+
+@media screen and (max-width: 768px){
+    .title-name {
+
+        h1 {
+            font-family: "Oswald";
+            font-weight: 400;
+            font-size: 48px;
+        }
+
+        h2 {
+            font-size: 34px;
+            font-family: "Oswald";
+        }
+    }
+
+    .under-construction {
+        h3 {
+            font-size: 28px;
+            font-family: "Oswald";
+        }
+    }
+}
+
+@media screen and (min-width: 769px){
+
+}
+
+.footer {
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   height: calc(12px + 3vh);
+   background-color:#202124;
+   color: white;
+   text-align: center;
+   margin: 0px;
+}
+
+.profile-image{
+    border-radius: 50%;
+    height: calc(125px + 3vw);
+    transform: rotate(0deg);
+}

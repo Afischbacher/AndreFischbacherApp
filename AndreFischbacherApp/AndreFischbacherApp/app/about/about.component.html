@@ -1,0 +1,129 @@
+<div class="wrapper">
+    <app-toolbar></app-toolbar>
+    <div class="about-component">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <mat-card class="my-3 py-5">
+                        <mat-card-header>
+                            <h1 class="mat-card-header-mobile-title">About Me</h1>
+                        </mat-card-header>
+                        <p class="mat-card-margin-x mb-4">Here is where you can get to know about me as a person.</p>
+
+                        <mat-card-content class="">
+                            <div *ngIf="loading">
+                                <mat-progress-spinner class="center-spinner" [color]="color" [diameter]="75"
+                                    [mode]="mode"></mat-progress-spinner>
+                            </div>
+                            <div *ngIf="!loading" class="row">
+
+                                <div *ngFor="let aboutItem of aboutData">
+
+                                    <div *ngIf="!aboutItem.isSubcard" class="row mat-card-margin-x">
+
+                                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                                            <h3 class="mb-3">{{aboutItem.title}}</h3>
+                                            <p>{{aboutItem.content}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div *ngIf="!loading">
+                                <div class="row my-3 about-me-card-margin-x">
+                                    <div class="col-sm-12 col-md-12 col-xl-3 col-xl-3">
+                                        <mat-card class="about-interests-mat-card mb-3">
+                                            <mat-card-header>
+                                                <mat-card-title>
+                                                    <h4>Software Architecture</h4>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <div class="architecture-software-interests-card-background">
+                                                <fa-icon [icon]="faHeartbeat" class="software-interests-icon-style">
+                                                </fa-icon>
+                                            </div>
+                                            <mat-card-content class="my-3 mb-6">
+                                                <p>
+                                                    Architecting and designing software is one of the topics I truly
+                                                    find quite interesting. Ranging from design
+                                                    patterns to serverless computing and everything inbetween, this
+                                                    topic of discussion never fails to amaze me and is why
+                                                    am so interested in software.
+                                                </p>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12 col-xl-3 col-xl-3">
+                                        <mat-card class=" about-interests-mat-card mb-3">
+                                            <mat-card-header>
+                                                <mat-card-title>
+                                                    <h4>UI / UX </h4>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <div class="ui-software-interests-card-background">
+                                                <fa-icon [icon]="faPaintBrush" class="software-interests-icon-style">
+                                                </fa-icon>
+                                            </div>
+                                            <mat-card-content class="my-3">
+                                                <p>
+                                                    From every color on a palette to the placement of buttons and
+                                                    elements, creating an immersive and intuitve design for a
+                                                    user experience is something that is in the heart of every
+                                                    application I build. Setting the experience every user and
+                                                    leaving a lasting impression.
+                                                </p>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12 col-xl-3 col-xl-3">
+                                        <mat-card class=" about-interests-mat-card mb-3">
+                                            <mat-card-header>
+                                                <mat-card-title>
+                                                    <h4>Technical Stack</h4>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <div class="technical-stack-software-interests-card-background">
+                                                <fa-icon [icon]="faWrench" class="software-interests-icon-style">
+                                                </fa-icon>
+                                            </div>
+                                            <mat-card-content class="my-3">
+                                                <p>
+                                                    When carefully selecting a technical stack, there is always many
+                                                    considerations you must take into account when building
+                                                    an application. I consistently enjoy learning new technical stacks,
+                                                    especially since the landscape is constantly changing.
+                                                </p>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12 col-xl-3 col-xl-3">
+                                        <mat-card class="about-interests-mat-card mb-3">
+                                            <mat-card-header>
+                                                <mat-card-title>
+                                                    <h4>Agile Iteration</h4>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <div class="agile-software-interests-card-background">
+                                                <fa-icon [icon]="faAtom" class="software-interests-icon-style">
+                                                </fa-icon>
+                                            </div>
+                                            <mat-card-content class="my-3">
+                                                <p>
+                                                    From the inception of a minimal viable product, to a full fledged
+                                                    application, quickly building upon a product or app
+                                                    is always exciting and something I personally enjoy. Watching
+                                                    something incrementally grow is what makes building apps
+                                                    incredibly fun.
+                                                </p>
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
