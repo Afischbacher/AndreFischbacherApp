@@ -33,7 +33,6 @@ export const zoomInOut =
     trigger('zoomInOut', [
         transition('* <=> *', [
             group([
-
                 query(':enter', [
                     animate('0.5s ease', keyframes([
                         style({ opacity: 0, transform: 'scale3d(0.5, 0.5, 0.5)', offset: 0 }),
