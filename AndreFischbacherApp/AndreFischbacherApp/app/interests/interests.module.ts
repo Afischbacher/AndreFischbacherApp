@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AppToolbarModule } from '../components/toolbar/toolbar.module';
 import { InterestsService } from '../services/interests.service';
 import { CommonModule } from '@angular/common';
-import { MatProgressSpinnerModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({

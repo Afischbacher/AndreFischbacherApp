@@ -18,8 +18,4 @@ export class AppComponent {
     {
 
     }
-
-    prepareRoute(outlet){
-      
-    }
 }

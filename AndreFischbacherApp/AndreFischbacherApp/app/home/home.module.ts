@@ -9,9 +9,8 @@ import { MatRippleModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { ContactBottomSheet } from '../components/contact-bottom-sheet/contact-bottom-sheet.component';
-import { MatListModule } from '@angular/material/list';
 import { ContactBottomSheetModule } from '../components/contact-bottom-sheet/contact-bottom-sheet.module';
-import { MatToolbarModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppFooter } from '../components/app-footer/app-footer.component';
 import { AppFooterModule } from '../components/app-footer/app-footer.module';
 import { NavigationService } from '../services/navigation.service';
@@ -21,8 +20,8 @@ import { NavigationService } from '../services/navigation.service';
     declarations: [
         HomeComponent
     ],
-    imports: [ 
-        RouterModule,      
+    imports: [
+        RouterModule,
         BrowserModule,
         MatCardModule,
         MatIconModule,
@@ -34,7 +33,7 @@ import { NavigationService } from '../services/navigation.service';
         AppFooterModule,
         BrowserAnimationsModule
     ],
-    entryComponents:[ContactBottomSheet, AppFooter],
+    entryComponents: [ContactBottomSheet, AppFooter],
     providers: [NavigationService],
     exports: [HomeComponent]
 })

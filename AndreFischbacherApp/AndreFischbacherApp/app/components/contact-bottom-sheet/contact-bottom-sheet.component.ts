@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { MatBottomSheetRef } from '@angular/material';
+import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { faTwitter, faGithub, faSkype, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 @Component({
     selector: "contact-bottom-sheet",
