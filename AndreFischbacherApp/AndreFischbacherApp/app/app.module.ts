@@ -20,6 +20,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppInfoDialogModule } from './components/app-info-dialog/app-info-dialog.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from "@angular/common";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes =
     [
@@ -49,7 +51,8 @@ const appRoutes: Routes =
         MatButtonModule,
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, {useHash: true}),
-        FontAwesomeModule
+        FontAwesomeModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),
     ],
     providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
     bootstrap: [AppComponent]

@@ -26,7 +26,8 @@
             "assets": [
               "AndreFischbacherApp/favicon.ico",
               "AndreFischbacherApp/favicon.png",
-              "AndreFischbacherApp/assets"
+              "AndreFischbacherApp/assets",
+              "AndreFischbacherApp/src/manifest.webmanifest"
             ],
             "styles": [
               "AndreFischbacherApp/styles.scss",
@@ -57,7 +58,9 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "serviceWorker": true
+              
             }
           }
         },
@@ -92,7 +95,8 @@
             "assets": [
               "AndreFischbacherApp/favicon.ico",
               "AndreFischbacherApp/favicon.png",
-              "AndreFischbacherApp/assets"
+              "AndreFischbacherApp/assets",
+              "AndreFischbacherApp/src/manifest.webmanifest"
             ]
           }
         },
