@@ -1,0 +1,152 @@
+{
+  "configVersion": 1,
+  "timestamp": 1590798186697,
+  "index": "./index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "./favicon.ico",
+        "./index.html",
+        "./main-es2015.a7cbd6b226119d006ad7.js",
+        "./main-es5.a7cbd6b226119d006ad7.js",
+        "./polyfills-es2015.3fd2185600212906eaaf.js",
+        "./polyfills-es5.d45f67a66d0c7e396393.js",
+        "./runtime-es2015.1eba213af0b233498d9d.js",
+        "./runtime-es5.1eba213af0b233498d9d.js",
+        "./styles.56c76d5f7e41d4481b84.css"
+      ],
+      "patterns": [
+        "https:\\/\\/fonts\\.googleapis\\.com\\/.*"
+      ]
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "./assets/icons/android-chrome-192x192.png",
+        "./assets/icons/android-chrome-512x512.png",
+        "./assets/icons/apple-touch-icon.png",
+        "./assets/icons/favicon-16x16.png",
+        "./assets/icons/favicon-32x32.png",
+        "./assets/icons/icon-128x128.png",
+        "./assets/icons/icon-144x144.png",
+        "./assets/icons/icon-152x152.png",
+        "./assets/icons/icon-192x192.png",
+        "./assets/icons/icon-384x384.png",
+        "./assets/icons/icon-512x512.png",
+        "./assets/icons/icon-72x72.png",
+        "./assets/icons/icon-96x96.png",
+        "./assets/icons/mstile-150x150.png",
+        "./assets/icons/safari-pinned-tab.svg",
+        "./assets/images/andre-fischbacher.jpg",
+        "./assets/images/andre-profile-2017.jpg",
+        "./assets/images/angular.png",
+        "./assets/images/azure-functions-logo.png",
+        "./assets/images/bmo-logo.png",
+        "./assets/images/funding-innovation-logo.jpg",
+        "./assets/images/hockey-stock.jpg",
+        "./assets/images/pano-logo.png",
+        "./assets/images/plooto-logo.png",
+        "./assets/images/video-games-stock.jpg",
+        "./assets/images/weightlifting-stock.jpg",
+        "./fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+        "./fontawesome-webfont.20fd1704ea223900efa9.woff2",
+        "./fontawesome-webfont.8b43027f47b20503057d.eot",
+        "./fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+        "./fontawesome-webfont.f691f37e57f04c152e23.woff",
+        "./oswald-Bold-webfont.1cba88821aca9eaabba0.woff",
+        "./oswald-Bold-webfont.6d73755e44f7a80f4e86.eot",
+        "./oswald-Bold-webfont.943d2e4b0e2fac01b319.svg",
+        "./oswald-Bold-webfont.e7c7c489a20965ab07b4.ttf",
+        "./oswald-Light-webfont.23c8e348a3f3f020acee.ttf",
+        "./oswald-Light-webfont.42da2295b5f079fc7f43.eot",
+        "./oswald-Light-webfont.53d8850effb7621c8579.woff",
+        "./oswald-Light-webfont.93004ea5ed7daedf0e36.svg",
+        "./oswald-Regular-webfont.17a58bc81f723d860c51.eot",
+        "./oswald-Regular-webfont.33e57ece4b5494efe416.svg",
+        "./oswald-Regular-webfont.93c75ea0cc8406815ab2.woff",
+        "./oswald-Regular-webfont.ec0148986b009503d52e.ttf"
+      ],
+      "patterns": [
+        "https:\\/\\/fonts\\.googleapis\\.com\\/.*"
+      ]
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "./assets/icons/android-chrome-192x192.png": "6198f523ad5cff256b6d37deca735a6861fd497a",
+    "./assets/icons/android-chrome-512x512.png": "370f9d1143f9680c8cdf0c0e91af0798590ec069",
+    "./assets/icons/apple-touch-icon.png": "64c0b5e20e78a7be8fe454bfec77341499336d33",
+    "./assets/icons/favicon-16x16.png": "fce9b01b9a2bab55693311fab12bdcb613e9e668",
+    "./assets/icons/favicon-32x32.png": "42b3b34728a2e2bb2560a53fd07b51a8adbd8881",
+    "./assets/icons/icon-128x128.png": "cbb1527d4a6b659915b3bcc7ad93cea476527188",
+    "./assets/icons/icon-144x144.png": "7e257e7492bc79e81fc249bf5ff522a27689b42f",
+    "./assets/icons/icon-152x152.png": "e01da2d430756c18848aeced967a3d15ede90912",
+    "./assets/icons/icon-192x192.png": "f4a5206b825b03b693e63033716ac1a9e7d3a65d",
+    "./assets/icons/icon-384x384.png": "0ed69481be075eab6dc6f46f1d8865c7818c63bb",
+    "./assets/icons/icon-512x512.png": "71797bd7f08fc4dbea9f3d37de8909eb2771353f",
+    "./assets/icons/icon-72x72.png": "42735e1b46dbfe0c975033c50ad7ed9645dd08e0",
+    "./assets/icons/icon-96x96.png": "1801c4fcc7f027fe2b23a5e50ec7575a0d42df71",
+    "./assets/icons/mstile-150x150.png": "1d9bea2e57f33e9e33edfac63b2151c6a41f220e",
+    "./assets/icons/safari-pinned-tab.svg": "b659fd22829dcf78425ef853f5ae13064b6ffb0e",
+    "./assets/images/andre-fischbacher.jpg": "888d35c249220c86bd91fab352e187faad457a5c",
+    "./assets/images/andre-profile-2017.jpg": "c9e3554b37c2f6690b2ece90b7660bfa942f03e1",
+    "./assets/images/angular.png": "f0191f8d50460c560d9e28b29e849b4f44ed0bf4",
+    "./assets/images/azure-functions-logo.png": "87d026444a62a89882d36e0931e8c71587e46445",
+    "./assets/images/bmo-logo.png": "dddba7cf1e2bf0ceb8c2b4f580bc9f05dafb35a7",
+    "./assets/images/funding-innovation-logo.jpg": "611473bb2a134bd832760a7c4f759cfcc3c2058a",
+    "./assets/images/hockey-stock.jpg": "73e0b8104251648c32acb0368c7023a0e94f6cd7",
+    "./assets/images/pano-logo.png": "798b22919e64ea366466f2624b562ada56fc09d4",
+    "./assets/images/plooto-logo.png": "96ec0051c5eb1bef9b232b2df8289afefcf3a354",
+    "./assets/images/video-games-stock.jpg": "13b67e37f26d0e5e7a500248bcebc16e96dff52e",
+    "./assets/images/weightlifting-stock.jpg": "d4551412707c27d619bca733d9c97af996e3b107",
+    "./favicon.ico": "69448981732c93ff8959136afe821c46de69da96",
+    "./fontawesome-webfont.1e59d2330b4c6deb84b3.ttf": "13b1eab65a983c7a73bc7997c479d66943f7c6cb",
+    "./fontawesome-webfont.20fd1704ea223900efa9.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
+    "./fontawesome-webfont.8b43027f47b20503057d.eot": "d980c2ce873dc43af460d4d572d441304499f400",
+    "./fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
+    "./fontawesome-webfont.f691f37e57f04c152e23.woff": "28b782240b3e76db824e12c02754a9731a167527",
+    "./index.html": "99c9f4e2d356cb13e57fd127cb5ff402dd52038b",
+    "./main-es2015.a7cbd6b226119d006ad7.js": "9ff58f1d01a41f3dd9cf45da89f1a0364e733771",
+    "./main-es5.a7cbd6b226119d006ad7.js": "74d40c115fe4bdb3cf5985f2d8658b1b7fdf384f",
+    "./oswald-Bold-webfont.1cba88821aca9eaabba0.woff": "ace23501ecc50273ef38ffda344068a847fbc929",
+    "./oswald-Bold-webfont.6d73755e44f7a80f4e86.eot": "4a17948caf74f968e432202f0d70e4c6756e23d6",
+    "./oswald-Bold-webfont.943d2e4b0e2fac01b319.svg": "80eb958b9e5badbd9943b59c73f2c32cf3027a80",
+    "./oswald-Bold-webfont.e7c7c489a20965ab07b4.ttf": "a5270749999632b57c3a26958dd66157d910609e",
+    "./oswald-Light-webfont.23c8e348a3f3f020acee.ttf": "9a26eb177bf93816b30319c7a56bb796b90cdf9f",
+    "./oswald-Light-webfont.42da2295b5f079fc7f43.eot": "3c72d4a96440ed3774625b24b9b24fb0c3f1d842",
+    "./oswald-Light-webfont.53d8850effb7621c8579.woff": "fbe4594919d8faf39a2bebd93859eb9dc231ac77",
+    "./oswald-Light-webfont.93004ea5ed7daedf0e36.svg": "806b982891797cb294f3e6ca65463b0906778e0a",
+    "./oswald-Regular-webfont.17a58bc81f723d860c51.eot": "8f6ae7f4f8fb34195ddd66a0c8df49116f5bbd69",
+    "./oswald-Regular-webfont.33e57ece4b5494efe416.svg": "0b92a9ecef5a81922d64d518445d83ec8c17911e",
+    "./oswald-Regular-webfont.93c75ea0cc8406815ab2.woff": "4b1a03edf70a294b43d2d8902c77e43bdf2c0b4a",
+    "./oswald-Regular-webfont.ec0148986b009503d52e.ttf": "02d4fd1bfdd4bd92e328e08efea5695031d2eb18",
+    "./polyfills-es2015.3fd2185600212906eaaf.js": "508a3e83f68f3726e7134a19482b23ba6a404fc4",
+    "./polyfills-es5.d45f67a66d0c7e396393.js": "e48386355cf3838ada6569ab4694b25e1e48fecc",
+    "./runtime-es2015.1eba213af0b233498d9d.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "./runtime-es5.1eba213af0b233498d9d.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "./styles.56c76d5f7e41d4481b84.css": "60a908124f60b341d6c8d37fa744fb578803b465"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
