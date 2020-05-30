@@ -24,7 +24,11 @@ import { ContactMeModule } from './contact-me/contact-me.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppInfoDialogModule } from './components/app-info-dialog/app-info-dialog.module';
-var appRoutes = [
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from "@angular/common";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+const appRoutes = [
     { path: "home", component: HomeComponent, data: { title: "Andre Fischbacher - Home" } },
     { path: "", component: HomeComponent, data: { title: "Andre Fischbacher - Home" } },
     { path: "about", component: AboutComponent, data: { title: "Andre Fischbacher - About" } },
@@ -32,33 +36,33 @@ var appRoutes = [
     { path: "interests", component: InterestsComponent, data: { title: "Andre Fischbacher - Interests" } },
     { path: "contact-me", component: ContactMeComponent, data: { title: "Andre Fischbacher - Contact Me" } },
 ];
-var AppModule = /** @class */ (function () {
-    function AppModule() {
-    }
-    AppModule = __decorate([
-        NgModule({
-            declarations: [
-                AppComponent
-            ],
-            imports: [
-                AboutModule,
-                HomeModule,
-                CareerModule,
-                AppInfoDialogModule,
-                InterestsModule,
-                ContactMeModule,
-                BrowserModule,
-                MatCardModule,
-                MatIconModule,
-                MatButtonModule,
-                BrowserAnimationsModule,
-                RouterModule.forRoot(appRoutes, { useHash: true })
-            ],
-            providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
-            bootstrap: [AppComponent]
-        })
-    ], AppModule);
-    return AppModule;
-}());
+let AppModule = class AppModule {
+};
+AppModule = __decorate([
+    NgModule({
+        declarations: [
+            AppComponent
+        ],
+        imports: [
+            AboutModule,
+            HomeModule,
+            CareerModule,
+            AppInfoDialogModule,
+            InterestsModule,
+            CommonModule,
+            ContactMeModule,
+            BrowserModule,
+            MatCardModule,
+            MatIconModule,
+            MatButtonModule,
+            BrowserAnimationsModule,
+            RouterModule.forRoot(appRoutes, { useHash: true }),
+            FontAwesomeModule,
+            ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),
+        ],
+        providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+        bootstrap: [AppComponent]
+    })
+], AppModule);
 export { AppModule };
 //# sourceMappingURL=app.module.js.map

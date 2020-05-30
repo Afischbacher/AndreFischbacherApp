@@ -6,18 +6,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Component } from '@angular/core';
 import { fadeAnimation } from '../animations/route-animations';
-var ContactMeComponent = /** @class */ (function () {
-    function ContactMeComponent() {
-    }
-    ContactMeComponent = __decorate([
-        Component({
-            selector: 'contact-me-component',
-            templateUrl: './contact-me.component.html',
-            styleUrls: ['./contact-me.component.scss'],
-            animations: [fadeAnimation]
-        })
-    ], ContactMeComponent);
-    return ContactMeComponent;
-}());
+let ContactMeComponent = class ContactMeComponent {
+};
+ContactMeComponent = __decorate([
+    Component({
+        selector: 'contact-me-component',
+        templateUrl: './contact-me.component.html',
+        styleUrls: ['./contact-me.component.scss'],
+        animations: [fadeAnimation]
+    })
+], ContactMeComponent);
 export { ContactMeComponent };
 //# sourceMappingURL=contact-me.component.js.map

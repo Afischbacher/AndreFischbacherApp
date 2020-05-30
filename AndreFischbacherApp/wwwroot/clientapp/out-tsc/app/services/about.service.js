@@ -9,18 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-var AboutService = /** @class */ (function () {
-    function AboutService(httpClient) {
+let AboutService = class AboutService {
+    constructor(httpClient) {
         this.httpClient = httpClient;
     }
-    AboutService.prototype.getAboutInformation = function () {
-        return this.httpClient.get("http://api.andrefischbacher.com/v1/about");
-    };
-    AboutService = __decorate([
-        Injectable(),
-        __metadata("design:paramtypes", [HttpClient])
-    ], AboutService);
-    return AboutService;
-}());
+    getAboutInformation() {
+        return this.httpClient.get(`http://api.andrefischbacher.com/v1/about`);
+    }
+};
+AboutService = __decorate([
+    Injectable(),
+    __metadata("design:paramtypes", [HttpClient])
+], AboutService);
 export { AboutService };
 //# sourceMappingURL=about.service.js.map

@@ -11,27 +11,26 @@ import { Component } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ContactBottomSheet } from '../components/contact-bottom-sheet/contact-bottom-sheet.component';
 import { NavigationService } from '../services/navigation.service';
-var HomeComponent = /** @class */ (function () {
-    function HomeComponent(bottomContactSheet, navigationService) {
+let HomeComponent = class HomeComponent {
+    constructor(bottomContactSheet, navigationService) {
         this.bottomContactSheet = bottomContactSheet;
         this.navigationService = navigationService;
     }
-    HomeComponent.prototype.openContactSheet = function () {
+    openContactSheet() {
         this.navigationService.vibrate([25]);
         this.bottomContactSheet.open(ContactBottomSheet, {});
-    };
-    HomeComponent.prototype.vibrate = function () {
+    }
+    vibrate() {
         this.navigationService.vibrate([25]);
-    };
-    HomeComponent = __decorate([
-        Component({
-            selector: 'home-component',
-            templateUrl: './home.component.html',
-            styleUrls: ['./home.component.scss']
-        }),
-        __metadata("design:paramtypes", [MatBottomSheet, NavigationService])
-    ], HomeComponent);
-    return HomeComponent;
-}());
+    }
+};
+HomeComponent = __decorate([
+    Component({
+        selector: 'home-component',
+        templateUrl: './home.component.html',
+        styleUrls: ['./home.component.scss']
+    }),
+    __metadata("design:paramtypes", [MatBottomSheet, NavigationService])
+], HomeComponent);
 export { HomeComponent };
 //# sourceMappingURL=home.component.js.map

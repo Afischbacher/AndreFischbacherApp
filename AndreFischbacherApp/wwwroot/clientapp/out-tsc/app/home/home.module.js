@@ -16,37 +16,34 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { ContactBottomSheet } from '../components/contact-bottom-sheet/contact-bottom-sheet.component';
 import { ContactBottomSheetModule } from '../components/contact-bottom-sheet/contact-bottom-sheet.module';
-import { MatToolbarModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppFooter } from '../components/app-footer/app-footer.component';
 import { AppFooterModule } from '../components/app-footer/app-footer.module';
 import { NavigationService } from '../services/navigation.service';
-var HomeModule = /** @class */ (function () {
-    function HomeModule() {
-    }
-    HomeModule = __decorate([
-        NgModule({
-            declarations: [
-                HomeComponent
-            ],
-            imports: [
-                RouterModule,
-                BrowserModule,
-                MatCardModule,
-                MatIconModule,
-                MatButtonModule,
-                MatToolbarModule,
-                MatRippleModule,
-                MatBottomSheetModule,
-                ContactBottomSheetModule,
-                AppFooterModule,
-                BrowserAnimationsModule
-            ],
-            entryComponents: [ContactBottomSheet, AppFooter],
-            providers: [NavigationService],
-            exports: [HomeComponent]
-        })
-    ], HomeModule);
-    return HomeModule;
-}());
+let HomeModule = class HomeModule {
+};
+HomeModule = __decorate([
+    NgModule({
+        declarations: [
+            HomeComponent
+        ],
+        imports: [
+            RouterModule,
+            BrowserModule,
+            MatCardModule,
+            MatIconModule,
+            MatButtonModule,
+            MatToolbarModule,
+            MatRippleModule,
+            MatBottomSheetModule,
+            ContactBottomSheetModule,
+            AppFooterModule,
+            BrowserAnimationsModule
+        ],
+        entryComponents: [ContactBottomSheet, AppFooter],
+        providers: [NavigationService],
+        exports: [HomeComponent]
+    })
+], HomeModule);
 export { HomeModule };
 //# sourceMappingURL=home.module.js.map

@@ -8,23 +8,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { NavigationService } from '../../services/navigation.service';
-let AppToolbar = class AppToolbar {
-    constructor(navigationService) {
-        this.navigationService = navigationService;
-        this.positionOptions = ['below'];
+let AppSpeedDial = class AppSpeedDial {
+    constructor() {
     }
-    goHome() {
-        this.navigationService.vibrate([25]);
+    onClose() {
     }
 };
-AppToolbar = __decorate([
+AppSpeedDial = __decorate([
     Component({
-        selector: "app-toolbar",
-        templateUrl: "./toolbar.component.html",
-        styleUrls: ["./toolbar.scss"]
+        selector: "app-speed-dial",
+        templateUrl: "./app-speed-dial.component.html",
+        styleUrls: ["./app-speed-dial.scss"]
     }),
-    __metadata("design:paramtypes", [NavigationService])
-], AppToolbar);
-export { AppToolbar };
-//# sourceMappingURL=toolbar.component.js.map
+    __metadata("design:paramtypes", [])
+], AppSpeedDial);
+export { AppSpeedDial };
+//# sourceMappingURL=app-speed-dial.component..js.map

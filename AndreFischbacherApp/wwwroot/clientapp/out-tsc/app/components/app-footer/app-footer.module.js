@@ -6,34 +6,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule, MatButtonModule, MatDialogModule, MatRippleModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatRippleModule } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { AppFooter } from './app-footer.component';
 import { AppInfoDialog } from '../app-info-dialog/app-info-dialog.component.';
-var AppFooterModule = /** @class */ (function () {
-    function AppFooterModule() {
-    }
-    AppFooterModule = __decorate([
-        NgModule({
-            declarations: [
-                AppFooter
-            ],
-            imports: [
-                MatIconModule,
-                RouterModule,
-                MatRippleModule,
-                MatTooltipModule,
-                MatToolbarModule,
-                MatDialogModule,
-                MatButtonModule
-            ],
-            entryComponents: [AppInfoDialog],
-            providers: [],
-            exports: [AppFooter]
-        })
-    ], AppFooterModule);
-    return AppFooterModule;
-}());
+let AppFooterModule = class AppFooterModule {
+};
+AppFooterModule = __decorate([
+    NgModule({
+        declarations: [
+            AppFooter
+        ],
+        imports: [
+            MatIconModule,
+            RouterModule,
+            MatRippleModule,
+            MatTooltipModule,
+            MatToolbarModule,
+            MatDialogModule,
+            MatButtonModule
+        ],
+        entryComponents: [AppInfoDialog],
+        providers: [],
+        exports: [AppFooter]
+    })
+], AppFooterModule);
 export { AppFooterModule };
 //# sourceMappingURL=app-footer.module.js.map

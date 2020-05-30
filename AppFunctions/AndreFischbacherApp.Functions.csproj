@@ -21,6 +21,7 @@
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AndreFischbacherApp.DataContext\AndreFischbacherApp.DataContext.csproj" />
     <ProjectReference Include="..\AndreFischbacherApp.Repositories\AndreFischbacherApp.DataContext.csproj" />
   </ItemGroup>
   <ItemGroup>

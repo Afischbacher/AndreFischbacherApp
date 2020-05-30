@@ -1,16 +1,16 @@
 import { TestBed, async } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
-describe('HomeComponent', function () {
-    beforeEach(async(function () {
+describe('HomeComponent', () => {
+    beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
                 HomeComponent
             ],
         }).compileComponents();
     }));
-    it('should create the app', async(function () {
-        var fixture = TestBed.createComponent(HomeComponent);
-        var app = fixture.debugElement.componentInstance;
+    it('should create the app', async(() => {
+        const fixture = TestBed.createComponent(HomeComponent);
+        const app = fixture.debugElement.componentInstance;
         expect(app).toBeTruthy();
     }));
 });

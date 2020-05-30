@@ -10,25 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AppInfoDialog } from '../app-info-dialog/app-info-dialog.component.';
-var AppFooter = /** @class */ (function () {
-    function AppFooter(appInfoDialog) {
+let AppFooter = class AppFooter {
+    constructor(appInfoDialog) {
         this.appInfoDialog = appInfoDialog;
     }
-    AppFooter.prototype.openAppInfoDialog = function () {
+    openAppInfoDialog() {
         this.appInfoDialog.open(AppInfoDialog, {
             width: '500px',
             data: {} // no data at the moment
         });
-    };
-    AppFooter = __decorate([
-        Component({
-            selector: "app-footer",
-            templateUrl: "./app-footer.component.html",
-            styleUrls: ["./app-footer.scss"]
-        }),
-        __metadata("design:paramtypes", [MatDialog])
-    ], AppFooter);
-    return AppFooter;
-}());
+    }
+};
+AppFooter = __decorate([
+    Component({
+        selector: "app-footer",
+        templateUrl: "./app-footer.component.html",
+        styleUrls: ["./app-footer.scss"]
+    }),
+    __metadata("design:paramtypes", [MatDialog])
+], AppFooter);
 export { AppFooter };
 //# sourceMappingURL=app-footer.component.js.map

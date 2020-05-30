@@ -16,29 +16,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AgeService } from '../services/birthday.service';
-var AboutModule = /** @class */ (function () {
-    function AboutModule() {
-    }
-    AboutModule = __decorate([
-        NgModule({
-            declarations: [
-                AboutComponent
-            ],
-            imports: [
-                BrowserModule,
-                HttpClientModule,
-                AppToolbarModule,
-                MatCardModule,
-                MatIconModule,
-                MatProgressSpinnerModule,
-                MatButtonModule,
-                FontAwesomeModule
-            ],
-            providers: [AboutService, AgeService],
-            exports: [AboutComponent]
-        })
-    ], AboutModule);
-    return AboutModule;
-}());
+let AboutModule = class AboutModule {
+};
+AboutModule = __decorate([
+    NgModule({
+        declarations: [
+            AboutComponent
+        ],
+        imports: [
+            BrowserModule,
+            HttpClientModule,
+            AppToolbarModule,
+            MatCardModule,
+            MatIconModule,
+            MatProgressSpinnerModule,
+            MatButtonModule,
+            FontAwesomeModule
+        ],
+        providers: [AboutService, AgeService],
+        exports: [AboutComponent]
+    })
+], AboutModule);
 export { AboutModule };
 //# sourceMappingURL=about.module.js.map

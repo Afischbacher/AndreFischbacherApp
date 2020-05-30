@@ -13,29 +13,26 @@ import { MatIconModule } from '@angular/material/icon';
 import { AppToolbarModule } from '../components/toolbar/toolbar.module';
 import { InterestsService } from '../services/interests.service';
 import { CommonModule } from '@angular/common';
-import { MatProgressSpinnerModule } from '@angular/material';
-var InterestsModule = /** @class */ (function () {
-    function InterestsModule() {
-    }
-    InterestsModule = __decorate([
-        NgModule({
-            declarations: [
-                InterestsComponent
-            ],
-            imports: [
-                AppToolbarModule,
-                CommonModule,
-                BrowserModule,
-                MatCardModule,
-                MatIconModule,
-                MatProgressSpinnerModule,
-                MatButtonModule
-            ],
-            providers: [InterestsService],
-            exports: [InterestsComponent]
-        })
-    ], InterestsModule);
-    return InterestsModule;
-}());
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+let InterestsModule = class InterestsModule {
+};
+InterestsModule = __decorate([
+    NgModule({
+        declarations: [
+            InterestsComponent
+        ],
+        imports: [
+            AppToolbarModule,
+            CommonModule,
+            BrowserModule,
+            MatCardModule,
+            MatIconModule,
+            MatProgressSpinnerModule,
+            MatButtonModule
+        ],
+        providers: [InterestsService],
+        exports: [InterestsComponent]
+    })
+], InterestsModule);
 export { InterestsModule };
 //# sourceMappingURL=interests.module.js.map

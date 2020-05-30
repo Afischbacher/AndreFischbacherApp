@@ -12,24 +12,23 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-var AppInfoDialog = /** @class */ (function () {
-    function AppInfoDialog(dialogRef, data) {
+let AppInfoDialog = class AppInfoDialog {
+    constructor(dialogRef, data) {
         this.dialogRef = dialogRef;
         this.data = data;
     }
-    AppInfoDialog.prototype.onClose = function () {
+    onClose() {
         this.dialogRef.close();
-    };
-    AppInfoDialog = __decorate([
-        Component({
-            selector: "app-info-dialog",
-            templateUrl: "./app-info-dialog.component.html",
-            styleUrls: ["./app-info-dialog.scss"]
-        }),
-        __param(1, Inject(MAT_DIALOG_DATA)),
-        __metadata("design:paramtypes", [MatDialogRef, Object])
-    ], AppInfoDialog);
-    return AppInfoDialog;
-}());
+    }
+};
+AppInfoDialog = __decorate([
+    Component({
+        selector: "app-info-dialog",
+        templateUrl: "./app-info-dialog.component.html",
+        styleUrls: ["./app-info-dialog.scss"]
+    }),
+    __param(1, Inject(MAT_DIALOG_DATA)),
+    __metadata("design:paramtypes", [MatDialogRef, Object])
+], AppInfoDialog);
 export { AppInfoDialog };
 //# sourceMappingURL=app-info-dialog.component..js.map

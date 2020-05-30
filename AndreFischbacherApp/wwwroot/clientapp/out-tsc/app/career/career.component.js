@@ -10,36 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { fadeAnimation } from '../animations/route-animations';
 import { CareerService } from '../services/career.service';
-var CareerComponent = /** @class */ (function () {
-    function CareerComponent(careerService) {
+let CareerComponent = class CareerComponent {
+    constructor(careerService) {
         this.careerService = careerService;
         this.careerContents = [];
         this.color = 'primary';
         this.mode = 'indeterminate';
     }
-    CareerComponent.prototype.ngOnInit = function () {
+    ngOnInit() {
         this.loading = true;
         this.getCareerInfo();
-    };
-    CareerComponent.prototype.getCareerInfo = function () {
-        var _this = this;
-        this.careerService.getCareerInformation().subscribe(function (career) {
-            _this.careerContents = career;
-            _this.loading = false;
-        }, function (error) {
+    }
+    getCareerInfo() {
+        this.careerService.getCareerInformation().subscribe(career => {
+            this.careerContents = career;
+            this.loading = false;
+        }, error => {
             console.log(error);
         });
-    };
-    CareerComponent = __decorate([
-        Component({
-            selector: 'career-component',
-            templateUrl: './career.component.html',
-            styleUrls: ['./career.component.scss'],
-            animations: [fadeAnimation]
-        }),
-        __metadata("design:paramtypes", [CareerService])
-    ], CareerComponent);
-    return CareerComponent;
-}());
+    }
+};
+CareerComponent = __decorate([
+    Component({
+        selector: 'career-component',
+        templateUrl: './career.component.html',
+        styleUrls: ['./career.component.scss'],
+        animations: [fadeAnimation]
+    }),
+    __metadata("design:paramtypes", [CareerService])
+], CareerComponent);
 export { CareerComponent };
 //# sourceMappingURL=career.component.js.map

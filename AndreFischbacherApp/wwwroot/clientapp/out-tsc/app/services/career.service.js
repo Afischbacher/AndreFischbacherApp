@@ -9,18 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-var CareerService = /** @class */ (function () {
-    function CareerService(httpClient) {
+let CareerService = class CareerService {
+    constructor(httpClient) {
         this.httpClient = httpClient;
     }
-    CareerService.prototype.getCareerInformation = function () {
-        return this.httpClient.get("http://api.andrefischbacher.com/v1/career");
-    };
-    CareerService = __decorate([
-        Injectable(),
-        __metadata("design:paramtypes", [HttpClient])
-    ], CareerService);
-    return CareerService;
-}());
+    getCareerInformation() {
+        return this.httpClient.get(`http://api.andrefischbacher.com/v1/career`);
+    }
+};
+CareerService = __decorate([
+    Injectable(),
+    __metadata("design:paramtypes", [HttpClient])
+], CareerService);
 export { CareerService };
 //# sourceMappingURL=career.service.js.map

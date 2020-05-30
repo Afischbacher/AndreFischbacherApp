@@ -10,24 +10,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { zoomInOut } from './animations/route-animations';
-var AppComponent = /** @class */ (function () {
-    function AppComponent(router, activatedRoute) {
+import { SwUpdate } from '@angular/service-worker';
+let AppComponent = class AppComponent {
+    constructor(router, activatedRoute, swUpdate) {
         this.router = router;
         this.activatedRoute = activatedRoute;
+        this.swUpdate = swUpdate;
     }
-    AppComponent.prototype.prepareRoute = function (outlet) {
-    };
-    AppComponent = __decorate([
-        Component({
-            selector: 'app-root',
-            templateUrl: './app.component.html',
-            styleUrls: ['./app.component.scss'],
-            animations: [zoomInOut]
-        }),
-        __metadata("design:paramtypes", [Router,
-            ActivatedRoute])
-    ], AppComponent);
-    return AppComponent;
-}());
+    ngAfterViewInit() {
+        if (this.swUpdate.isEnabled) {
+            this.swUpdate.available
+                .subscribe(() => {
+                this.swUpdate
+                    .activateUpdate()
+                    .then(() => {
+                    window.location.reload();
+                });
+            });
+        }
+    }
+};
+AppComponent = __decorate([
+    Component({
+        selector: 'app-root',
+        templateUrl: './app.component.html',
+        styleUrls: ['./app.component.scss'],
+        animations: [zoomInOut]
+    }),
+    __metadata("design:paramtypes", [Router,
+        ActivatedRoute,
+        SwUpdate])
+], AppComponent);
 export { AppComponent };
 //# sourceMappingURL=app.component.js.map

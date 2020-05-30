@@ -1,5 +1,5 @@
 import { trigger, style, query, group, animate, keyframes, transition } from '@angular/animations';
-export var fadeAnimation = trigger('fadeAnimation', [
+export const fadeAnimation = trigger('fadeAnimation', [
     transition('* <=> *', [
         query(":enter", [
             style([{ opacity: 0 }])
@@ -10,7 +10,7 @@ export var fadeAnimation = trigger('fadeAnimation', [
         query(':enter', [style({ opacity: 0 }), animate('0.2s', style({ opacity: 1 }))], { optional: true })
     ])
 ]);
-export var zoomInOut = trigger('zoomInOut', [
+export const zoomInOut = trigger('zoomInOut', [
     transition('* <=> *', [
         group([
             query(':enter', [

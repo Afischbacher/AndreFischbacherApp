@@ -6,24 +6,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AppInfoDialog } from './app-info-dialog.component.';
-var AppInfoDialogModule = /** @class */ (function () {
-    function AppInfoDialogModule() {
-    }
-    AppInfoDialogModule = __decorate([
-        NgModule({
-            declarations: [
-                AppInfoDialog
-            ],
-            imports: [
-                CommonModule,
-                MatDialogModule
-            ],
-            exports: [AppInfoDialog]
-        })
-    ], AppInfoDialogModule);
-    return AppInfoDialogModule;
-}());
+let AppInfoDialogModule = class AppInfoDialogModule {
+};
+AppInfoDialogModule = __decorate([
+    NgModule({
+        declarations: [
+            AppInfoDialog
+        ],
+        imports: [
+            CommonModule,
+            MatDialogModule
+        ],
+        providers: [],
+        exports: [AppInfoDialog]
+    })
+], AppInfoDialogModule);
 export { AppInfoDialogModule };
 //# sourceMappingURL=app-info-dialog.module.js.map

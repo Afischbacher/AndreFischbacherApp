@@ -12,8 +12,8 @@ import { fadeAnimation } from '../animations/route-animations';
 import { AboutService } from '../services/about.service';
 import { faHeartbeat, faWrench, faPaintBrush, faAtom } from '@fortawesome/free-solid-svg-icons';
 import { AgeService } from '../services/birthday.service';
-var AboutComponent = /** @class */ (function () {
-    function AboutComponent(aboutService, ageService) {
+let AboutComponent = class AboutComponent {
+    constructor(aboutService, ageService) {
         this.aboutService = aboutService;
         this.ageService = ageService;
         this.aboutData = [];
@@ -25,27 +25,25 @@ var AboutComponent = /** @class */ (function () {
         this.color = 'primary';
         this.mode = 'indeterminate';
     }
-    AboutComponent.prototype.ngOnInit = function () {
+    ngOnInit() {
         this.getAboutContents();
-    };
-    AboutComponent.prototype.getAboutContents = function () {
-        var _this = this;
+    }
+    getAboutContents() {
         this.loading = true;
-        this.aboutService.getAboutInformation().subscribe(function (response) {
-            response = _this.interpolateAboutMeContentVariables(response);
-            _this.aboutData = response;
-            _this.loading = false;
-        }, function (err) { return console.log(err); });
-    };
-    AboutComponent.prototype.interpolateAboutMeContentVariables = function (aboutContents) {
-        var _this = this;
-        aboutContents.forEach(function (aboutContent) {
-            var regExpVariableMatchGroups = aboutContent.content.match(/(\[.*?\])/gm);
+        this.aboutService.getAboutInformation().subscribe((response) => {
+            response = this.interpolateAboutMeContentVariables(response);
+            this.aboutData = response;
+            this.loading = false;
+        }, err => console.log(err));
+    }
+    interpolateAboutMeContentVariables(aboutContents) {
+        aboutContents.forEach(aboutContent => {
+            const regExpVariableMatchGroups = aboutContent.content.match(/(\[.*?\])/gm);
             if (regExpVariableMatchGroups && regExpVariableMatchGroups.length > 0) {
-                regExpVariableMatchGroups.forEach(function (match) {
+                regExpVariableMatchGroups.forEach(match => {
                     switch (match) {
                         case "[age]":
-                            var currentAgeInYears = _this.ageService.getCurrentAge();
+                            const currentAgeInYears = this.ageService.getCurrentAge();
                             aboutContent.content = aboutContent.content.replace(match, currentAgeInYears);
                             break;
                     }
@@ -53,17 +51,16 @@ var AboutComponent = /** @class */ (function () {
             }
         });
         return aboutContents;
-    };
-    AboutComponent = __decorate([
-        Component({
-            selector: 'about-component',
-            templateUrl: './about.component.html',
-            styleUrls: ['./about.component.scss'],
-            animations: [fadeAnimation]
-        }),
-        __metadata("design:paramtypes", [AboutService, AgeService])
-    ], AboutComponent);
-    return AboutComponent;
-}());
+    }
+};
+AboutComponent = __decorate([
+    Component({
+        selector: 'about-component',
+        templateUrl: './about.component.html',
+        styleUrls: ['./about.component.scss'],
+        animations: [fadeAnimation]
+    }),
+    __metadata("design:paramtypes", [AboutService, AgeService])
+], AboutComponent);
 export { AboutComponent };
 //# sourceMappingURL=about.component.js.map

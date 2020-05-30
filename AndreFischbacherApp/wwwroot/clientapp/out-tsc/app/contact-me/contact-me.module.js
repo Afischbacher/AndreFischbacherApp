@@ -13,28 +13,25 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
-var ContactMeModule = /** @class */ (function () {
-    function ContactMeModule() {
-    }
-    ContactMeModule = __decorate([
-        NgModule({
-            declarations: [
-                ContactMeComponent
-            ],
-            imports: [
-                RouterModule,
-                BrowserModule,
-                MatCardModule,
-                MatIconModule,
-                MatButtonModule,
-                BrowserAnimationsModule,
-                MatBottomSheetModule
-            ],
-            providers: [],
-            exports: [ContactMeComponent]
-        })
-    ], ContactMeModule);
-    return ContactMeModule;
-}());
+let ContactMeModule = class ContactMeModule {
+};
+ContactMeModule = __decorate([
+    NgModule({
+        declarations: [
+            ContactMeComponent
+        ],
+        imports: [
+            RouterModule,
+            BrowserModule,
+            MatCardModule,
+            MatIconModule,
+            MatButtonModule,
+            BrowserAnimationsModule,
+            MatBottomSheetModule
+        ],
+        providers: [],
+        exports: [ContactMeComponent]
+    })
+], ContactMeModule);
 export { ContactMeModule };
 //# sourceMappingURL=contact-me.module.js.map

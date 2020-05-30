@@ -8,17 +8,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Injectable } from '@angular/core';
-var AgeService = /** @class */ (function () {
-    function AgeService() {
-    }
-    AgeService.prototype.getCurrentAge = function () {
+let AgeService = class AgeService {
+    constructor() { }
+    getCurrentAge() {
         return Math.floor((new Date().getTime() - new Date("1995-08-18 1:00").getTime()) / 1000 / 60 / 60 / 24 / 365).toString();
-    };
-    AgeService = __decorate([
-        Injectable(),
-        __metadata("design:paramtypes", [])
-    ], AgeService);
-    return AgeService;
-}());
+    }
+};
+AgeService = __decorate([
+    Injectable(),
+    __metadata("design:paramtypes", [])
+], AgeService);
 export { AgeService };
 //# sourceMappingURL=birthday.service.js.map

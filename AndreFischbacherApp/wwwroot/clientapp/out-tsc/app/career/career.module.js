@@ -13,31 +13,28 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppToolbarModule } from '../components/toolbar/toolbar.module';
 import { CareerService } from '../services/career.service';
-import { MatProgressSpinnerModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-var CareerModule = /** @class */ (function () {
-    function CareerModule() {
-    }
-    CareerModule = __decorate([
-        NgModule({
-            declarations: [
-                CareerComponent
-            ],
-            imports: [
-                BrowserModule,
-                AppToolbarModule,
-                MatCardModule,
-                MatIconModule,
-                MatButtonModule,
-                BrowserAnimationsModule,
-                MatProgressSpinnerModule,
-                FontAwesomeModule
-            ],
-            providers: [CareerService],
-            exports: [CareerComponent]
-        })
-    ], CareerModule);
-    return CareerModule;
-}());
+let CareerModule = class CareerModule {
+};
+CareerModule = __decorate([
+    NgModule({
+        declarations: [
+            CareerComponent
+        ],
+        imports: [
+            BrowserModule,
+            AppToolbarModule,
+            MatCardModule,
+            MatIconModule,
+            MatButtonModule,
+            BrowserAnimationsModule,
+            MatProgressSpinnerModule,
+            FontAwesomeModule
+        ],
+        providers: [CareerService],
+        exports: [CareerComponent]
+    })
+], CareerModule);
 export { CareerModule };
 //# sourceMappingURL=career.module.js.map

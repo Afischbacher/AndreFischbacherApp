@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreFischbacherApp", "Andr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreFischbacherApp.Functions", "AppFunctions\AndreFischbacherApp.Functions.csproj", "{976EBA20-EBFC-4685-9692-53B50EACF76F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreFischbacherApp.DataContext", "AndreFischbacherApp.Repositories\AndreFischbacherApp.DataContext.csproj", "{BC12377D-3205-4221-BD7B-ABB69203C39B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreFischbacherApp.DataContext", "AndreFischbacherApp.DataContext\AndreFischbacherApp.DataContext.csproj", "{554BCE8A-47E7-405F-B488-AC00BC1A4D59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{976EBA20-EBFC-4685-9692-53B50EACF76F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{976EBA20-EBFC-4685-9692-53B50EACF76F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{976EBA20-EBFC-4685-9692-53B50EACF76F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BC12377D-3205-4221-BD7B-ABB69203C39B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC12377D-3205-4221-BD7B-ABB69203C39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BC12377D-3205-4221-BD7B-ABB69203C39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BC12377D-3205-4221-BD7B-ABB69203C39B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{554BCE8A-47E7-405F-B488-AC00BC1A4D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554BCE8A-47E7-405F-B488-AC00BC1A4D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554BCE8A-47E7-405F-B488-AC00BC1A4D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554BCE8A-47E7-405F-B488-AC00BC1A4D59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,28 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { InterestsService } from '../services/interests.service';
-var InterestsComponent = /** @class */ (function () {
-    function InterestsComponent(interestsService) {
+let InterestsComponent = class InterestsComponent {
+    constructor(interestsService) {
         this.interestsService = interestsService;
         this.mode = "indeterminate";
     }
-    InterestsComponent.prototype.ngOnInit = function () {
-        var _this = this;
+    ngOnInit() {
         this.loading = true;
-        this.interestsService.getInterestsInformation().subscribe(function (response) {
-            _this.interestsData = response;
-            _this.loading = false;
-        }, function (error) { return console.log(error); });
-    };
-    InterestsComponent = __decorate([
-        Component({
-            selector: 'interests-component',
-            templateUrl: './interests.component.html',
-            styleUrls: ['./interests.component.scss']
-        }),
-        __metadata("design:paramtypes", [InterestsService])
-    ], InterestsComponent);
-    return InterestsComponent;
-}());
+        this.interestsService.getInterestsInformation().subscribe(response => {
+            this.interestsData = response;
+            this.loading = false;
+        }, error => console.log(error));
+    }
+};
+InterestsComponent = __decorate([
+    Component({
+        selector: 'interests-component',
+        templateUrl: './interests.component.html',
+        styleUrls: ['./interests.component.scss']
+    }),
+    __metadata("design:paramtypes", [InterestsService])
+], InterestsComponent);
 export { InterestsComponent };
 //# sourceMappingURL=interests.component.js.map

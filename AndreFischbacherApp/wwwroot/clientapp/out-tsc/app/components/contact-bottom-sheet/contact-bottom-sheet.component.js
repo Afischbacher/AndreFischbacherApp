@@ -8,24 +8,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { MatBottomSheetRef } from '@angular/material';
+import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { faTwitter, faGithub, faSkype } from '@fortawesome/free-brands-svg-icons';
-var ContactBottomSheet = /** @class */ (function () {
-    function ContactBottomSheet(_bottomSheetRef) {
+let ContactBottomSheet = class ContactBottomSheet {
+    constructor(_bottomSheetRef) {
         this._bottomSheetRef = _bottomSheetRef;
         this.faTwitter = faTwitter;
         this.faGithub = faGithub;
         this.faSkype = faSkype;
     }
-    ContactBottomSheet = __decorate([
-        Component({
-            selector: "contact-bottom-sheet",
-            templateUrl: "./contact-bottom-sheet.component.html",
-            styleUrls: ["./contact-bottom-sheet.scss"]
-        }),
-        __metadata("design:paramtypes", [MatBottomSheetRef])
-    ], ContactBottomSheet);
-    return ContactBottomSheet;
-}());
+};
+ContactBottomSheet = __decorate([
+    Component({
+        selector: "contact-bottom-sheet",
+        templateUrl: "./contact-bottom-sheet.component.html",
+        styleUrls: ["./contact-bottom-sheet.scss"]
+    }),
+    __metadata("design:paramtypes", [MatBottomSheetRef])
+], ContactBottomSheet);
 export { ContactBottomSheet };
 //# sourceMappingURL=contact-bottom-sheet.component.js.map

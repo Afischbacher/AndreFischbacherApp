@@ -7,28 +7,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { NgModule } from '@angular/core';
 import { AppToolbar } from './toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
-var AppToolbarModule = /** @class */ (function () {
-    function AppToolbarModule() {
-    }
-    AppToolbarModule = __decorate([
-        NgModule({
-            declarations: [
-                AppToolbar
-            ],
-            imports: [
-                MatIconModule,
-                RouterModule,
-                MatTooltipModule,
-                MatToolbarModule
-            ],
-            providers: [],
-            exports: [AppToolbar]
-        })
-    ], AppToolbarModule);
-    return AppToolbarModule;
-}());
+let AppToolbarModule = class AppToolbarModule {
+};
+AppToolbarModule = __decorate([
+    NgModule({
+        declarations: [
+            AppToolbar
+        ],
+        imports: [
+            MatIconModule,
+            RouterModule,
+            MatIconModule,
+            MatTooltipModule,
+            MatToolbarModule
+        ],
+        providers: [],
+        exports: [AppToolbar]
+    })
+], AppToolbarModule);
 export { AppToolbarModule };
 //# sourceMappingURL=toolbar.module.js.map

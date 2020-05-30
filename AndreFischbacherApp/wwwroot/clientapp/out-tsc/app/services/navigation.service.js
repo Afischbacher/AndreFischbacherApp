@@ -5,21 +5,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { Injectable } from '@angular/core';
-var NavigationService = /** @class */ (function () {
-    function NavigationService() {
-    }
-    NavigationService.prototype.vibrate = function (pattern) {
+let NavigationService = class NavigationService {
+    vibrate(pattern) {
         if ("vibrate" in navigator) {
             window.navigator.vibrate(pattern);
         }
         else {
             return;
         }
-    };
-    NavigationService = __decorate([
-        Injectable()
-    ], NavigationService);
-    return NavigationService;
-}());
+    }
+};
+NavigationService = __decorate([
+    Injectable()
+], NavigationService);
 export { NavigationService };
 //# sourceMappingURL=navigation.service.js.map

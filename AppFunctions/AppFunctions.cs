@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System.Linq;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using AndreFischbacherApp.DataContext.Configuration;
 using AndreFischbacherApp.DataContext.Repositories;
