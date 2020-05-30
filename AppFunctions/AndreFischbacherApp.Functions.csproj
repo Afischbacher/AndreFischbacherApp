@@ -22,7 +22,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AndreFischbacherApp.DataContext\AndreFischbacherApp.DataContext.csproj" />
-    <ProjectReference Include="..\AndreFischbacherApp.Repositories\AndreFischbacherApp.DataContext.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
