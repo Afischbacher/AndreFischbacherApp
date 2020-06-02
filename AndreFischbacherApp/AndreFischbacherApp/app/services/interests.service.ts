@@ -9,6 +9,6 @@ export class InterestsService {
     constructor(private httpClient: HttpClient){}
 
     public getInterestsInformation() : Observable<Interests[]> {
-        return this.httpClient.get<Interests[]>(`https://api.andrefischbacher.com/v1/interests`);
+        return this.httpClient.get<Interests[]>(`https://andrefischbacherappfunctions.azurewebsites.net/v1/interests`);
     }
 }

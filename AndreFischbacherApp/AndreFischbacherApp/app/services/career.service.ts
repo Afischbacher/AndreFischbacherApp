@@ -9,6 +9,6 @@ export class CareerService {
     constructor(private httpClient: HttpClient){}
 
     public getCareerInformation() : Observable<Career[]> {
-        return this.httpClient.get<Career[]>(`https://api.andrefischbacher.com/v1/career`);
+        return this.httpClient.get<Career[]>(`https://andrefischbacherappfunctions.azurewebsites.net/v1/career`);
     }
 }

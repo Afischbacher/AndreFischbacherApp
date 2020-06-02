@@ -9,6 +9,6 @@ export class AboutService {
     constructor(private httpClient: HttpClient) { }
 
     public getAboutInformation(): Observable<About[]> {
-        return this.httpClient.get<About[]>(`https://api.andrefischbacher.com/v1/about`);
+        return this.httpClient.get<About[]>(`https://andrefischbacherappfunctions.azurewebsites.net/v1/about`);
     }
 }
