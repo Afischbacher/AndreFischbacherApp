@@ -14,7 +14,7 @@ let InterestsService = class InterestsService {
         this.httpClient = httpClient;
     }
     getInterestsInformation() {
-        return this.httpClient.get(`http://api.andrefischbacher.com/v1/interests`);
+        return this.httpClient.get(`https://andrefischbacherappfunctions.azurewebsites.net/v1/interests`);
     }
 };
 InterestsService = __decorate([

@@ -14,7 +14,7 @@ let CareerService = class CareerService {
         this.httpClient = httpClient;
     }
     getCareerInformation() {
-        return this.httpClient.get(`http://api.andrefischbacher.com/v1/career`);
+        return this.httpClient.get(`https://andrefischbacherappfunctions.azurewebsites.net/v1/career`);
     }
 };
 CareerService = __decorate([

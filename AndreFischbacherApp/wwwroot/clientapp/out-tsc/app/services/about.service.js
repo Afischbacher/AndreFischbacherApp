@@ -14,7 +14,7 @@ let AboutService = class AboutService {
         this.httpClient = httpClient;
     }
     getAboutInformation() {
-        return this.httpClient.get(`http://api.andrefischbacher.com/v1/about`);
+        return this.httpClient.get(`https://andrefischbacherappfunctions.azurewebsites.net/v1/about`);
     }
 };
 AboutService = __decorate([
