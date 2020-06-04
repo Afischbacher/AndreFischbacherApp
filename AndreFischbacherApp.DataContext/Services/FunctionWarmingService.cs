@@ -29,6 +29,7 @@ namespace AndreFischbacherApp.DataContext.Services
 
 		public async Task<bool> WarmUpFunctions<T>(Type type) where T : Attribute
 		{
+			const string memberName = "Route";
 			try
 			{
 				// Dynamically retrieve routes from Azure Functions
@@ -36,9 +37,10 @@ namespace AndreFischbacherApp.DataContext.Services
 
 				var functionParameterTypes = functionMethodParameters
 					.SelectMany(p => p.SelectMany(c => c.CustomAttributes))
-					.Where(x => x.AttributeType == typeof(T) && x.NamedArguments.Any());
+					.Where(p => p.AttributeType == typeof(T) && p.NamedArguments.Any());
 
-				var functionRoutes = functionParameterTypes.SelectMany(p => p.NamedArguments.Select(c => c.TypedValue.Value.ToString()));
+				var functionRoutes = functionParameterTypes.SelectMany(p => p.NamedArguments
+				.Where(m => m.MemberName == memberName).Select(v =>  v.TypedValue.Value.ToString()));
 
 				// No routes found, exit
 				if (!functionRoutes.Any()) return true;
@@ -47,7 +49,7 @@ namespace AndreFischbacherApp.DataContext.Services
 				{
 					return Task.Run(async () =>
 					{
-						await _httpClient.GetAsync($"{_appConfiguration.BaseApiUrl}{route}");
+						await _httpClient.GetAsync($"{_appConfiguration.BaseApiUrl}/{route}");
 					});
 
 				});
