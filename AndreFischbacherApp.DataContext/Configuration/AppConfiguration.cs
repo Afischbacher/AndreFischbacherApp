@@ -1,12 +1,12 @@
 ﻿namespace AndreFischbacherApp.DataContext.Configuration
 {
-    public interface IAppConfiguration
-    {
-        string BaseApiUrl { get;  }
-    }
+	public interface IAppConfiguration
+	{
+		string BaseApiUrl { get; }
+	}
 
-    public class AppConfiguration : IAppConfiguration
-    {
-        public string BaseApiUrl => "http://api.andrefischbacher.com/v1";
-    }
+	public class AppConfiguration : IAppConfiguration
+	{
+		public string BaseApiUrl => "https://andrefischbacherappfunctions.azurewebsites.net/v1";
+	}
 }

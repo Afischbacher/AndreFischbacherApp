@@ -1,9 +1,8 @@
 ﻿using AndreFischbacherApp.DataContext.Configuration;
 using AndreFischbacherApp.DataContext.Repositories;
+using AndreFischbacherApp.DataContext.Services;
 using AndreFischbacherApp.Repositories;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
-using Microsoft.Azure.WebJobs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,6 +35,9 @@ namespace AndreFischbacherApp.Functions
 			builder.Services.AddTransient<IInterestsContentRepository, InterestsContentRepository>();
 			builder.Services.AddTransient<IAboutMeContentRepository, AboutMeContentRepository>();
 			builder.Services.AddTransient<ICareerContentRepository, CareerContentRepository>();
+
+			builder.Services.AddTransient<IFunctionWarmingService, FunctionWarmingService>();
+
 
 
 		}

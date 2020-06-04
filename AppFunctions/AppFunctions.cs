@@ -9,31 +9,41 @@ using System;
 using System.Net.Http;
 using AndreFischbacherApp.DataContext.Configuration;
 using AndreFischbacherApp.DataContext.Repositories;
+using AndreFischbacherApp.DataContext.Services;
 
 namespace AndreFischbacherApp.Functions
 {
-	public class AppFunctions
+	public interface IAppFunctions
+	{
+		Task<IActionResult> AboutFunction([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "about")] HttpRequest req, ILogger log);
+
+		Task<IActionResult> InterestsFunction([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "interests")] HttpRequest req, ILogger log);
+
+		Task<IActionResult> CareerFunction([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "career")] HttpRequest req, ILogger log);
+
+		Task PerformanceFunction([TimerTrigger("0 */5 * * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log);
+			
+	}
+
+	public class AppFunctions : IAppFunctions
 	{
 		private readonly IInterestsContentRepository _interestsContentRepository;
 		private readonly IAboutMeContentRepository _aboutMeContentRepository;
 		private readonly ICareerContentRepository _careerContentRepository;
-		private readonly IAppConfiguration _appConfiguration;
-		private readonly HttpClient _httpClient;
+		private readonly IFunctionWarmingService _functionWarmingService;
 
 		public AppFunctions
 			(
 				IInterestsContentRepository interestsContentRepository,
 				IAboutMeContentRepository aboutMeContentRepository,
 				ICareerContentRepository careerContentRepository,
-				IAppConfiguration appConfiguration,
-				HttpClient httpClient
+				IFunctionWarmingService functionWarmingService
 			)
 		{
 			_interestsContentRepository = interestsContentRepository;
 			_aboutMeContentRepository = aboutMeContentRepository;
 			_careerContentRepository = careerContentRepository;
-			_appConfiguration = appConfiguration;
-			_httpClient = httpClient;
+			_functionWarmingService = functionWarmingService;
 		}
 
 		[FunctionName("AboutFunction")]
@@ -67,18 +77,14 @@ namespace AndreFischbacherApp.Functions
 			return new OkObjectResult(careerInformationContents);
 		}
 
-		[FunctionName("WarmUpFunction")]
-		public async Task<IActionResult> WarmUpFunction(
-		  [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "warmup")] HttpRequest req,
-		  ILogger log)
-		{
-			return await Task.Run(() => new OkObjectResult(true));
-		}
-
 		[FunctionName("PerformanceFunction")]
-		public async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger log)
+		public async Task PerformanceFunction([TimerTrigger("0 */5 * * * *", RunOnStartup = true)]TimerInfo myTimer, ILogger log)
 		{
-			await _httpClient.GetAsync($"{_appConfiguration.BaseApiUrl}/warmup");
+			log.LogInformation("PerformanceFunction started");
+
+			await _functionWarmingService.WarmUpFunctions<HttpTriggerAttribute>(GetType());
+
+			log.LogInformation("PerformanceFunction finished");
 		}
 	}
 }
