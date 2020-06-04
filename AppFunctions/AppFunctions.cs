@@ -82,7 +82,7 @@ namespace AndreFischbacherApp.Functions
 		{
 			log.LogInformation("PerformanceFunction started");
 
-			await _functionWarmingService.WarmUpFunctions<HttpTriggerAttribute>(GetType());
+			await _functionWarmingService.WarmUpFunctions<HttpTriggerAttribute>(GetType(), new[] { AuthorizationLevel.Anonymous });
 
 			log.LogInformation("PerformanceFunction finished");
 		}
