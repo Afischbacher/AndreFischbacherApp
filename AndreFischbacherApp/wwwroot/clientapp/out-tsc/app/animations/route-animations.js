@@ -14,10 +14,17 @@ export const zoomInOut = trigger('zoomInOut', [
     transition('* <=> *', [
         group([
             query(':enter', [
-                animate('0.5s ease', keyframes([
+                animate('0.5s ease-in-out', keyframes([
                     style({ opacity: 0, transform: 'scale3d(0.5, 0.5, 0.5)', offset: 0 }),
                     style({ opacity: 0.5, transform: 'scale3d(0.75, 0.75, 0.75)', offset: 0.5 }),
                     style({ opacity: 1, transform: 'scale3d(1, 1, 1)', offset: 1 })
+                ]))
+            ], { optional: true }),
+            query(':leave', [
+                animate('0.5s ease-in-out', keyframes([
+                    style({ opacity: 1, transform: 'scale3d(1, 1, 1)', offset: 0 }),
+                    style({ opacity: 0.5, transform: 'scale3d(0.75, 0.75, 0.75)', offset: 0.5 }),
+                    style({ opacity: 0, transform: 'scale3d(0.5, 0.5, 0.5)', offset: 1 })
                 ]))
             ], { optional: true })
         ])
