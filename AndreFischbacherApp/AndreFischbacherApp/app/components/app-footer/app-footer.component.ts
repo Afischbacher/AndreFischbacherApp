@@ -17,6 +17,7 @@ export class AppFooter {
     openAppInfoDialog(){
         this.appInfoDialog.open(AppInfoDialog,{
             width: '500px',
+            closeOnNavigation: true,
             data: {} // no data at the moment
         })
     }

@@ -16,7 +16,9 @@ export class HomeComponent {
 
     public openContactSheet() {
         this.navigationService.vibrate([25]);
-        this.bottomContactSheet.open(ContactBottomSheet, {});
+        this.bottomContactSheet.open(ContactBottomSheet, {
+            closeOnNavigation: true
+        });
     }
 
     public vibrate() {
