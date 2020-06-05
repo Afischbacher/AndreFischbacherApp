@@ -11,19 +11,8 @@ using AndreFischbacherApp.DataContext.Services;
 
 namespace AndreFischbacherApp.Functions
 {
-	public interface IAppFunctions
-	{
-		Task<IActionResult> AboutFunction([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "about")] HttpRequest req, ILogger log);
 
-		Task<IActionResult> InterestsFunction([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "interests")] HttpRequest req, ILogger log);
-
-		Task<IActionResult> CareerFunction([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "career")] HttpRequest req, ILogger log);
-
-		Task PerformanceFunction([TimerTrigger("0 */5 * * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log);
-			
-	}
-
-	public class AppFunctions : IAppFunctions
+	public class AppFunctions
 	{
 		private readonly IInterestsContentRepository _interestsContentRepository;
 		private readonly IAboutMeContentRepository _aboutMeContentRepository;
