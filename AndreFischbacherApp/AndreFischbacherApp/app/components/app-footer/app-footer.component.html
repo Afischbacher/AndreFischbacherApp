@@ -1,7 +1,7 @@
 <div class="app-footer">
     <div class="footer">
         <div class="icon-row mt-1 mb-4">
-            <button mat-fab color="primary" (click)="openAppInfoDialog()">
+            <button mat-fab color="primary" [routerLink]="['']" [queryParams]="{modal: 'aboutApp'}">
                 <mat-icon class="info-icon">info</mat-icon>
             </button>
         </div>

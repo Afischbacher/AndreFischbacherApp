@@ -58,7 +58,7 @@
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
 
-                                <mat-card class="home-card my-2 py-5" (click)="openContactSheet()" matRipple>
+                                <mat-card class="home-card my-2 py-5" [routerLink]='[""]' [queryParams]="{sheet: 'contactMe'}" matRipple>
                                         <mat-card-header>
                                                 <mat-icon mat-card-avatar class="mr-4 card-icon">perm_contact_calendar
                                                 </mat-icon>
