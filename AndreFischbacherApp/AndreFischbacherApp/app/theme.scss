@@ -35,10 +35,20 @@ $andre-app-palette: (
 );
 
 
+@media (prefers-color-scheme: dark) {
+    $my-app-primary: mat-palette($andre-app-palette);
+    $my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
+    $my-app-warn:    mat-palette($mat-deep-orange);
+    $my-app-theme: mat-dark-theme($my-app-primary, $my-app-accent, $my-app-warn);
+    
+    @include angular-material-theme($my-app-theme);
+}
 
-$my-app-primary: mat-palette($andre-app-palette);
-$my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
-$my-app-warn:    mat-palette($mat-deep-orange);
-$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+@media (prefers-color-scheme: light) {
+    $my-app-primary: mat-palette($andre-app-palette);
+    $my-app-accent: mat-palette($mat-pink, 500, 900, A100);
+    $my-app-warn: mat-palette($mat-deep-orange);
+    $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
-@include angular-material-theme($my-app-theme);
+    @include angular-material-theme($my-app-theme);
+}

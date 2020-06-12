@@ -3,11 +3,31 @@
         display: flex;
         flex-direction: row;
         align-content: space-around;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
-    .icon {
-        height: calc(2vw + 80px);
+    .icon-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
-    
+
+    .azure-function-icon {
+        height: calc(6vw + 30px);
+        max-height: calc(2vw + 60px);
+
+    }
+
+    .angular-icon {
+        height: calc(6vw + 30px);
+        max-height: calc(2vw + 70px);
+
+    }
+
+    .pwa-icon {
+        height: calc(5vw + 30px);
+        max-height: calc(2vw + 55px);
+    }
+
 }
