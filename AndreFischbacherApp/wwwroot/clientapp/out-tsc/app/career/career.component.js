@@ -29,6 +29,35 @@ let CareerComponent = class CareerComponent {
             console.log(error);
         });
     }
+    getCompanyLogo(companyName) {
+        console.log(companyName); // getting called twice? why?
+        switch (companyName) {
+            case "Pano Cap Canada Limited":
+                return "../../assets/images/Pano-Cap.png";
+            case "Funding Innovation Inc.":
+                return "../../assets/images/funding-innovation.png";
+            case "Bank of Montreal":
+                return "../../assets/images/bmo-logo-transparent.png";
+            case "Plooto Inc.":
+                return "../../assets/images/plooto-logo.png";
+            default:
+                return "";
+        }
+    }
+    getCompanyLogoCssClass(companyName) {
+        switch (companyName) {
+            case "Pano Cap Canada Limited":
+                return "pano-cap-canada";
+            case "Funding Innovation Inc.":
+                return "funding-innovation";
+            case "Bank of Montreal":
+                return "bmo-logo";
+            case "Plooto Inc.":
+                return "plooto-logo";
+            default:
+                return "basic-logo";
+        }
+    }
 };
 CareerComponent = __decorate([
     Component({

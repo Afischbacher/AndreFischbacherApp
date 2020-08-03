@@ -8,7 +8,7 @@
                         <mat-card-header>
                             <h1 class="mat-card-header-mobile-title">Career Experience</h1>
                         </mat-card-header>
-                        <p class="mat-card-margin-x mb-4">Here is where you can see my current and previous work
+                        <p class="mat-card-margin-x mb-4">Here is where you can see my current and previous career
                             experience.</p>
 
                         <div *ngIf="loading">
@@ -20,9 +20,9 @@
                             <mat-card-content class="mat-card-margin-x">
                                 <mat-card *ngFor="let careerContent of careerContents" class="career-card mb-5">
                                     <div class="row">
-                                        <div class="col-sm-12 col-md-2 col-lg-1">
-                                            <mat-icon class="mt-3 code-icon" aria-hidden="false">
-                                                {{careerContent.iconCode}}</mat-icon>
+                                        <div class="col-sm-12 col-md-2 col-lg-1 d-flex" style="align-items:center">
+                                           <img class="d-none d-xl-flex"
+                                                [src]="getCompanyLogo(careerContent.companyName)" >
                                         </div>
                                         <div class="col-sm-12 col-md-10 col-lg-11">
                                             <div class="information-flex-display">

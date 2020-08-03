@@ -10,14 +10,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AppInfoDialog } from '../app-info-dialog/app-info-dialog.component.';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 let AppFooter = class AppFooter {
-    constructor(appInfoDialog) {
+    constructor(appInfoDialog, activatedRoute, router) {
         this.appInfoDialog = appInfoDialog;
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+        this.unsubscribe$ = new Subject();
+    }
+    ngOnDestroy() {
+        this.unsubscribe$.next();
+        this.unsubscribe$.complete();
+    }
+    ngOnInit() {
+        this.activatedRoute.queryParams
+            .pipe(takeUntil(this.unsubscribe$))
+            .subscribe(param => {
+            if (param['modal']) {
+                switch (param['modal']) {
+                    case 'aboutApp':
+                        this.openAppInfoDialog();
+                        break;
+                }
+            }
+        });
     }
     openAppInfoDialog() {
-        this.appInfoDialog.open(AppInfoDialog, {
+        let appInfoDialog = this.appInfoDialog.open(AppInfoDialog, {
             width: '500px',
-            data: {} // no data at the moment
+            closeOnNavigation: true
+        });
+        appInfoDialog.backdropClick()
+            .pipe(takeUntil(this.unsubscribe$))
+            .subscribe(() => {
+            this.router.navigate(['']);
         });
     }
 };
@@ -27,7 +55,7 @@ AppFooter = __decorate([
         templateUrl: "./app-footer.component.html",
         styleUrls: ["./app-footer.scss"]
     }),
-    __metadata("design:paramtypes", [MatDialog])
+    __metadata("design:paramtypes", [MatDialog, ActivatedRoute, Router])
 ], AppFooter);
 export { AppFooter };
 //# sourceMappingURL=app-footer.component.js.map

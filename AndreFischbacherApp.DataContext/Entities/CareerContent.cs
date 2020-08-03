@@ -30,8 +30,8 @@ namespace AndreFischbacherApp.DataContext.Entities
         [Column("LastModified")]
         public DateTimeOffset LastModified { get; set; }
 
-        [Column("IconCode")]
-        public string IconCode { get; set; }
+        [Column("CompanyLogoUrl")]
+        public string CompanyLogoUrl { get; set; }
 
         public IEnumerable<CareerInformationContent> CareerInformationContents { get; set; }
 
