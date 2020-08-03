@@ -20,9 +20,9 @@
                             <mat-card-content class="mat-card-margin-x">
                                 <mat-card *ngFor="let careerContent of careerContents" class="career-card mb-5">
                                     <div class="row">
-                                        <div class="col-sm-12 col-md-2 col-lg-1 d-flex" style="align-items:center">
-                                           <img class="d-none d-xl-flex"
-                                                [src]="getCompanyLogo(careerContent.companyName)" >
+                                        <div class="col-sm-12 col-md-2 col-lg-1 company-logo">
+                                           <img class="d-none d-lg-none d-md-none d-sm-none d-xs-none d-xl-flex"
+                                                [src]="careerContent.companyLogoUrl" [ngClass]="getCompanyLogoCssClass(careerContent.companyName)">
                                         </div>
                                         <div class="col-sm-12 col-md-10 col-lg-11">
                                             <div class="information-flex-display">

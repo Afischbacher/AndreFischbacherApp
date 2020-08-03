@@ -13,8 +13,9 @@ export class CareerComponent implements OnInit {
 
   public careerContents : Career[] = [];
   public loading: boolean;
-  color = 'primary';
-  mode = 'indeterminate';
+  public color = 'primary';
+  public mode = 'indeterminate';
+
   constructor(private careerService : CareerService) {
   }
 
@@ -34,37 +35,14 @@ export class CareerComponent implements OnInit {
 
   }
 
-  public getCompanyLogo(companyName: string){
-    
-    console.log(companyName); // getting called twice? why?
-
-    switch(companyName){
-
-      case "Pano Cap Canada Limited":
-        return "../../assets/images/Pano-Cap.png";
-      
-      case "Funding Innovation Inc.":
-        return "../../assets/images/funding-innovation.png"
-
-      case "Bank of Montreal":
-        return "../../assets/images/bmo-logo-transparent.png";
-
-      case "Plooto Inc.":
-        return "../../assets/images/plooto-logo.png";
-
-      default:
-        return "";
-    }
-  }
-
   public getCompanyLogoCssClass(companyName: string){
     switch(companyName){
 
       case "Pano Cap Canada Limited":
-        return "pano-cap-canada";
+        return "pano-cap-canada-logo";
       
       case "Funding Innovation Inc.":
-        return "funding-innovation";
+        return "funding-innovation-logo";
 
       case "Bank of Montreal":
         return "bmo-logo";
