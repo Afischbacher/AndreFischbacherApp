@@ -39,7 +39,7 @@ export class CareerComponent implements OnInit {
     switch(companyName){
 
       case "Pano Cap Canada Limited":
-        return "pano-cap-canada-logo";
+        return "pano-cap-logo";
       
       case "Funding Innovation Inc.":
         return "funding-innovation-logo";
