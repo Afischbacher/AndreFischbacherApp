@@ -2,7 +2,7 @@
 
 namespace AndreFischbacherApp.DataContext.Migrations
 {
-    public partial class RenameColumnCareerLogo : Migration
+    public partial class AddCareerLogoUrl : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

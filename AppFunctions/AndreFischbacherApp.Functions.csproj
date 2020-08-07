@@ -10,6 +10,7 @@
 	<UseNETCoreGenerator>true</UseNETCoreGenerator>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Azure.Extensions.Configuration.Secrets" Version="1.0.0-preview.1" />
     <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.0.0" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="3.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />

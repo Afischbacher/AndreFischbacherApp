@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AndreFischbacherApp.DataContext.Migrations
 {
     [DbContext(typeof(AndreFischbacherAppContext))]
-    [Migration("20200807012837_RenameColumnCareerLogo")]
-    partial class RenameColumnCareerLogo
+    [Migration("20200807020343_AddCareerLogoUrl")]
+    partial class AddCareerLogoUrl
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
