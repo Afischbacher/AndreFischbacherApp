@@ -3,7 +3,8 @@ using AndreFischbacherApp.Repositories.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using System.Reflection;
 
 namespace AndreFischbacherApp.Repositories
 {
@@ -22,6 +23,9 @@ namespace AndreFischbacherApp.Repositories
 		public AndreFischbacherAppContext(DbContextOptions<AndreFischbacherAppContext> dbContextOptions) : base(dbContextOptions)
 		{
 
+		}
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -42,9 +46,11 @@ namespace AndreFischbacherApp.Repositories
 		{
 			var configuration = new ConfigurationBuilder();
 
-			var configurationRoot = configuration.Build();
+			var configurationRoot = configuration
+				.AddUserSecrets(Assembly.GetExecutingAssembly(), optional: false, reloadOnChange: true)
+				.Build();
 
-			var connectionString = configurationRoot["AndreFischbacherApp:Database:ConnectionString"];
+			var connectionString = configurationRoot["AndreFischbacherApp:Database:ConnectionString"] ?? configurationRoot["DatabaseConnectionString"];;
 
 			var builder = new DbContextOptionsBuilder<AndreFischbacherAppContext>();
 

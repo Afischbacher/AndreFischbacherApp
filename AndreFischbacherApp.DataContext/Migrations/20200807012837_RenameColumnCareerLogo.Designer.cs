@@ -4,14 +4,16 @@ using AndreFischbacherApp.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AndreFischbacherApp.DataContext.Migrations
 {
     [DbContext(typeof(AndreFischbacherAppContext))]
-    partial class AndreFischbacherAppContextModelSnapshot : ModelSnapshot
+    [Migration("20200807012837_RenameColumnCareerLogo")]
+    partial class RenameColumnCareerLogo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
