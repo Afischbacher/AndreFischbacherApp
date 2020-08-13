@@ -8,9 +8,9 @@ export class AgeService {
 
     public getCurrentAge(): number {        
         
-        let birthdayDate = moment("1995-08-18");
-        let now = moment();
-        let ageInYears = moment.duration(now.diff(birthdayDate)).asYears().toString();
+        let birthDate = moment("1995-08-18");
+        let timeNow = moment();
+        let ageInYears = moment.duration(timeNow.diff(birthDate)).asYears().toString();
         
         return parseInt(ageInYears); 
     }
