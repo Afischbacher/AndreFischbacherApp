@@ -48,7 +48,7 @@ export class AboutComponent implements OnInit {
         regExpVariableMatchGroups.forEach(match => {
           switch (match) {
             case "[age]":
-              const currentAgeInYears = this.ageService.getCurrentAge();
+              const currentAgeInYears = this.ageService.getCurrentAge().toString();
               aboutContent.content = aboutContent.content.replace(match, currentAgeInYears);
               break;
           }
