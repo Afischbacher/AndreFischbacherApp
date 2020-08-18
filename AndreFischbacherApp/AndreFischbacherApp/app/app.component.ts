@@ -40,9 +40,7 @@ export class AppComponent implements AfterViewInit {
                 window.location.reload();
               });
           });
-
         });
-
     }
   }
 }
