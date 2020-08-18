@@ -22,6 +22,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppInfoDialog } from './components/app-info-dialog/app-info-dialog.component.';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const appRoutes: Routes =
     [
@@ -47,6 +48,7 @@ const appRoutes: Routes =
         MatCardModule,
         MatIconModule,
         MatButtonModule,
+        MatSnackBarModule,
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, {useHash: true}),
         FontAwesomeModule,

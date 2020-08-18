@@ -1,0 +1,6 @@
+@media (prefers-color-scheme: dark) {
+    ::ng-deep .dark-snackbar {
+        background-color: #424242;
+        color: white;
+    }
+}
