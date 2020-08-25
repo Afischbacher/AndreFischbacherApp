@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using AndreFischbacherApp.DataContext.Configuration;
+using AndreFischbacherApp.DataContext.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
@@ -67,7 +68,7 @@ namespace AndreFischbacherApp.DataContext.Services
 			}
 			catch
 			{
-				throw;
+				throw new FunctionWarmUpExecutionException();
 			}
 		}
 	}
