@@ -27,10 +27,10 @@ export class AppComponent implements AfterViewInit {
       this.swUpdate.available
         .subscribe(() => {
 
-          let snackBar = this.snackBar.open('Would you like to update the app to the latest version ?', 'Yes',
+          const snackBar = this.snackBar.open('Would you like to update the app to the latest version ?', 'Yes',
             {
               duration: 5000,
-              panelClass: 'dark-snackbar'
+              panelClass: ['light-snackbar','dark-snackbar']
             });
 
           snackBar.onAction().subscribe(() => {

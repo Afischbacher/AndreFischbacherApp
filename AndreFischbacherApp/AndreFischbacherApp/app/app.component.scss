@@ -4,3 +4,10 @@
         color: white;
     }
 }
+
+@media (prefers-color-scheme: light) {
+    ::ng-deep .light-snackbar {
+        background-color: white;
+        color: #424242;
+    }
+}
