@@ -1,8 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { zoomInOut } from './animations/route-animations';
 import { SwUpdate } from '@angular/service-worker';
-import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +13,6 @@ export class AppComponent implements AfterViewInit {
 
   constructor
     (
-      private router: Router,
-      private activatedRoute: ActivatedRoute,
       private swUpdate: SwUpdate,
       private snackBar: MatSnackBar
     ) { }
