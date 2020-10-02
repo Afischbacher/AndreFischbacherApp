@@ -1,18 +1,21 @@
 @media (prefers-color-scheme: dark) {
     ::ng-deep .dark-snackbar {
-        background-color: #424242;
-        color: white;
+        background-color: #424242 !important;
+        color: white !important;
+    }
+
+    ::ng-deep .mat-button-wrapper {
+        color: #ffffff !important;
     }
 }
 
 @media (prefers-color-scheme: light) {
     ::ng-deep .light-snackbar {
-        background-color: white;
-        color: #424242;
+        background-color: #ffffff !important;
+        color: #424242 !important;
+        
+        ::ng-deep .mat-button-wrapper {
+            color: #424242 !important;
+        }
     }
-}
-
-::ng-deep .light-snackbar {
-    background-color: white;
-    color: #424242;
 }
