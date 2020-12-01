@@ -37,6 +37,7 @@ namespace AndreFischbacherApp.DataContext.Services
 			{
 			
 				var authorizationLevelsAsInt = authorizationLevels.Select(a => (int)a);
+
 				// Dynamically retrieve routes from Azure Functions
 				var functionMethodParameters = type.GetMethods().Select(c => c.GetParameters());
 
