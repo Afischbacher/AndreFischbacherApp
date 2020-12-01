@@ -31,8 +31,8 @@
             ],
             "styles": [
               "AndreFischbacherApp/styles.scss",
-              "AndreFischbacherApp/app/theme.scss",
-              "node_modules/oswald-fontface/oswald.scss"
+              "AndreFischbacherApp/app/theme.scss"
+			  
             ],
             "scripts": []
           },
