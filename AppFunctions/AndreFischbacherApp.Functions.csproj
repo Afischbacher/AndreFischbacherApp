@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
 	<UserSecretsId>56D1CBA6-7362-4195-B20D-D9CF53A0554B</UserSecretsId>
     <AzureFunctionsVersion>v3</AzureFunctionsVersion>
     <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
