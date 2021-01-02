@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using AndreFischbacherApp.DataContext.Configuration;
 using AndreFischbacherApp.DataContext.Exceptions;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 
 namespace AndreFischbacherApp.DataContext.Services
@@ -36,7 +31,7 @@ namespace AndreFischbacherApp.DataContext.Services
 			try
 			{
 			
-				var authorizationLevelsAsInt = authorizationLevels.Select(a => (int)a);
+				var authorizationLevelsAsInt = authorizationLevels.Select(a => int.Parse(a.ToString()));
 
 				// Dynamically retrieve routes from Azure Functions
 				var functionMethodParameters = type.GetMethods().Select(c => c.GetParameters());
