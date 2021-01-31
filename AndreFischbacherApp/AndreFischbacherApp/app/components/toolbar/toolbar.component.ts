@@ -14,7 +14,7 @@ export class AppToolbar {
 
     }
 
-    goHome(){
+    public goHome(){
         this.navigationService.vibrate([25]);
     }
 }

@@ -16,12 +16,12 @@ export class AppFooter implements OnInit, OnDestroy {
 
     constructor(private appInfoDialog: MatDialog, private activatedRoute: ActivatedRoute, private router: Router) { }
 
-    ngOnDestroy(): void {
+    public ngOnDestroy(): void {
         this.unsubscribe$.next();
         this.unsubscribe$.complete();
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
 
         this.activatedRoute.queryParams
             .pipe(takeUntil(this.unsubscribe$))
@@ -36,7 +36,7 @@ export class AppFooter implements OnInit, OnDestroy {
             });
     }
 
-    openAppInfoDialog() : void {
+    public openAppInfoDialog(): void {
         let appInfoDialog = this.appInfoDialog.open(AppInfoDialog, {
             width: '500px',
             closeOnNavigation: true

@@ -10,7 +10,7 @@ export class AppSpeedDial {
     constructor() {
     }
 
-    onClose(): void {
+    public onClose(): void {
     }
 
 }

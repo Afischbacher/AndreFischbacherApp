@@ -12,7 +12,7 @@ export class AppInfoDialog {
         
     }
 
-    onClose(): void {
+    public onClose(): void {
         this.dialogRef.close();
     }
 

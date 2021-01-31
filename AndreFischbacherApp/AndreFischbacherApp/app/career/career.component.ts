@@ -35,7 +35,7 @@ export class CareerComponent implements OnInit {
 
   }
 
-  public getCompanyLogoCssClass(companyName: string){
+  public getCompanyLogoCssClass(companyName: string): string {
     switch(companyName){
 
       case "Pano Cap Canada Limited":

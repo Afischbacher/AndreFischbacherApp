@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import * as moment from 'moment'; 
 
+const birthDateTime = "1995-08-18";
+
 @Injectable()
 export class AgeService {
 
     constructor() { }
-
     public getCurrentAge(): number {        
-        
-        let birthDate = moment("1995-08-18");
-        let timeNow = moment();
-        let ageInYears = moment.duration(timeNow.diff(birthDate)).asYears().toString();
+        const birthDateTime = "1995-08-18";
+
+        const birthDate = moment(birthDateTime);
+        const timeNow = moment();
+        const ageInYears = moment.duration(timeNow.diff(birthDate)).asYears().toString();
         
         return parseInt(ageInYears); 
     }

@@ -15,16 +15,17 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     private unsubscribe$: Subject<void> = new Subject<void>();
 
-    constructor(private bottomContactSheet: MatBottomSheet, private navigationService: NavigationService, private activateRoute: ActivatedRoute, private router: Router) {
-
+    public ngxTypedStrings: string[] = ['Cloud Computing', 'Distributed Architecture', 'Event Driven Microservices', 'Lead Full Stack Software Developer'];
+    constructor(private bottomContactSheet: MatBottomSheet, private navigationService: NavigationService, private activateRoute: ActivatedRoute, private router: Router, private location: Location) {
     }
     
-    ngOnDestroy(): void {
+    public ngOnDestroy(): void {
         this.unsubscribe$.next();
         this.unsubscribe$.complete();
+        sessionStorage.setItem('hasSeenTyped','true');
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
        this.activateRoute.queryParams
        .pipe(takeUntil(this.unsubscribe$))
        .subscribe(param =>{
@@ -53,6 +54,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     public vibrate() {
         this.navigationService.vibrate([25]);
+    }
+
+    public getTypedStrings(): string[] {
+        
+        const hasSeenTypings = sessionStorage.getItem('hasSeenTyped');
+        if(!!hasSeenTypings){
+            return ['Lead Full Stack Developer'];
+        } else {
+            return this.ngxTypedStrings;
+        }
     }
 }
 
