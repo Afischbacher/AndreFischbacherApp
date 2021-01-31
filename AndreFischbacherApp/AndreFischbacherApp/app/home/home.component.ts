@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private unsubscribe$: Subject<void> = new Subject<void>();
 
     public ngxTypedStrings: string[] = ['Cloud Computing', 'Distributed Architecture', 'Event Driven Microservices', 'Lead Full Stack Software Developer'];
-    constructor(private bottomContactSheet: MatBottomSheet, private navigationService: NavigationService, private activateRoute: ActivatedRoute, private router: Router, private location: Location) {
+    constructor(private bottomContactSheet: MatBottomSheet, private navigationService: NavigationService, private activateRoute: ActivatedRoute, private router: Router) {
     }
     
     public ngOnDestroy(): void {
