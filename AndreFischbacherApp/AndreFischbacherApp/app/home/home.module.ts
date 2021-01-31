@@ -14,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppFooter } from '../components/app-footer/app-footer.component';
 import { AppFooterModule } from '../components/app-footer/app-footer.module';
 import { NavigationService } from '../services/navigation.service';
+import { NgxTypedJsModule } from 'ngx-typed-js';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NavigationService } from '../services/navigation.service';
         MatBottomSheetModule,
         ContactBottomSheetModule,
         AppFooterModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        NgxTypedJsModule    
     ],
     entryComponents: [ContactBottomSheet, AppFooter],
     providers: [NavigationService],

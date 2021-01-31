@@ -36,7 +36,7 @@ export class AppFooter implements OnInit, OnDestroy {
             });
     }
 
-    openAppInfoDialog() {
+    openAppInfoDialog() : void {
         let appInfoDialog = this.appInfoDialog.open(AppInfoDialog, {
             width: '500px',
             closeOnNavigation: true
