@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         
         const hasSeenTypings = sessionStorage.getItem('hasSeenTyped');
         if(!!hasSeenTypings){
-            return ['Lead Full Stack Developer'];
+            return ['Full Stack Developer'];
         } else {
             return this.ngxTypedStrings;
         }
