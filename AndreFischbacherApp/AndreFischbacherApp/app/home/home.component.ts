@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     private unsubscribe$: Subject<void> = new Subject<void>();
 
-    public ngxTypedStrings: string[] = ['Cloud Computing', 'Distributed Architecture', 'Event Driven Microservices', 'Lead Full Stack Software Developer'];
+    public ngxTypedStrings: string[] = ['Cloud Computing', 'Distributed Architecture', 'Event Driven Microservices', 'Full Stack Software Developer'];
     constructor(private bottomContactSheet: MatBottomSheet, private navigationService: NavigationService, private activateRoute: ActivatedRoute, private router: Router) {
     }
     
@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         
         const hasSeenTypings = sessionStorage.getItem('hasSeenTyped');
         if(!!hasSeenTypings){
-            return ['Full Stack Developer'];
+            return [this.ngxTypedStrings[this.ngxTypedStrings.length - 1]];
         } else {
             return this.ngxTypedStrings;
         }
