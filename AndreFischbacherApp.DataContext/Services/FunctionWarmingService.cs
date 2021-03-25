@@ -31,7 +31,7 @@ namespace AndreFischbacherApp.DataContext.Services
 			try
 			{
 			
-				var authorizationLevelsAsInt = authorizationLevels.Select(a => int.Parse(a.ToString()));
+				var authorizationLevelsAsInt = authorizationLevels.Select(a => (int)a);
 
 				// Dynamically retrieve routes from Azure Functions
 				var functionMethodParameters = type.GetMethods().Select(c => c.GetParameters());
@@ -62,9 +62,9 @@ namespace AndreFischbacherApp.DataContext.Services
 
 				return true;
 			}
-			catch
+			catch (Exception exception)
 			{
-				throw new FunctionWarmUpExecutionException();
+				throw new FunctionWarmUpExecutionException(message: "Failed to warm up Azure Functions", exception: exception);
 			}
 		}
 	}
