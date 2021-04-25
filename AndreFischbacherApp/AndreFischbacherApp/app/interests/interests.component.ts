@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InterestsService } from '../services/interests.service';
 import { Interests } from '../models/interests';
+import { LoadingStatus } from '../components/app-loading/app-loading.component';
 
 @Component({
   selector: 'interests-component',
@@ -11,18 +12,25 @@ export class InterestsComponent implements OnInit {
   
   private interestsData : Interests[];
 
-  public loading: boolean;
+  public loadingStatus: LoadingStatus = LoadingStatus.Loading;
+  public LoadingStatus : typeof LoadingStatus = LoadingStatus;
+ 
   public mode = "indeterminate";
 
   constructor( private interestsService : InterestsService) {}  
   
   public ngOnInit(): void {
-    this.loading = true;
+
     this.interestsService.getInterestsInformation().subscribe(response => {
       
     this.interestsData = response;
-      this.loading = false;
-    }, error => console.log(error));
+      this.loadingStatus = LoadingStatus.Loaded;
+    }, error => { 
+      
+      this.loadingStatus = LoadingStatus.Failed;
+      console.log(error);
+    
+    });
 
   }
 

@@ -11,12 +11,11 @@
                         <p class="mat-card-margin-x mb-4">Here is where you can see my current and previous career
                             experience.</p>
 
-                        <div *ngIf="loading">
-                            <mat-progress-spinner class="center-spinner" [color]="color" [diameter]="75" [mode]="mode">
-                            </mat-progress-spinner>
+                        <div *ngIf="loadingStatus !== LoadingStatus.Loaded">
+                            <app-loading [loadingStatus]="loadingStatus"></app-loading>
                         </div>
 
-                        <div *ngIf="!loading">
+                        <div *ngIf="loadingStatus === LoadingStatus.Loaded">
                             <mat-card-content class="mat-card-margin-x">
                                 <mat-card *ngFor="let careerContent of careerContents" class="career-card mb-5">
                                     <div class="row">

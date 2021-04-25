@@ -4,6 +4,7 @@ import { AboutService } from '../services/about.service';
 import { About } from '../models/about';
 import { faHeartbeat, faWrench, faPaintBrush, faAtom } from '@fortawesome/free-solid-svg-icons';
 import { AgeService } from '../services/birthday.service';
+import { LoadingStatus } from '../components/app-loading/app-loading.component';
 
 @Component({
   selector: 'about-component',
@@ -12,15 +13,17 @@ import { AgeService } from '../services/birthday.service';
   animations: [fadeAnimation]
 })
 export class AboutComponent implements OnInit {
-  public loading: boolean;
+
+  public loadingStatus: LoadingStatus;
   public aboutData: About[] = [];
   public aboutCardData: About[] = [];
+  public LoadingStatus : typeof LoadingStatus = LoadingStatus;
+
   faHeartbeat = faHeartbeat;
   faWrench = faWrench;
   faPaintBrush = faPaintBrush;
   faAtom = faAtom;
-  color = 'primary';
-  mode = 'indeterminate';
+  
 
   constructor(private aboutService: AboutService, private ageService: AgeService) { }
 
@@ -29,15 +32,18 @@ export class AboutComponent implements OnInit {
   }
 
   public getAboutContents() {
-    this.loading = true;
-    this.aboutService.getAboutInformation().subscribe((response: About[]) => {
+    this.loadingStatus = LoadingStatus.Loading;
+    this.aboutService.getAboutInformation().subscribe((aboutResponse: About[]) => {
       
-      response = this.interpolateAboutMeContentVariables(response);
-      this.aboutData = response;
+      aboutResponse = this.interpolateAboutMeContentVariables(aboutResponse);
+      this.aboutData = aboutResponse;
 
-      this.loading = false;
+      this.loadingStatus = LoadingStatus.Loaded;
 
-    }, err => console.log(err));
+    }, error =>  { 
+        this.loadingStatus = LoadingStatus.Failed;
+        console.error(error);
+    });
   }
 
   private interpolateAboutMeContentVariables(aboutContents: About[]): About[] {

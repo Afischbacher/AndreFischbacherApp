@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AgeService } from '../services/birthday.service';
+import { AppLoadingModule } from '../components/app-loading/app-loading.module';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { AgeService } from '../services/birthday.service';
         BrowserModule,
         HttpClientModule,
         AppToolbarModule,
+        AppLoadingModule,
         MatCardModule,
         MatIconModule,
         MatProgressSpinnerModule,

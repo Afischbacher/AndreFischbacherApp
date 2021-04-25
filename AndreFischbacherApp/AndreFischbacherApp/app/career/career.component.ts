@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { fadeAnimation } from '../animations/route-animations';
 import { CareerService } from '../services/career.service';
 import { Career } from '../models/career';
+import { LoadingStatus } from '../components/app-loading/app-loading.component';
 
 @Component({
   selector: 'career-component',
@@ -12,15 +13,14 @@ import { Career } from '../models/career';
 export class CareerComponent implements OnInit {
 
   public careerContents : Career[] = [];
-  public loading: boolean;
-  public color = 'primary';
-  public mode = 'indeterminate';
+  public loadingStatus: LoadingStatus;
+  public LoadingStatus : typeof LoadingStatus = LoadingStatus;
 
   constructor(private careerService : CareerService) {
   }
 
   public ngOnInit(): void {
-      this.loading = true;
+      this.loadingStatus = LoadingStatus.Loading;
       this.getCareerInfo();
    }
 
@@ -28,12 +28,14 @@ export class CareerComponent implements OnInit {
 
       this.careerService.getCareerInformation().subscribe(career => {
           this.careerContents = career;
-          this.loading = false;
+          this.loadingStatus = LoadingStatus.Loaded;
         }, error => {
-            console.log(error);
+            console.error(error);
+            this.loadingStatus = LoadingStatus.Failed;
           });
 
   }
+
 
   public getCompanyLogoCssClass(companyName: string): string {
     switch(companyName){

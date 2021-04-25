@@ -9,6 +9,7 @@ import { AppToolbarModule } from '../components/toolbar/toolbar.module';
 import { CareerService } from '../services/career.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AppLoadingModule } from '../components/app-loading/app-loading.module';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         AppToolbarModule,
         MatCardModule,
         MatIconModule,
+        AppLoadingModule,
         MatButtonModule,
         BrowserAnimationsModule,
         MatProgressSpinnerModule,

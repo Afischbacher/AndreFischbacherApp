@@ -8,6 +8,7 @@ import { AppToolbarModule } from '../components/toolbar/toolbar.module';
 import { InterestsService } from '../services/interests.service';
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { AppLoadingModule } from '../components/app-loading/app-loading.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
         CommonModule,
         BrowserModule,
         MatCardModule,
+        AppLoadingModule,
         MatIconModule,
         MatProgressSpinnerModule,
         MatButtonModule

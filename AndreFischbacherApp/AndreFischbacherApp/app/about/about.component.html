@@ -10,12 +10,12 @@
                         </mat-card-header>
                         <p class="mat-card-margin-x mb-4">Here is where you can get to know about me as a person.</p>
 
-                        <mat-card-content class="">
-                            <div *ngIf="loading">
-                                <mat-progress-spinner class="center-spinner" [color]="color" [diameter]="75"
-                                    [mode]="mode"></mat-progress-spinner>
+                        <mat-card-content>
+                            <div *ngIf="loadingStatus !== LoadingStatus.Loaded" class="center-spinner">
+                               <app-loading [loadingStatus]="loadingStatus"></app-loading>
                             </div>
-                            <div *ngIf="!loading" class="row">
+
+                            <div *ngIf="loadingStatus === LoadingStatus.Loaded" class="row">
 
                                 <div *ngFor="let aboutItem of aboutData">
 
@@ -29,7 +29,7 @@
                                 </div>
 
                             </div>
-                            <div *ngIf="!loading">
+                            <div *ngIf="loadingStatus === LoadingStatus.Loaded">
                                 <div class="row my-3 about-me-card-margin-x">
                                     <div class="col-sm-12 col-md-12 col-xl-3 col-xl-3">
                                         <mat-card class="about-interests-mat-card mb-3">

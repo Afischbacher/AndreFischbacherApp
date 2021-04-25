@@ -64,7 +64,7 @@ namespace AndreFischbacherApp.DataContext.Services
 			}
 			catch (Exception exception)
 			{
-				throw new FunctionWarmUpExecutionException(message: "Failed to warm up Azure Functions", exception: exception);
+				throw new FunctionWarmUpExecutionException("Failed to warm up Azure Functions", exception);
 			}
 		}
 	}

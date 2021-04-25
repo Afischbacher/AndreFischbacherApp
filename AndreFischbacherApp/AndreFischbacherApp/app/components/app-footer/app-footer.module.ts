@@ -7,7 +7,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { AppFooter } from './app-footer.component';
-import { AppInfoDialog } from '../app-info-dialog/app-info-dialog.component.';
+import { AppInfoDialog } from './../app-info-dialog/app-info-dialog.component'
 
 @NgModule({
     declarations: [

@@ -1,0 +1,11 @@
+<div class="app-loader">
+    <div *ngIf="loadingStatus === LoadingStatus.Loading">
+        <mat-progress-spinner class="center-spinner" [color]="color" [diameter]="75" [mode]="mode">
+        </mat-progress-spinner>
+    </div>
+
+    <div *ngIf="loadingStatus === LoadingStatus.Failed">
+        <fa-icon [icon]="faExclamationCircle" class="my-4 error-exclamation"></fa-icon>
+        <h5 class="my-6">This request can not be processed at the moment, please try again later...</h5>
+    </div>
+</div>

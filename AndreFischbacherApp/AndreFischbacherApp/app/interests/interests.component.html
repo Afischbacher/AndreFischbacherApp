@@ -10,14 +10,14 @@
                             <h1 class="mat-card-header-mobile-title">Interests</h1>
                         </mat-card-header>
 
-                        <mat-card-content *ngIf="loading">
-                            <mat-progress-spinner class="center-spinner" [color]="color" [diameter]="75" [mode]="mode">
-                            </mat-progress-spinner>
-                        </mat-card-content>
-                       
-                        <mat-card-content *ngIf="!loading" class="mat-card-margin-x">
+                        <mat-card-content class="mat-card-margin-x">
                             <p>Here are some of the things I enjoy doing outside of my professional working time.</p>
-                            <div class="row">
+                           
+                            <div *ngIf="loadingStatus !== LoadingStatus.Loaded">
+                                <app-loading [loadingStatus]="loadingStatus"></app-loading>
+                            </div>
+                            
+                            <div *ngIf="loadingStatus === LoadingStatus.Loaded" class="row">
                                 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4"
                                     *ngFor="let interest of interestsData">
                                     <mat-card class="my-3 py-5 interests-card">

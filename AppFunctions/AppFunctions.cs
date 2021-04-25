@@ -35,7 +35,7 @@ namespace AndreFischbacherApp.Functions
 
 		[FunctionName("AboutFunction")]
 		public async Task<IActionResult> AboutFunction(
-			[HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "about")] HttpRequest req,
+			[HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "about")] HttpRequest httpRequest,
 			ILogger log)
 		{
 		
@@ -45,7 +45,7 @@ namespace AndreFischbacherApp.Functions
 
 		[FunctionName("InterestsFunction")]
 		public async Task<IActionResult> InterestsFunction(
-		  [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "interests")] HttpRequest req,
+		  [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "interests")] HttpRequest httpRequest,
 		  ILogger log)
 		{
 			var interestsContents = await _interestsContentRepository.GetInterestContentsAsync();
@@ -54,7 +54,7 @@ namespace AndreFischbacherApp.Functions
 
 		[FunctionName("CareerFunction")]
 		public async Task<IActionResult> CareerFunction(
-		  [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "career")] HttpRequest req,
+		  [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "career")] HttpRequest httpRequest,
 		  ILogger log)
 		{
 			var careerInformationContents = (await _careerContentRepository
