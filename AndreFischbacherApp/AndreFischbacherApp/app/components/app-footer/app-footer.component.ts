@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AppInfoDialog } from '../app-info-dialog/app-info-dialog.component.';
+import { MatDialog } from '@angular/material/dialog';
+import { AppInfoDialog } from '../app-info-dialog/app-info-dialog.component';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Observable, Subscribable, Subscription, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
