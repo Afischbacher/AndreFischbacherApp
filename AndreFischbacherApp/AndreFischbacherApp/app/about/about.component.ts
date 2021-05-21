@@ -3,7 +3,7 @@ import { fadeAnimation } from '../animations/route-animations';
 import { AboutService } from '../services/about.service';
 import { About } from '../models/about';
 import { faHeartbeat, faWrench, faPaintBrush, faAtom } from '@fortawesome/free-solid-svg-icons';
-import { AgeService } from '../services/birthday.service';
+import { AgeService } from '../services/age.service';
 import { LoadingStatus } from '../components/app-loading/app-loading.component';
 
 @Component({

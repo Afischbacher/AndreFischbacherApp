@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as moment from 'moment'; 
 
-const birthDateTime = "1995-08-18";
-
 @Injectable()
 export class AgeService {
 

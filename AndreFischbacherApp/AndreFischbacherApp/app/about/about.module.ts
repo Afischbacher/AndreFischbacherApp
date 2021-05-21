@@ -9,7 +9,7 @@ import { AboutService } from '../services/about.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AgeService } from '../services/birthday.service';
+import { AgeService } from '../services/age.service';
 import { AppLoadingModule } from '../components/app-loading/app-loading.module';
 
 
