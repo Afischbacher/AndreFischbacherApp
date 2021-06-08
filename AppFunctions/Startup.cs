@@ -27,16 +27,16 @@ namespace AndreFischbacherApp.Functions
 
 			var _connectionString = configurationRoot["AndreFischbacherApp:Database:ConnectionString"] ?? configurationRoot["DatabaseConnectionString"];
 
-			builder.Services.AddSingleton(new HttpClient());
-			builder.Services.AddTransient<IAppConfiguration, AppConfiguration>();
 			builder.Services.AddDbContext<IAndreFischbacherAppContext, AndreFischbacherAppContext>
 				(options => options.UseSqlServer(_connectionString));
 
-			builder.Services.AddTransient<IInterestsContentRepository, InterestsContentRepository>();
-			builder.Services.AddTransient<IAboutMeContentRepository, AboutMeContentRepository>();
-			builder.Services.AddTransient<ICareerContentRepository, CareerContentRepository>();
+			builder.Services.AddSingleton(new HttpClient());
 
-			builder.Services.AddTransient<IFunctionWarmingService, FunctionWarmingService>();
+			builder.Services.AddScoped<IAppConfiguration, AppConfiguration>();
+			builder.Services.AddScoped<IInterestsContentRepository, InterestsContentRepository>();
+			builder.Services.AddScoped<IAboutMeContentRepository, AboutMeContentRepository>();
+			builder.Services.AddScoped<ICareerContentRepository, CareerContentRepository>();
+			builder.Services.AddScoped<IFunctionWarmingService, FunctionWarmingService>();
 
 
 
