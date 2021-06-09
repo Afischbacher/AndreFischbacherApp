@@ -65,7 +65,7 @@ namespace AndreFischbacherApp.Functions
 		}
 
 		[FunctionName("PerformanceFunction")]
-		public async Task PerformanceFunction([TimerTrigger("0 */5 * * * *", RunOnStartup = true)]TimerInfo myTimer, ILogger log)
+		public async Task PerformanceFunction([TimerTrigger("0 */20 * * * *", RunOnStartup = true)]TimerInfo myTimer, ILogger log)
 		{
 			log.LogInformation("PerformanceFunction started");
 
