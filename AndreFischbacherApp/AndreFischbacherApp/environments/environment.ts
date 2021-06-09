@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'https://andre-fischbacher-app-api.azurefd.net'
+  api: 'https://api.andrefischbacher.com'
 };
 
 /*
