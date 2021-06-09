@@ -5,12 +5,13 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace AndreFischbacherApp.Repositories
 {
 	public interface IAndreFischbacherAppContext
 	{
-
+		Task<int> SaveChangesAsync();
 		DbSet<AboutContent> AboutContents { get; set; }
 		DbSet<CareerContent> CareerContents { get; set; }
 		DbSet<InterestContent> InterestContents { get; set; }
@@ -32,10 +33,15 @@ namespace AndreFischbacherApp.Repositories
 		{
 		}
 
-		public DbSet<AboutContent> AboutContents { get; set; }
-		public DbSet<CareerContent> CareerContents { get; set; }
-		public DbSet<InterestContent> InterestContents { get; set; }
-		public DbSet<CareerInformationContent> CareerInformationContents { get; set; }
+		public async Task<int> SaveChangesAsync()
+		{
+			return await base.SaveChangesAsync();
+		}
+
+		public virtual DbSet<AboutContent> AboutContents { get; set; }
+		public virtual DbSet<CareerContent> CareerContents { get; set; }
+		public virtual DbSet<InterestContent> InterestContents { get; set; }
+		public virtual DbSet<CareerInformationContent> CareerInformationContents { get; set; }
 
 	}
 
