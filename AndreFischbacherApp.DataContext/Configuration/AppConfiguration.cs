@@ -7,6 +7,6 @@
 
 	public class AppConfiguration : IAppConfiguration
 	{
-		public string BaseApiUrl => "https://andrefischbacherappfunctions.azurewebsites.net/v1";
+		public string BaseApiUrl => "https://api.andrefischbacher.com/v1";
 	}
 }
