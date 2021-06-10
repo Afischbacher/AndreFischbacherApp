@@ -7,30 +7,25 @@ using Microsoft.Extensions.Logging;
 using System.Linq;
 using System;
 using AndreFischbacherApp.DataContext.Repositories;
-using AndreFischbacherApp.DataContext.Services;
 
 namespace AndreFischbacherApp.Functions
 {
-
 	public class AppFunctions
 	{
 		private readonly IInterestsContentRepository _interestsContentRepository;
 		private readonly IAboutMeContentRepository _aboutMeContentRepository;
 		private readonly ICareerContentRepository _careerContentRepository;
-		private readonly IFunctionWarmingService _functionWarmingService;
 
 		public AppFunctions
 			(
 				IInterestsContentRepository interestsContentRepository,
 				IAboutMeContentRepository aboutMeContentRepository,
-				ICareerContentRepository careerContentRepository,
-				IFunctionWarmingService functionWarmingService
+				ICareerContentRepository careerContentRepository
 			)
 		{
 			_interestsContentRepository = interestsContentRepository;
 			_aboutMeContentRepository = aboutMeContentRepository;
 			_careerContentRepository = careerContentRepository;
-			_functionWarmingService = functionWarmingService;
 		}
 
 		[FunctionName("AboutFunction")]
@@ -62,16 +57,6 @@ namespace AndreFischbacherApp.Functions
 				.OrderByDescending(c => c.EndDate ?? DateTimeOffset.MaxValue);
 
 			return new OkObjectResult(careerInformationContents);
-		}
-
-		[FunctionName("PerformanceFunction")]
-		public async Task PerformanceFunction([TimerTrigger("0 */20 * * * *", RunOnStartup = true)]TimerInfo myTimer, ILogger log)
-		{
-			log.LogInformation("PerformanceFunction started");
-
-			await _functionWarmingService.WarmUpFunctions<HttpTriggerAttribute>(GetType(), new[] { AuthorizationLevel.Anonymous });
-
-			log.LogInformation("PerformanceFunction finished");
 		}
 	}
 }
