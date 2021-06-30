@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
+using MediatR;
+using AndreFischbacherApp.DataContext.Mediator.Base;
 
 [assembly: FunctionsStartup(typeof(AndreFischbacherApp.Functions.Startup))]
 namespace AndreFischbacherApp.Functions
@@ -25,10 +27,13 @@ namespace AndreFischbacherApp.Functions
 
 			var configurationRoot = configuration.Build();
 
-			var _connectionString = configurationRoot["AndreFischbacherApp:Database:ConnectionString"] ?? configurationRoot["DatabaseConnectionString"];
+			var connectionString = configurationRoot["AndreFischbacherApp:Database:ConnectionString"] ?? configurationRoot["DatabaseConnectionString"];
 
 			builder.Services.AddDbContext<IAndreFischbacherAppContext, AndreFischbacherAppContext>
-				(options => options.UseSqlServer(_connectionString));
+				(options => options.UseSqlServer(connectionString));
+
+			// Register Mediator
+			builder.Services.AddMediatR(typeof(IMediatorDataContextBase));
 
 			builder.Services.AddSingleton(new HttpClient());
 
@@ -37,8 +42,6 @@ namespace AndreFischbacherApp.Functions
 			builder.Services.AddScoped<IAboutMeContentRepository, AboutMeContentRepository>();
 			builder.Services.AddScoped<ICareerContentRepository, CareerContentRepository>();
 			builder.Services.AddScoped<IFunctionWarmingService, FunctionWarmingService>();
-
-
 
 		}
 	}
