@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AndreFischbacherApp.DataContext.Configuration;
 using AndreFischbacherApp.DataContext.Exceptions;
-using Microsoft.Azure.WebJobs.Extensions.Http;
 
 namespace AndreFischbacherApp.DataContext.Services
 {
 	public interface IFunctionWarmingService
 	{
-		Task<bool> WarmUpFunctions<T>(Type type, IEnumerable<AuthorizationLevel> authorizationLevels) where T : Attribute;
+		Task<bool> WarmUpFunctions();
 	}
 
 	public class FunctionWarmingService : IFunctionWarmingService
@@ -25,34 +23,21 @@ namespace AndreFischbacherApp.DataContext.Services
 			_appConfiguration = appConfiguration;
 		}
 
-		public async Task<bool> WarmUpFunctions<T>(Type type, IEnumerable<AuthorizationLevel> authorizationLevels) where T : Attribute
+		public async Task<bool> WarmUpFunctions() 
 		{
-			const string routeMemberName = "Route";
 			try
 			{
-			
-				var authorizationLevelsAsInt = authorizationLevels.Select(a => (int)a);
 
-				// Dynamically retrieve routes from Azure Functions
-				var functionMethodParameters = type.GetMethods().Select(c => c.GetParameters());
-
-				var functionParameterTypes = functionMethodParameters
-					.SelectMany(p => p.SelectMany(c => c.CustomAttributes))
-					.Where(p => p.AttributeType == typeof(T) && p.NamedArguments.Any() && p.ConstructorArguments.Any());
-
-				var functionRoutes = functionParameterTypes
-					.Where(f => f.ConstructorArguments.Any(c => authorizationLevelsAsInt.Contains((int)c.Value)))
-					.SelectMany(p => p.NamedArguments
-					.Where(m => m.MemberName == routeMemberName).Select(v =>  v.TypedValue.Value.ToString()));
-
-				// No routes found, exit
-				if (!functionRoutes.Any()) return true;
+				var functionRoutes = _appConfiguration.ApiEndpoints.Select(endpoint =>
+				{
+					return $"{_appConfiguration.BaseApiUrl}{endpoint}";
+				});
 
 				var functionWarmingRequests = functionRoutes.Select(route =>
 				{
 					return Task.Run(async () =>
 					{
-						await _httpClient.GetAsync($"{_appConfiguration.BaseApiUrl}/{route}");
+						await _httpClient.GetAsync(route);
 					});
 
 				});

@@ -24,14 +24,7 @@ namespace AndreFischbacherApp.Functions.v1.Timer
 		[FunctionName("FunctionWarmingTimerTriggerFunction")]
 		public async Task Run([TimerTrigger("0 */15 * * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
 		{
-			await _mediator.Send(new FunctionWarmingCommand
-			{
-				Type = GetType(),
-				AuthorizationLevels = new List<AuthorizationLevel>
-				{
-					AuthorizationLevel.Anonymous
-				}
-			});
+			await _mediator.Send(new FunctionWarmingCommand());
 
 		}
 	}
