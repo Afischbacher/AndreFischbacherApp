@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -17,33 +18,37 @@ namespace AndreFischbacherApp.DataContext.Services
 		private readonly HttpClient _httpClient;
 		private readonly IAppConfiguration _appConfiguration;
 
+
 		public FunctionWarmingService(HttpClient httpClient, IAppConfiguration appConfiguration)
 		{
 			_httpClient = httpClient;
 			_appConfiguration = appConfiguration;
 		}
 
-		public async Task<bool> WarmUpFunctions() 
+
+		public async Task<bool> WarmUpFunctions()
 		{
 			try
 			{
-
-				var functionRoutes = _appConfiguration.ApiEndpoints.Select(endpoint =>
+				foreach (var baseApiUrl in _appConfiguration.BaseApiUrls)
 				{
-					return $"{_appConfiguration.BaseApiUrl}{endpoint}";
-				});
-
-				var functionWarmingRequests = functionRoutes.Select(route =>
-				{
-					return Task.Run(async () =>
+					var functionRoutes = _appConfiguration.ApiRoutes.Select(endpoint =>
 					{
-						await _httpClient.GetAsync(route);
+						return $"{baseApiUrl}{endpoint}";
 					});
 
-				});
+					var functionWarmingRequests = functionRoutes.Select(route =>
+					{
+						return Task.Run(async () =>
+						{
+							await _httpClient.GetAsync(route);
+						});
+					});
 
-				// Execute Http requests in parallel
-				await Task.WhenAll(functionWarmingRequests);
+					// Execute Http requests in parallel
+					await Task.WhenAll(functionWarmingRequests);
+
+				}
 
 				return true;
 			}
