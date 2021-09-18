@@ -1,5 +1,5 @@
 ﻿using AndreFischbacherApp.DataContext.Entities;
-using AndreFischbacherApp.DataContext.Repositories;
+using AndreFischbacherApp.Repositories;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AndreFischbacherApp.DataContext.Mediator.Commands
+namespace AndreFischbacherApp.Services.Features.Career.Mediator.Commands
 {
 	/// <summary>
 	/// A command to return all of the career information and contents

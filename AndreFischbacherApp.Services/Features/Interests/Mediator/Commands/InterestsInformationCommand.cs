@@ -1,11 +1,11 @@
 ﻿using AndreFischbacherApp.DataContext.Entities;
-using AndreFischbacherApp.DataContext.Repositories;
+using AndreFischbacherApp.Repositories;
 using MediatR;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AndreFischbacherApp.DataContext.Mediator.Commands
+namespace AndreFischbacherApp.Services.Features.Interests.Mediator.Commands
 {
 	/// <summary>
 	/// A command that returns information about interests

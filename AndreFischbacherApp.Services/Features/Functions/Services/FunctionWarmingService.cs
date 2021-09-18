@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AndreFischbacherApp.DataContext.Configuration;
 using AndreFischbacherApp.DataContext.Exceptions;
 
-namespace AndreFischbacherApp.DataContext.Services
+namespace AndreFischbacherApp.Services.Features.Functions.Services
 {
 	public interface IFunctionWarmingService
 	{

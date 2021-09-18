@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AndreFischbacherApp.DataContext.Mediator.Commands;
+using AndreFischbacherApp.Services.Features.Functions.Mediator.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;

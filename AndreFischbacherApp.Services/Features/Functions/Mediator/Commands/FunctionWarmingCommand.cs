@@ -1,9 +1,9 @@
-﻿using AndreFischbacherApp.DataContext.Services;
+﻿using AndreFischbacherApp.Services.Features.Functions.Services;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AndreFischbacherApp.DataContext.Mediator.Commands
+namespace AndreFischbacherApp.Services.Features.Functions.Mediator.Commands
 {
 	/// <summary>
 	/// Warm's up the API endpoint's to prevent them from going to sleep

@@ -1,12 +1,9 @@
 ﻿using AndreFischbacherApp.DataContext.Entities;
-using AndreFischbacherApp.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace AndreFischbacherApp.DataContext.Repositories
+namespace AndreFischbacherApp.Repositories
 {
 	public interface ICareerContentRepository
 	{

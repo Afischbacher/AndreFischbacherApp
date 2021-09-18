@@ -1,6 +1,4 @@
 ﻿using AndreFischbacherApp.DataContext.Configuration;
-using AndreFischbacherApp.DataContext.Repositories;
-using AndreFischbacherApp.DataContext.Services;
 using AndreFischbacherApp.Repositories;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
 using MediatR;
-using AndreFischbacherApp.DataContext.Mediator.Base;
+using AndreFischbacherApp.Services.Mediator.Base;
+using AndreFischbacherApp.Services.Features.Functions.Services;
+using AndreFischbacherApp.Common.Mediator.Base;
 
 [assembly: FunctionsStartup(typeof(AndreFischbacherApp.Functions.Startup))]
 namespace AndreFischbacherApp.Functions
@@ -34,7 +34,7 @@ namespace AndreFischbacherApp.Functions
 				(options => options.UseSqlServer(connectionString));
 
 			// Register Mediator
-			builder.Services.AddMediatR(typeof(IMediatorDataContextBase));
+			builder.Services.AddMediatR(new[] { typeof(IMediatorServicesBase), typeof(IMediatorBase) });
 
 			// Http Client
 			builder.Services.AddSingleton(new HttpClient());

@@ -5,7 +5,7 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using MediatR;
-using AndreFischbacherApp.DataContext.Mediator.Commands;
+using AndreFischbacherApp.Services.Features.Career.Mediator.Commands;
 
 namespace AndreFischbacherApp.Functions.v1.Http
 {

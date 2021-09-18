@@ -1,11 +1,11 @@
-﻿using AndreFischbacherApp.DataContext.Repositories;
+﻿using AndreFischbacherApp.Repositories;
 using AndreFischbacherApp.Repositories.Entities;
 using MediatR;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AndreFischbacherApp.DataContext.Mediator.Commands
+namespace AndreFischbacherApp.Services.Features.About.Mediator.Commands
 {
 	/// <summary>
 	/// A command that returns about information content 

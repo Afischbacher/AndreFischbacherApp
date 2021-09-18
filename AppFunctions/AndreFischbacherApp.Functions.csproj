@@ -31,7 +31,10 @@
     <PackageReference Include="System.Runtime" Version="4.3.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AndreFischbacherApp.Common\AndreFischbacherApp.Common.csproj" />
     <ProjectReference Include="..\AndreFischbacherApp.DataContext\AndreFischbacherApp.DataContext.csproj" />
+    <ProjectReference Include="..\AndreFischbacherApp.Repositories\AndreFischbacherApp.Repositories.csproj" />
+    <ProjectReference Include="..\AndreFischbacherApp.Services\AndreFischbacherApp.Services.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
