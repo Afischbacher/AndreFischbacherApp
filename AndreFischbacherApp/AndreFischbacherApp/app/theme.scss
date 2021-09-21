@@ -1,5 +1,6 @@
+@use '~@angular/material' as mat;
 @import '~@angular/material/theming';
-@include mat-core();
+@include mat.core();
 
 $andre-app-palette: (
     50 : #e6e6e6,
@@ -36,19 +37,19 @@ $andre-app-palette: (
 
 
 @media (prefers-color-scheme: dark) {
-    $my-app-primary: mat-palette($andre-app-palette);
-    $my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
-    $my-app-warn:    mat-palette($mat-deep-orange);
-    $my-app-theme: mat-dark-theme($my-app-primary, $my-app-accent, $my-app-warn);
+    $my-app-primary: mat.define-palette($andre-app-palette);
+    $my-app-accent:  mat.define-palette(mat.$pink-palette, 500, 900, A100);
+    $my-app-warn:    mat.define-palette(mat.$deep-orange-palette);
+    $my-app-theme: mat.define-dark-theme($my-app-primary, $my-app-accent, $my-app-warn);
     
-    @include angular-material-theme($my-app-theme);
+    @include mat.all-component-themes($my-app-theme);
 }
 
 @media (prefers-color-scheme: light) {
-    $my-app-primary: mat-palette($andre-app-palette);
-    $my-app-accent: mat-palette($mat-pink, 500, 900, A100);
-    $my-app-warn: mat-palette($mat-deep-orange);
-    $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+    $my-app-primary: mat.define-palette($andre-app-palette);
+    $my-app-accent: mat.define-palette(mat.$pink-palette, 500, 900, A100);
+    $my-app-warn: mat.define-palette(mat.$deep-orange-palette);
+    $my-app-theme: mat.define-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
-    @include angular-material-theme($my-app-theme);
+    @include mat.all-component-themes($my-app-theme);
 }
