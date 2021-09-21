@@ -10,5 +10,5 @@ export const environment = {
  * below file. Don't forget to comment it out in production mode
  * because it will have a performance impact when errors are thrown
  */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
 //# sourceMappingURL=environment.js.map
