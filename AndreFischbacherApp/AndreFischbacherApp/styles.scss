@@ -10,6 +10,8 @@ html,
 body,
 app-root {
     height: 100%;
+    width: 100%;
+    min-width: 100% !important;
     margin: 0;
     padding: 0;
     animation: home-background 8s ease-in-out infinite;
