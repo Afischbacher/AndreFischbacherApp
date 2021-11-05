@@ -12,13 +12,11 @@ namespace AndreFischbacherApp.DataContext.Configuration
 	public class AppConfiguration : IAppConfiguration
 	{
 		
-		public HashSet<string> ApiRoutes => new HashSet<string> { "/about", "/interests", "/career" };
+		public HashSet<string> ApiRoutes => new HashSet<string> { "/about" };
 
 		public HashSet<string> BaseApiUrls => new HashSet<string>
-			{
-				"https://andre-fischbacher-app-canada-central.azurewebsites.net",
-				"https://andre-fischbacher-app-east-us.azurewebsites.net",
-				"https://andre-fischbacher-app-west-us.azurewebsites.net"
-			};
+		{
+			"https://api.andrefischbacher.com/v1"
+		};
 	}
 }

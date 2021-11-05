@@ -1,10 +1,7 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using AndreFischbacherApp.Services.Features.Functions.Mediator.Commands;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
 
 namespace AndreFischbacherApp.Functions.v1.Timer
@@ -25,7 +22,6 @@ namespace AndreFischbacherApp.Functions.v1.Timer
 		public async Task Run([TimerTrigger("0 */10 * * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
 		{
 			await _mediator.Send(new FunctionWarmingCommand());
-
 		}
 	}
 }
