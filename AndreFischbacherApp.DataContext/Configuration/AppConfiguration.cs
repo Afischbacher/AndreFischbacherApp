@@ -12,7 +12,7 @@ namespace AndreFischbacherApp.DataContext.Configuration
 	public class AppConfiguration : IAppConfiguration
 	{
 		
-		public HashSet<string> ApiRoutes => new HashSet<string> { "/about" };
+		public HashSet<string> ApiRoutes => new HashSet<string> { "/ok" };
 
 		public HashSet<string> BaseApiUrls => new HashSet<string>
 		{
