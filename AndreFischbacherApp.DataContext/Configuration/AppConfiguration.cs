@@ -16,7 +16,10 @@ namespace AndreFischbacherApp.DataContext.Configuration
 
 		public HashSet<string> BaseApiUrls => new HashSet<string>
 		{
-			"https://api.andrefischbacher.com/v1"
+			"https://api.andrefischbacher.com/v1",
+			"https://andre-fischbacher-app-east-us.azurewebsites.net/v1",
+			"https://andre-fischbacher-app-west-us.azurewebsites.net/v1",
+			"https://andre-fischbacher-app-canada-central.azurewebsites.net/v1"
 		};
 	}
 }

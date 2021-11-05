@@ -18,7 +18,6 @@ namespace AndreFischbacherApp.Functions.v1.Timer
 			_mediator = mediator;
 		}
 
-		[Disable]
 		[FunctionName("FunctionWarmingTimerTriggerFunction")]
 		public async Task Run([TimerTrigger("0 */15 * * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
 		{

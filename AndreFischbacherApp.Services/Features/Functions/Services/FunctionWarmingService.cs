@@ -46,7 +46,6 @@ namespace AndreFischbacherApp.Services.Features.Functions.Services
 
 					// Execute Http requests in parallel
 					await Task.WhenAll(functionWarmingRequests);
-
 				}
 
 				return true;
