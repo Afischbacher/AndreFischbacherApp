@@ -18,7 +18,7 @@ namespace AndreFischbacherApp.Functions.v1.Http
 			_mediator = mediator;
 		}
 
-		[FunctionName("InterestsFunction")]
+		[FunctionName("InterestsHttpTriggerFunction")]
 		public async Task<IActionResult> InterestsFunction([HttpTrigger(AuthorizationLevel.Anonymous, "GET", Route = "interests")] HttpRequest httpRequest, ILogger log)
 		{
 			var interestsContents = await _mediator.Send(new InterestsInformationCommand());

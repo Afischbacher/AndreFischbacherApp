@@ -18,7 +18,7 @@ namespace AndreFischbacherApp.Functions.v1.Http
 			_mediator = mediator;
 		}
 
-		[FunctionName("CareerFunction")]
+		[FunctionName("CareerHttpFunctionTrigger")]
 		public async Task<IActionResult> CareerFunction([HttpTrigger(AuthorizationLevel.Anonymous, "GET", Route = "career")] HttpRequest httpRequest, ILogger log)
 		{
 			var careerInformationContents = await _mediator.Send(new CareerInformationCommand());
