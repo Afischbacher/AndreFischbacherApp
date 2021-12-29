@@ -33,9 +33,8 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
         ContactBottomSheetModule,
         AppFooterModule,
         BrowserAnimationsModule,
-        NgxTypedJsModule    
+        NgxTypedJsModule
     ],
-    entryComponents: [ContactBottomSheet, AppFooter],
     providers: [NavigationService],
     exports: [HomeComponent]
 })

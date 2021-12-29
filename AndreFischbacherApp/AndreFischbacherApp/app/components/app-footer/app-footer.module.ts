@@ -22,7 +22,6 @@ import { AppInfoDialog } from './../app-info-dialog/app-info-dialog.component'
         MatDialogModule,
         MatButtonModule
     ],
-    entryComponents: [AppInfoDialog],
     providers: [],
     exports: [AppFooter]
 })
