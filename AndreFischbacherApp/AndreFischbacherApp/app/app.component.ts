@@ -1,8 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { zoomInOut } from './animations/route-animations';
-import { SwUpdate } from '@angular/service-worker';
+import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { filter, map } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,10 +21,12 @@ export class AppComponent implements AfterViewInit {
 
     if (this.swUpdate.isEnabled) {
 
-      this.swUpdate.available
-        .subscribe(() => {
 
-          const snackBar = this.snackBar.open('Would you like to update the Andre Fischbacher app to the latest version ?', 'Yes',
+      this.swUpdate.versionUpdates.pipe(
+        filter((event): event is VersionReadyEvent => event.type === 'VERSION_READY'),
+        map((event: VersionReadyEvent) => {
+          
+          const snackBar = this.snackBar.open(`Would you like to update the Andre Fischbacher app to the latest version - ${event.latestVersion.hash} ?`, 'Yes',
             {
               duration: 10000,
               panelClass: ['light-snackbar', 'dark-snackbar']
@@ -38,7 +40,7 @@ export class AppComponent implements AfterViewInit {
                 console.log('Application Updated!');
               }).catch((error) => console.error(error));
           });
-        });
+        }));
     }
   }
 }
