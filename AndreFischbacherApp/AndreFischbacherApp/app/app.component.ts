@@ -20,7 +20,7 @@ export class AppComponent implements AfterViewInit {
   public ngAfterViewInit(): void {
 
     if (this.swUpdate.isEnabled) {
-      console.log('Update Avaliable!');
+      console.log('Service Worker Available!');
       this.swUpdate.versionUpdates.pipe(
         filter((event): event is VersionReadyEvent => event.type === 'VERSION_READY'),
         map((event: VersionReadyEvent) => {
