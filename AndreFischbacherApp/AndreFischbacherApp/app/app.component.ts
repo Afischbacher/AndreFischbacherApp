@@ -24,10 +24,10 @@ export class AppComponent implements AfterViewInit {
       this.swUpdate.available
         .subscribe(() => {
 
-          const snackBar = this.snackBar.open('Would you like to update the app to the latest version ?', 'Yes',
+          const snackBar = this.snackBar.open('Would you like to update the Andre Fischbacher app to the latest version ?', 'Yes',
             {
               duration: 10000,
-              panelClass: ['light-snackbar','dark-snackbar']
+              panelClass: ['light-snackbar', 'dark-snackbar']
             });
 
           snackBar.onAction().subscribe(() => {
@@ -35,7 +35,8 @@ export class AppComponent implements AfterViewInit {
               .activateUpdate()
               .then(() => {
                 window.location.reload();
-              });
+                console.log('Application Updated!');
+              }).catch((error) => console.error(error));
           });
         });
     }
