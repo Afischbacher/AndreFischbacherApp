@@ -5,6 +5,7 @@ import { NavigationService } from '../services/navigation.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import mobile from 'is-mobile';
 
 @Component({
     selector: 'home-component',
@@ -14,7 +15,7 @@ import { takeUntil } from 'rxjs/operators';
 export class HomeComponent implements OnInit, OnDestroy {
 
     private unsubscribe$: Subject<void> = new Subject<void>();
-
+    public isMobile = mobile();
     public ngxTypedStrings: string[] = ['Cloud Computing', 'Distributed Architecture', 'Event Driven Microservices', 'Full Stack Software Developer'];
     constructor(private bottomContactSheet: MatBottomSheet, private navigationService: NavigationService, private activateRoute: ActivatedRoute, private router: Router) {
     }
@@ -39,7 +40,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         });
     }
 
-    public openContactSheet() {
+    public openContactSheet() : void {
         this.navigationService.vibrate([25]);
         let bottomSheet = this.bottomContactSheet.open(ContactBottomSheet, {
             closeOnNavigation: true
@@ -52,7 +53,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         });
     }
 
-    public vibrate() {
+    public vibrate() : void {
         this.navigationService.vibrate([25]);
     }
 
