@@ -9,7 +9,7 @@ namespace AndreFischbacherApp.Functions.v1.Timer
 	public class FunctionWarmingTimerTriggerFunction
 	{
 		[FunctionName("FunctionWarmingTimerTriggerFunction")]
-		public async Task Run([TimerTrigger("0 */15 * * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
+		public async Task Run([TimerTrigger("0 */5 * * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
 		{
 		}
 	}
