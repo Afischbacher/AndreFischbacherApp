@@ -4,7 +4,6 @@ using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Net.Http;
 using MediatR;
 using AndreFischbacherApp.Services.Mediator.Base;
 using AndreFischbacherApp.Services.Features.Functions.Services;
@@ -19,25 +18,22 @@ namespace AndreFischbacherApp.Functions
 
 		public override void Configure(IFunctionsHostBuilder builder)
 		{
+
 			var configuration = new ConfigurationBuilder();
-
 			configuration.AddAzureKeyVault(GetKeyVaultEndpoint);
-
-			configuration.AddUserSecrets<Startup>();
+			configuration.AddUserSecrets<Startup>(optional: true, reloadOnChange: true);
 
 			var configurationRoot = configuration.Build();
 
 			var connectionString = configurationRoot["AndreFischbacherApp:Database:ConnectionString"] ?? configurationRoot["DatabaseConnectionString"];
-
 			// Add DbContext and SQL connection
-			builder.Services.AddDbContext<IAndreFischbacherAppContext, AndreFischbacherAppContext>
-				(options => options.UseSqlServer(connectionString));
+			builder.Services.AddDbContextPool<IAndreFischbacherAppContext, AndreFischbacherAppContext>(options => options.UseSqlServer(connectionString));
 
 			// Register Mediator
 			builder.Services.AddMediatR(new[] { typeof(IMediatorServicesBase), typeof(IMediatorBase) });
 
 			// Http Client
-			builder.Services.AddSingleton(new HttpClient());
+			builder.Services.AddHttpClient();
 
 			// App Settings
 			builder.Services.AddScoped<IAppConfiguration, AppConfiguration>();
