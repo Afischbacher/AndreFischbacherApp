@@ -14,13 +14,13 @@ namespace AndreFischbacherApp.Functions
 {
 	public class Startup : FunctionsStartup
 	{
-		private static string GetKeyVaultEndpoint => "https://andrefischbacherkeyvault.vault.azure.net/";
+		private const string _keyVaultEndpoint = "https://andrefischbacherkeyvault.vault.azure.net/";
 
 		public override void Configure(IFunctionsHostBuilder builder)
 		{
 
 			var configuration = new ConfigurationBuilder();
-			configuration.AddAzureKeyVault(GetKeyVaultEndpoint);
+			configuration.AddAzureKeyVault(_keyVaultEndpoint);
 			configuration.AddUserSecrets<Startup>(optional: true, reloadOnChange: true);
 
 			var configurationRoot = configuration.Build();
