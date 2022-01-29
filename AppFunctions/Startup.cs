@@ -8,6 +8,7 @@ using MediatR;
 using AndreFischbacherApp.Services.Mediator.Base;
 using AndreFischbacherApp.Services.Features.Functions.Services;
 using AndreFischbacherApp.Common.Mediator.Base;
+using Microsoft.Extensions.Configuration.AzureKeyVault;
 
 [assembly: FunctionsStartup(typeof(AndreFischbacherApp.Functions.Startup))]
 namespace AndreFischbacherApp.Functions
@@ -19,13 +20,14 @@ namespace AndreFischbacherApp.Functions
 		public override void Configure(IFunctionsHostBuilder builder)
 		{
 
-			var configuration = new ConfigurationBuilder();
-			configuration.AddAzureKeyVault(_keyVaultEndpoint);
-			configuration.AddUserSecrets<Startup>(optional: true, reloadOnChange: true);
+			var configurationBuilder = new ConfigurationBuilder();
+			configurationBuilder.AddUserSecrets<Startup>(optional: true, reloadOnChange: true);
+			var configurationRoot = configurationBuilder.Build();
 
-			var configurationRoot = configuration.Build();
+			var configuration = builder.GetContext().Configuration;
 
-			var connectionString = configurationRoot["AndreFischbacherApp:Database:ConnectionString"] ?? configurationRoot["DatabaseConnectionString"];
+            var connectionString = configuration.GetConnectionString("DatabaseConnectionString"); 
+
 			// Add DbContext and SQL connection
 			builder.Services.AddDbContextPool<IAndreFischbacherAppContext, AndreFischbacherAppContext>(options => options.UseSqlServer(connectionString));
 
