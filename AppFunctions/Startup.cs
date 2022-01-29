@@ -4,7 +4,6 @@ using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Net.Http;
 using MediatR;
 using AndreFischbacherApp.Services.Mediator.Base;
 using AndreFischbacherApp.Services.Features.Functions.Services;
@@ -13,31 +12,27 @@ using AndreFischbacherApp.Common.Mediator.Base;
 [assembly: FunctionsStartup(typeof(AndreFischbacherApp.Functions.Startup))]
 namespace AndreFischbacherApp.Functions
 {
-	public class Startup : FunctionsStartup
+    public class Startup : FunctionsStartup
 	{
-		private static string GetKeyVaultEndpoint => "https://andrefischbacherkeyvault.vault.azure.net/";
-
 		public override void Configure(IFunctionsHostBuilder builder)
 		{
-			var configuration = new ConfigurationBuilder();
 
-			configuration.AddAzureKeyVault(GetKeyVaultEndpoint);
+			var configurationBuilder = new ConfigurationBuilder();
+			configurationBuilder.AddUserSecrets<Startup>(optional: true, reloadOnChange: true);
+			var configurationRoot = configurationBuilder.Build();
 
-			configuration.AddUserSecrets<Startup>();
+			var configuration = builder.GetContext().Configuration;
 
-			var configurationRoot = configuration.Build();
-
-			var connectionString = configurationRoot["AndreFischbacherApp:Database:ConnectionString"] ?? configurationRoot["DatabaseConnectionString"];
+            var connectionString = configuration.GetConnectionString("DatabaseConnectionString"); 
 
 			// Add DbContext and SQL connection
-			builder.Services.AddDbContext<IAndreFischbacherAppContext, AndreFischbacherAppContext>
-				(options => options.UseSqlServer(connectionString));
+			builder.Services.AddDbContextPool<IAndreFischbacherAppContext, AndreFischbacherAppContext>(options => options.UseSqlServer(connectionString));
 
 			// Register Mediator
 			builder.Services.AddMediatR(new[] { typeof(IMediatorServicesBase), typeof(IMediatorBase) });
 
 			// Http Client
-			builder.Services.AddSingleton(new HttpClient());
+			builder.Services.AddHttpClient();
 
 			// App Settings
 			builder.Services.AddScoped<IAppConfiguration, AppConfiguration>();

@@ -3,13 +3,12 @@ using AndreFischbacherApp.Repositories.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Hosting;
 using System.Reflection;
 using System.Threading.Tasks;
 
 namespace AndreFischbacherApp.Repositories
 {
-	public interface IAndreFischbacherAppContext
+    public interface IAndreFischbacherAppContext
 	{
 		Task<int> SaveChangesAsync();
 		DbSet<AboutContent> AboutContents { get; set; }
@@ -48,15 +47,26 @@ namespace AndreFischbacherApp.Repositories
 
 	public class AndreFischbacherAppContextFactory : IDesignTimeDbContextFactory<AndreFischbacherAppContext>
 	{
+        private readonly IConfiguration _configuration;
+
+        public AndreFischbacherAppContextFactory(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
 		public AndreFischbacherAppContext CreateDbContext(string[] args)
 		{
 			var configuration = new ConfigurationBuilder();
+			
+			_configuration.GetConnectionString("DatabaseConnectionString");
 
 			var configurationRoot = configuration
 				.AddUserSecrets(Assembly.GetExecutingAssembly(), optional: false, reloadOnChange: true)
 				.Build();
 
-			var connectionString = configurationRoot["AndreFischbacherApp:Database:ConnectionString"] ?? configurationRoot["DatabaseConnectionString"];;
+			var connectionString = _configuration.GetConnectionString("DatabaseConnectionString")
+				?? configurationRoot["AndreFischbacherApp:Database:ConnectionString"] 
+				?? configurationRoot["DatabaseConnectionString"];;
 
 			var builder = new DbContextOptionsBuilder<AndreFischbacherAppContext>();
 

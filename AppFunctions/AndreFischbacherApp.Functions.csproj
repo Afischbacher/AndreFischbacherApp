@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 	<UserSecretsId>56D1CBA6-7362-4195-B20D-D9CF53A0554B</UserSecretsId>
-    <AzureFunctionsVersion>v3</AzureFunctionsVersion>
+    <AzureFunctionsVersion>v4</AzureFunctionsVersion>
     <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
     <GenerateRuntimeConfigurationFiles> true</GenerateRuntimeConfigurationFiles>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -11,22 +11,23 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Azure.Extensions.Configuration.Secrets" Version="1.0.0-preview.1" />
-    <PackageReference Include="MediatR" Version="9.0.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.AzureKeyVault.HostingStartup" Version="2.0.4" />
 	<PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
-	<PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="3.0.6" />
-	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
-	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.6">
+	<PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="4.0.1" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
 	  <PrivateAssets>all</PrivateAssets>
 	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	</PackageReference>
-	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
-	<PackageReference Include="Microsoft.Extensions.Configuration.AzureKeyVault" Version="3.1.6" />
-	<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.6" />
-	<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.6" />
-	<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.6" />
-	<PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.7" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
+	<PackageReference Include="Microsoft.Extensions.Configuration.AzureKeyVault" Version="3.1.22" />
+	<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="6.0.0" />
+	<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.0" />
+	<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+	<PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+	<PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.0.1" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="System.Runtime" Version="4.3.1" />
   </ItemGroup>
@@ -45,7 +46,4 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /Y &quot;$(TargetDir)bin\$(ProjectName).dll&quot; &quot;$(TargetDir)$(ProjectName).dll&quot;" />
-  </Target>
 </Project>
