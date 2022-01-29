@@ -1,12 +1,11 @@
-﻿using AndreFischbacherApp.Repositories;
-using AndreFischbacherApp.Repositories.Entities;
+﻿using AndreFischbacherApp.Repositories.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace AndreFischbacherApp.Repositories
 {
-	public interface IAboutMeContentRepository
+    public interface IAboutMeContentRepository
 	{
 		Task<List<AboutContent>> GetAboutContentsAsync();
 	}

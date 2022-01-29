@@ -8,15 +8,12 @@ using MediatR;
 using AndreFischbacherApp.Services.Mediator.Base;
 using AndreFischbacherApp.Services.Features.Functions.Services;
 using AndreFischbacherApp.Common.Mediator.Base;
-using Microsoft.Extensions.Configuration.AzureKeyVault;
 
 [assembly: FunctionsStartup(typeof(AndreFischbacherApp.Functions.Startup))]
 namespace AndreFischbacherApp.Functions
 {
-	public class Startup : FunctionsStartup
+    public class Startup : FunctionsStartup
 	{
-		private const string _keyVaultEndpoint = "https://andrefischbacherkeyvault.vault.azure.net/";
-
 		public override void Configure(IFunctionsHostBuilder builder)
 		{
 

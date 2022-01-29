@@ -3,13 +3,12 @@ using AndreFischbacherApp.Repositories.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Hosting;
 using System.Reflection;
 using System.Threading.Tasks;
 
 namespace AndreFischbacherApp.Repositories
 {
-	public interface IAndreFischbacherAppContext
+    public interface IAndreFischbacherAppContext
 	{
 		Task<int> SaveChangesAsync();
 		DbSet<AboutContent> AboutContents { get; set; }
