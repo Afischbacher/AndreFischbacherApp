@@ -11,7 +11,7 @@ namespace AndreFischbacherApp.Functions.v1.Http
 	{
 		[FunctionName(nameof(HealthHttpTriggerFunction))]
 		public async Task<IActionResult> Run(
-			[HttpTrigger(AuthorizationLevel.Anonymous, "GET", Route = "ok")] HttpRequest req,
+			[HttpTrigger(AuthorizationLevel.Anonymous, "HEAD", Route = "ok")] HttpRequest req,
 			ILogger log)
 		{ 
 			return new OkObjectResult("Ok");
