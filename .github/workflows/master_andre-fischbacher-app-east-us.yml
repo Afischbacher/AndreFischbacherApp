@@ -19,11 +19,13 @@ jobs:
     steps:
     - name: 'Checkout GitHub Action'
       uses: actions/checkout@v2
-
-    - name: Setup DotNet ${{ env.DOTNET_VERSION }} Environment
-      uses: actions/setup-dotnet@v1
+    - uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
+        dotnet-version: '2.2.106'
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.100-preview.4.21255.9'
+        include-prerelease: true
 
     - name: 'Resolve Project Dependencies Using Dotnet'
       shell: pwsh
