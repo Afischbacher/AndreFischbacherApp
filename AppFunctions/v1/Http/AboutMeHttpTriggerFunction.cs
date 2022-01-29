@@ -19,7 +19,7 @@ namespace AndreFischbacherApp.Functions.v1.Http
 		}
 
 
-		[FunctionName("AboutHttpTriggerFunction")]
+		[FunctionName(nameof(AboutMeHttpTriggerFunction))]
 		public async Task<IActionResult> AboutFunction([HttpTrigger(AuthorizationLevel.Anonymous, "GET", Route = "about")] HttpRequest httpRequest, ILogger log)
 		{
 			var aboutInformation = await _mediator.Send(new AboutInformationCommand());

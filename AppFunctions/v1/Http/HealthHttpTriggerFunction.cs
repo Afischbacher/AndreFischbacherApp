@@ -9,7 +9,7 @@ namespace AndreFischbacherApp.Functions.v1.Http
 {
 	public class HealthHttpTriggerFunction
 	{
-		[FunctionName("HealthHttpTriggerFunction")]
+		[FunctionName(nameof(HealthHttpTriggerFunction))]
 		public async Task<IActionResult> Run(
 			[HttpTrigger(AuthorizationLevel.Anonymous, "GET", Route = "ok")] HttpRequest req,
 			ILogger log)
