@@ -41,7 +41,7 @@ namespace AndreFischbacherApp.Functions
 			builder.Services.AddScoped<IInterestsContentRepository, InterestsContentRepository>();
 			builder.Services.AddScoped<IAboutMeContentRepository, AboutMeContentRepository>();
 			builder.Services.AddScoped<ICareerContentRepository, CareerContentRepository>();
-
+			;
 			// Services
 			builder.Services.AddScoped<IFunctionWarmingService, FunctionWarmingService>();
 
