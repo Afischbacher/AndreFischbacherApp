@@ -37,6 +37,9 @@ namespace AndreFischbacherApp.Functions
 			// App Settings
 			builder.Services.AddScoped<IAppConfiguration, AppConfiguration>();
 
+			// Caching
+			builder.Services.AddMemoryCache();
+
 			// Repositories
 			builder.Services.AddScoped<IInterestsContentRepository, InterestsContentRepository>();
 			builder.Services.AddScoped<IAboutMeContentRepository, AboutMeContentRepository>();

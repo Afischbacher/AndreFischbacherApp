@@ -2,6 +2,7 @@
 using AndreFischbacherApp.Repositories.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -48,10 +49,12 @@ namespace AndreFischbacherApp.Repositories
 	public class AndreFischbacherAppContextFactory : IDesignTimeDbContextFactory<AndreFischbacherAppContext>
 	{
         private readonly IConfiguration _configuration;
+        private readonly IMemoryCache _memoryCache;
 
-        public AndreFischbacherAppContextFactory(IConfiguration configuration)
+        public AndreFischbacherAppContextFactory(IConfiguration configuration, IMemoryCache memoryCache)
         {
             _configuration = configuration;
+            _memoryCache = memoryCache;
         }
 
 		public AndreFischbacherAppContext CreateDbContext(string[] args)
@@ -71,6 +74,7 @@ namespace AndreFischbacherApp.Repositories
 			var builder = new DbContextOptionsBuilder<AndreFischbacherAppContext>();
 
 			builder.UseSqlServer(connectionString);
+			builder.UseMemoryCache(_memoryCache);
 
 			return new AndreFischbacherAppContext(builder.Options);
 
