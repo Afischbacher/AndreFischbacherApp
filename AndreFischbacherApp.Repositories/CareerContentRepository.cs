@@ -36,10 +36,7 @@ namespace AndreFischbacherApp.Repositories
                 .Include(careerInformationContent => careerInformationContent.CareerInformationContents)
                 .ToListAsync();
 
-            _memoryCache.Set(nameof(careerContents), careerContents, new MemoryCacheEntryOptions
-            {
-                AbsoluteExpiration = System.DateTimeOffset.Now.AddDays(1),
-            });
+            _memoryCache.Set(nameof(careerContents), careerContents);
 
             return careerContents;
         }
