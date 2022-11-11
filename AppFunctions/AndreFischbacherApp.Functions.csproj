@@ -1,47 +1,48 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-	<UserSecretsId>56D1CBA6-7362-4195-B20D-D9CF53A0554B</UserSecretsId>
-    <AzureFunctionsVersion>v4</AzureFunctionsVersion>
-    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
-    <GenerateRuntimeConfigurationFiles> true</GenerateRuntimeConfigurationFiles>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="MediatR" Version="10.0.1" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.AzureKeyVault.HostingStartup" Version="2.0.4" />
-	<PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
-	<PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="4.0.1" />
-	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
-	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
-	  <PrivateAssets>all</PrivateAssets>
-	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-	</PackageReference>
-	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
-	<PackageReference Include="Microsoft.Extensions.Configuration.AzureKeyVault" Version="3.1.22" />
-	<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="6.0.0" />
-	<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.0" />
-	<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-	<PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
-	<PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.0.1" />
-    <PackageReference Include="System.Net.Http" Version="4.3.4" />
-    <PackageReference Include="System.Runtime" Version="4.3.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AndreFischbacherApp.Common\AndreFischbacherApp.Common.csproj" />
-    <ProjectReference Include="..\AndreFischbacherApp.DataContext\AndreFischbacherApp.DataContext.csproj" />
-    <ProjectReference Include="..\AndreFischbacherApp.Repositories\AndreFischbacherApp.Repositories.csproj" />
-    <ProjectReference Include="..\AndreFischbacherApp.Services\AndreFischbacherApp.Services.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="host.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="local.settings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
-    </None>
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<UserSecretsId>56D1CBA6-7362-4195-B20D-D9CF53A0554B</UserSecretsId>
+		<AzureFunctionsVersion>v4</AzureFunctionsVersion>
+		<PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+		<GenerateRuntimeConfigurationFiles> true</GenerateRuntimeConfigurationFiles>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+		<PublishReadyToRun>true</PublishReadyToRun>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="10.0.1" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.AzureKeyVault.HostingStartup" Version="2.0.4" />
+		<PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
+		<PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="4.0.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.AzureKeyVault" Version="3.1.22" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+		<PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.0.1" />
+		<PackageReference Include="System.Net.Http" Version="4.3.4" />
+		<PackageReference Include="System.Runtime" Version="4.3.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\AndreFischbacherApp.Common\AndreFischbacherApp.Common.csproj" />
+		<ProjectReference Include="..\AndreFischbacherApp.DataContext\AndreFischbacherApp.DataContext.csproj" />
+		<ProjectReference Include="..\AndreFischbacherApp.Repositories\AndreFischbacherApp.Repositories.csproj" />
+		<ProjectReference Include="..\AndreFischbacherApp.Services\AndreFischbacherApp.Services.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="host.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="local.settings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Never</CopyToPublishDirectory>
+		</None>
+	</ItemGroup>
 </Project>
