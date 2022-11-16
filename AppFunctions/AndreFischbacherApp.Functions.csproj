@@ -8,6 +8,8 @@
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<PublishReadyToRun>true</PublishReadyToRun>
+		<PublishReadyToRunComposite>true</PublishReadyToRunComposite>
+
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="MediatR" Version="10.0.1" />
