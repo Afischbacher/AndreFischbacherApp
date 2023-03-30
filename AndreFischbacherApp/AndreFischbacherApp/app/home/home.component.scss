@@ -31,7 +31,10 @@
     }
 
     .card-icon{
-        font-size: 3.5rem;
+        font-size: 3rem;
+        width: 3rem;
+        border-radius: 0%;
+        height: 3rem;
     }
 
     &:hover{
@@ -69,10 +72,6 @@
             font-family: "Oswald";
         }
     }
-}
-
-@media screen and (min-width: 769px){
-
 }
 
 .footer {

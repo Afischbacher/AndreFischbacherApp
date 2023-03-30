@@ -12,7 +12,7 @@
                                         <h3 class="typing"></h3>
                                 </ngx-typed-js>
 
-                                <h3 class="typing" *ngIf="isMobile">Lead Full Stack Developer</h3>
+                                <h3 class="typing" *ngIf="isMobile">Lead Software Engineer</h3>
                         </div>
                 </div>
         </div>
@@ -22,7 +22,8 @@
                         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
                                 <mat-card class="home-card my-2 py-5" routerLink="/about" (click)="vibrate()" matRipple>
                                         <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon">person_pin</mat-icon>
+                                                <mat-icon mat-card-avatar class="mr-4 card-icon" fontIcon="person_pin"></mat-icon>
+                                                
                                                 <mat-card-title>
                                                         <h3>About Me</h3>
                                                 </mat-card-title>
@@ -37,7 +38,7 @@
                                 <mat-card class="home-card my-2 py-5" routerLink="/career" (click)="vibrate()"
                                         matRipple>
                                         <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon">next_week</mat-icon>
+                                                <mat-icon mat-card-avatar class="mr-4 card-icon" fontIcon="next_week"></mat-icon>
                                                 <mat-card-title>
                                                         <h3>Career Experience</h3>
                                                 </mat-card-title>
@@ -55,7 +56,7 @@
                                 <mat-card class="home-card my-2 py-5" routerLink="/interests" (click)="vibrate()"
                                         matRipple>
                                         <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon">mood</mat-icon>
+                                                <mat-icon mat-card-avatar class="mr-4 card-icon" fontIcon="mood"></mat-icon>
                                                 <mat-card-title>
                                                         <h3>Interests</h3>
                                                 </mat-card-title>
@@ -70,7 +71,7 @@
                                 <mat-card class="home-card my-2 py-5" [routerLink]='[""]'
                                         [queryParams]="{sheet: 'contactMe'}" matRipple>
                                         <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon">perm_contact_calendar
+                                                <mat-icon mat-card-avatar class="mr-4 card-icon" fontIcon="perm_contact_calendar">
                                                 </mat-icon>
                                                 <mat-card-title>
                                                         <h3>Contact Me</h3>

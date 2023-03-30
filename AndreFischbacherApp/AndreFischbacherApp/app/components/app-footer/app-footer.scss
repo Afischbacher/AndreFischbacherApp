@@ -28,8 +28,11 @@
 
     .info-icon {
         font-size: 32px;
+        width: 32px;
+        height: 32px;
         position: absolute;
-        right: 20px;
-        bottom: 19px;
+        border-radius: 0%;
+        right: 12px;
+        bottom: 12px;
     }
 }

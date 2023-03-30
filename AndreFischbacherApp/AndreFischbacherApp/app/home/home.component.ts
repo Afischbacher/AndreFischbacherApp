@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     private unsubscribe$: Subject<void> = new Subject<void>();
     public isMobile = mobile();
-    public ngxTypedStrings: string[] = ['Cloud Computing', 'Distributed Architecture', 'Event Driven Microservices', 'Full Stack Software Developer'];
+    public ngxTypedStrings: string[] = ['Cloud Computing', 'Distributed Architecture', 'Event Driven Microservices', 'Lead Software Engineer'];
     constructor(private bottomContactSheet: MatBottomSheet, private navigationService: NavigationService, private activateRoute: ActivatedRoute, private router: Router) {
     }
     
