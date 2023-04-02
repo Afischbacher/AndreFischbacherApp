@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { fadeAnimation } from '../animations/route-animations';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AboutService } from '../services/about.service';
 import { About } from '../models/about';
 import { faHeartbeat, faWrench, faPaintBrush, faAtom } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +9,7 @@ import { LoadingStatus } from '../components/app-loading/app-loading.component';
   selector: 'about-component',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  animations: [fadeAnimation]
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutComponent implements OnInit {
 

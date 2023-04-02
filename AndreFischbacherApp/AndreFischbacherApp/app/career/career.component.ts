@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { fadeAnimation } from '../animations/route-animations';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CareerService } from '../services/career.service';
 import { Career } from '../models/career';
 import { LoadingStatus } from '../components/app-loading/app-loading.component';
@@ -8,7 +7,7 @@ import { LoadingStatus } from '../components/app-loading/app-loading.component';
   selector: 'career-component',
   templateUrl: './career.component.html',
   styleUrls: ['./career.component.scss'],
-  animations: [fadeAnimation]
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CareerComponent implements OnInit {
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { InterestsService } from '../services/interests.service';
 import { Interests } from '../models/interests';
 import { LoadingStatus } from '../components/app-loading/app-loading.component';
@@ -6,7 +6,8 @@ import { LoadingStatus } from '../components/app-loading/app-loading.component';
 @Component({
   selector: 'interests-component',
   templateUrl: './interests.component.html',
-  styleUrls: ['./interests.component.scss']
+  styleUrls: ['./interests.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InterestsComponent implements OnInit {
   

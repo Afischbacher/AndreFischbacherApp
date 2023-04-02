@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ContactBottomSheet } from '../components/contact-bottom-sheet/contact-bottom-sheet.component';
 import { NavigationService } from '../services/navigation.service';
@@ -10,7 +10,9 @@ import mobile from 'is-mobile';
 @Component({
     selector: 'home-component',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+    styleUrls: ['./home.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
