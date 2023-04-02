@@ -1,11 +1,10 @@
-<div  class="wrapper">
+<div class="wrapper">
         <div class="container-fluid">
                 <div class="row title-name">
                         <div class="col-md-12 col-sm-12 col-lg-12 text-center mt-5">
 
-                                <img src="../../assets/images/andre-profile-2017.jpg" 
-                                alt="Me - Andre Fischbacher"
-                                class="profile-image" />
+                                <img src="../../assets/images/andre-profile-2017.jpg" alt="Me - Andre Fischbacher"
+                                        class="profile-image" />
                                 <h1> Andre Fischbacher</h1>
 
                                 <ngx-typed-js *ngIf="!isMobile" [typeSpeed]="50" [strings]="getTypedStrings()">
@@ -16,14 +15,13 @@
                         </div>
                 </div>
         </div>
-        <div class="my-5"></div>
+        <div class="menu-separation"></div>
         <div class="container">
                 <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
                                 <mat-card class="home-card my-2 py-5" routerLink="/about" (click)="vibrate()" matRipple>
+                                        <mat-icon mat-card-avatar class="card-icon" fontIcon="person_pin"></mat-icon>
                                         <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon" fontIcon="person_pin"></mat-icon>
-                                                
                                                 <mat-card-title>
                                                         <h3>About Me</h3>
                                                 </mat-card-title>
@@ -34,11 +32,12 @@
                                 </mat-card>
                         </div>
 
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
                                 <mat-card class="home-card my-2 py-5" routerLink="/career" (click)="vibrate()"
                                         matRipple>
+                                        <mat-icon mat-card-avatar class="card-icon"
+                                                fontIcon="next_week"></mat-icon>
                                         <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon" fontIcon="next_week"></mat-icon>
                                                 <mat-card-title>
                                                         <h3>Career Experience</h3>
                                                 </mat-card-title>
@@ -49,14 +48,12 @@
                                 </mat-card>
                         </div>
 
-                </div>
-
-                <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
                                 <mat-card class="home-card my-2 py-5" routerLink="/interests" (click)="vibrate()"
                                         matRipple>
+                                        <mat-icon mat-card-avatar class="card-icon" fontIcon="mood"></mat-icon>
                                         <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon" fontIcon="mood"></mat-icon>
+
                                                 <mat-card-title>
                                                         <h3>Interests</h3>
                                                 </mat-card-title>
@@ -66,13 +63,14 @@
                                         </mat-card-header>
                                 </mat-card>
                         </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
 
                                 <mat-card class="home-card my-2 py-5" [routerLink]='[""]'
                                         [queryParams]="{sheet: 'contactMe'}" matRipple>
+                                        <mat-icon mat-card-avatar class="card-icon"
+                                                fontIcon="perm_contact_calendar">
+                                        </mat-icon>
                                         <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon" fontIcon="perm_contact_calendar">
-                                                </mat-icon>
                                                 <mat-card-title>
                                                         <h3>Contact Me</h3>
                                                 </mat-card-title>
@@ -83,14 +81,14 @@
                                 </mat-card>
 
                         </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 d-sm-block d-xs-block d-lg-none d-xl-none">
+                        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 d-sm-block d-xs-block d-lg-none d-xl-none">
+                        
+                                <mat-card class="home-card my-2 py-5" [routerLink]='[""]' [queryParams]="{modal: 'aboutApp'}" matRipple>
+                                        <mat-icon mat-card-avatar class="card-icon">help
+                                        </mat-icon>
 
-                                <mat-card class="home-card my-2 py-5" [routerLink]='[""]'
-                                        [queryParams]="{modal: 'aboutApp'}" matRipple>
                                         <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon">help
-                                                </mat-icon>
-                                                <mat-card-title>
+                                                <mat-card-title style="text-align: center;">
                                                         <h3>About App</h3>
                                                 </mat-card-title>
                                                 <mat-card-subtitle>
@@ -98,9 +96,9 @@
                                                 </mat-card-subtitle>
                                         </mat-card-header>
                                 </mat-card>
-
+                        
                                 <div class="pb-5"></div>
-
+                        
                                 <div class="d-block d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
                                         <div class="pb-5"></div>
                                         <div class="pb-5"></div>
@@ -112,5 +110,4 @@
 
 <div class="d-none d-xs-none d-sm-none d-md-none d-lg-block d-xs-block">
         <app-footer></app-footer>
-</div> 
- 
+</div>

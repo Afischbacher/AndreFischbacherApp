@@ -48,7 +48,7 @@ const appRoutes: Routes =
         MatButtonModule,
         MatSnackBarModule,
         BrowserAnimationsModule,
-        RouterModule.forRoot(appRoutes, { useHash: true, relativeLinkResolution: 'legacy' }),
+        RouterModule.forRoot(appRoutes, { useHash: true }),
         FontAwesomeModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' }),
     ],

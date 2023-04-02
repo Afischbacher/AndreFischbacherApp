@@ -51,32 +51,17 @@ router-outlet~* {
     height: 100vh;
 }
 
-@media all and (min-width: 768px) {
-    .mat-card-margin-x {
-        margin-left: 2rem !important;
-        margin-right: 2rem !important;
-    }
 
-    .about-me-card-margin-x {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-
-}
 
 @media all and (max-width: 767px) {
     .mat-card-margin-x {
-        margin-left: 0rem !important;
-        margin-right: 0rem !important;
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
     }
 
     .about-me-card-margin-x {
-        margin-left: 0rem !important;
-        margin-right: 0rem !important;
-    }
-
-    .mat-card-header-mobile-title {
-        margin-left: -32px !important;
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
     }
 }
 
@@ -125,8 +110,18 @@ router-outlet~* {
     h3,
     h4,
     h5,
-    h6 {
+    h6,
+    p {
         color: #ffffff;
     }
 
+    .app-icon {
+        color: #ffffff;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1350px;
+    }
 }
