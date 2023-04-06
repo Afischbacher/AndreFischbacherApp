@@ -10,7 +10,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "target": "ES2022",
+    "target": "ES2021",
     "typeRoots": [
       "node_modules/@types"
     ],
