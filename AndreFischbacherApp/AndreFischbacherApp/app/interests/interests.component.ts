@@ -30,7 +30,6 @@ export class InterestsComponent implements OnInit {
       
       this.loadingStatus = LoadingStatus.Failed;
       console.log(error);
-    
     });
 
   }
