@@ -251,3 +251,9 @@ svg {
         opacity: 1;
     }
 }
+
+mat-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
