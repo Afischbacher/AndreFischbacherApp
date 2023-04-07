@@ -17,8 +17,7 @@ $andre-app-palette: (
     A200 : #37eeee,
     A400 : #00f2f2,
     A700 : #00d9d9,
-    contrast: (
-        50 : #000000,
+    contrast: (50 : #000000,
         100 : #000000,
         200 : #000000,
         300 : #ffffff,
@@ -38,10 +37,10 @@ $andre-app-palette: (
 
 @media (prefers-color-scheme: dark) {
     $my-app-primary: mat.define-palette($andre-app-palette);
-    $my-app-accent:  mat.define-palette(mat.$pink-palette, 500, 900, A100);
-    $my-app-warn:    mat.define-palette(mat.$deep-orange-palette);
+    $my-app-accent: mat.define-palette(mat.$pink-palette, 500, 900, A100);
+    $my-app-warn: mat.define-palette(mat.$deep-orange-palette);
     $my-app-theme: mat.define-dark-theme($my-app-primary, $my-app-accent, $my-app-warn);
-    
+
     @include mat.all-component-themes($my-app-theme);
 }
 

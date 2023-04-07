@@ -8,9 +8,10 @@
                         <mat-card-header>
                             <h1 class="mat-card-header-mobile-title">About Me</h1>
                         </mat-card-header>
-                        <p class="mat-card-margin-x mb-4">Here is where you can get to know about me as a person.</p>
 
                         <mat-card-content>
+                            <p class="mb-4">Here is where you can get to know about me as a person.</p>
+
                             <div *ngIf="loadingStatus !== LoadingStatus.Loaded" class="center-spinner">
                                <app-loading [loadingStatus]="loadingStatus"></app-loading>
                             </div>

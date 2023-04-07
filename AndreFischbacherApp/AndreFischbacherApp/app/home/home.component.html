@@ -1,28 +1,51 @@
-<div  class="wrapper">
+<div class="wrapper">
         <div class="container-fluid">
                 <div class="row title-name">
                         <div class="col-md-12 col-sm-12 col-lg-12 text-center mt-5">
 
-                                <img src="../../assets/images/andre-profile-2017.jpg" 
-                                alt="Me - Andre Fischbacher"
-                                class="profile-image" />
+                                <img src="../../assets/images/andre-profile-2017.jpg" alt="Me - Andre Fischbacher"
+                                        class="profile-image" />
                                 <h1> Andre Fischbacher</h1>
 
-                                <ngx-typed-js *ngIf="!isMobile" [typeSpeed]="50" [strings]="getTypedStrings()">
-                                        <h3 class="typing"></h3>
-                                </ngx-typed-js>
-
-                                <h3 class="typing" *ngIf="isMobile">Lead Full Stack Developer</h3>
+                                <div style="height: 50px;">
+                                        <ngx-typed-js *ngIf="!isMobile" 
+                                        [showCursor]="false" 
+                                        [typeSpeed]="50" 
+                                        [smartBackspace]="true" 
+                                        [fadeOut]="true"
+                                        [strings]="getTypedStrings()"
+                                        >
+                                          <h3 class="typing"></h3>
+                                        </ngx-typed-js>
+                                </div>
+                                <h3 class="typing" *ngIf="isMobile">Lead Software Engineer</h3>
                         </div>
                 </div>
         </div>
-        <div class="my-5"></div>
+        <div class="menu-separation"></div>
         <div class="container">
                 <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
                                 <mat-card class="home-card my-2 py-5" routerLink="/about" (click)="vibrate()" matRipple>
-                                        <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon">person_pin</mat-icon>
+                                        <svg viewBox="0 0 94 94" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                                                <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                        fill-rule="evenodd">
+                                                        <g id="compass">
+                                                                <path d="M46.9444,6.1114 C24.3324,6.1114 6.0004,24.4434 6.0004,47.0554 C6.0004,69.6694 24.3324,87.9994 46.9444,87.9994 C69.5584,87.9994 87.8884,69.6694 87.8884,47.0554 C87.8884,24.4434 69.5584,6.1114 46.9444,6.1114"
+                                                                        id="compass-bg" fill="#134099"></path>
+                                                                <path d="M50.7132,50.8244 L71.3812,47.0564 L50.7132,43.2864 L46.9452,22.6184 L43.1752,43.2864 L22.5072,47.0564 L43.1752,50.8244 L46.9452,71.4924 L50.7132,50.8244 Z"
+                                                                        id="star" fill="#3369D4"></path>
+                                                                <path d="M40,52.552 L54.828,23 L49.552,55.64 L40,52.552 Z"
+                                                                        id="needle" fill="#90B4F9">
+                                                                </path>
+                                                                <path d="M42.4622,12.7346 C42.4622,12.5886 42.5922,12.4726 42.7382,12.4726 L43.1002,12.4726 L49.1402,18.8886 L49.1542,18.8886 L49.1542,12.8946 C49.1542,12.7486 49.2702,12.6186 49.4302,12.6186 L50.7642,12.6186 C50.9102,12.6186 51.0402,12.7486 51.0402,12.8946 L51.0402,22.6626 C51.0402,22.8086 50.9102,22.9246 50.7642,22.9246 L50.4162,22.9246 L44.3502,16.2606 L44.3342,16.2606 L44.3342,22.5026 C44.3342,22.6486 44.2182,22.7786 44.0582,22.7786 L42.7382,22.7786 C42.5922,22.7786 42.4622,22.6486 42.4622,22.5026 L42.4622,12.7346 Z"
+                                                                        id="n-marker" fill="#90B4F9"></path>
+                                                        </g>
+                                                </g>
+                                        </svg>
+                                        <mat-card-header class="mt-4">
                                                 <mat-card-title>
                                                         <h3>About Me</h3>
                                                 </mat-card-title>
@@ -33,11 +56,28 @@
                                 </mat-card>
                         </div>
 
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
                                 <mat-card class="home-card my-2 py-5" routerLink="/career" (click)="vibrate()"
                                         matRipple>
-                                        <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon">next_week</mat-icon>
+                                        <svg viewBox="0 0 94 94" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <defs></defs>
+                                                <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                        fill-rule="evenodd">
+                                                        <g id="pie-chart">
+                                                                <path d="M46.9388,6.1114 L46.9388,47.0514 L20.3328,78.1614 L20.3248,78.1674 C11.5508,70.6554 6.0008,59.4994 6.0008,47.0514 C6.0008,24.4454 24.3248,6.1114 46.9388,6.1114"
+                                                                        id="piece-4" fill="#386AD0"></path>
+                                                                <path d="M46.9388,47.0518 L20.3328,78.1598 L20.3248,78.1678 C27.4808,84.2958 36.7728,87.9998 46.9388,87.9998 C62.9068,87.9998 76.7308,78.8598 83.4908,65.5298 L46.9388,47.0518 Z"
+                                                                        id="piece-3" fill="#427AE6"></path>
+                                                                <path d="M83.4938,65.5336 L46.9418,47.0556 L81.0458,24.3956 C85.3718,30.8816 87.8898,38.6756 87.8898,47.0556 C87.8898,53.7016 86.2998,59.9836 83.4938,65.5336"
+                                                                        id="piece-2" fill="#6797F9"></path>
+                                                                <path d="M46.9426,47.0556 L46.9426,6.1156 C61.1766,6.1156 73.7086,13.3776 81.0446,24.3956 L46.9426,47.0556 Z"
+                                                                        id="piece-1" fill="#90B4F9"></path>
+                                                        </g>
+                                                </g>
+                                        </svg>
+
+                                        <mat-card-header class="mt-4">
                                                 <mat-card-title>
                                                         <h3>Career Experience</h3>
                                                 </mat-card-title>
@@ -48,14 +88,46 @@
                                 </mat-card>
                         </div>
 
-                </div>
-
-                <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
                                 <mat-card class="home-card my-2 py-5" routerLink="/interests" (click)="vibrate()"
                                         matRipple>
-                                        <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon">mood</mat-icon>
+                                        <svg viewBox="0 0 94 94" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <defs>
+                                                        <path id="path-1"
+                                                                d="M6.0004,47.0554 C6.0004,69.6694 24.3304,87.9994 46.9444,87.9994 C69.5564,87.9994 87.8884,69.6694 87.8884,47.0554 C87.8884,24.4434 69.5564,6.1114 46.9444,6.1114 C24.3304,6.1114 6.0004,24.4434 6.0004,47.0554 Z">
+                                                        </path>
+                                                </defs>
+                                                <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                        fill-rule="evenodd">
+                                                        <g id="airplane">
+                                                                <mask id="mask-2" sketch:name="Mask" fill="white">
+                                                                        <use xlink:href="#path-1"></use>
+                                                                </mask>
+                                                                <use id="Mask" fill="#386AD0" xlink:href="#path-1">
+                                                                </use>
+                                                                <g mask="url(#mask-2)">
+                                                                        <g id="airplane-icon">
+                                                                                <g
+                                                                                        transform="translate(10.000000, 28.000000)">
+                                                                                        <path d="M72.5748,24.0428 L19.8228,29.6868 L14.6728,11.6828 L18.1768,12.4308 L17.8408,8.8988 L72.5748,24.0428 Z"
+                                                                                                id="Fill-4"
+                                                                                                fill="#5587ED"></path>
+                                                                                        <path d="M72.5748,24.0428 L0.2948,22.1268 L14.6728,11.6828 L72.5748,24.0428 Z"
+                                                                                                id="Fill-6"
+                                                                                                fill="#90B4F9"></path>
+                                                                                        <path d="M72.5748,24.0428 L17.8408,8.8988 L23.9568,0.2428 L72.5748,24.0428 Z"
+                                                                                                id="Fill-8"
+                                                                                                fill="#90B4F9"></path>
+                                                                                </g>
+                                                                        </g>
+                                                                </g>
+
+                                                        </g>
+                                                </g>
+                                        </svg>
+                                        <mat-card-header class="mt-4">
+
                                                 <mat-card-title>
                                                         <h3>Interests</h3>
                                                 </mat-card-title>
@@ -65,13 +137,36 @@
                                         </mat-card-header>
                                 </mat-card>
                         </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
 
                                 <mat-card class="home-card my-2 py-5" [routerLink]='[""]'
                                         [queryParams]="{sheet: 'contactMe'}" matRipple>
-                                        <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon">perm_contact_calendar
-                                                </mat-icon>
+                                        <div id="phone">
+                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                        xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+                                                        x="0px" y="0px" viewBox="-16.011 -17.945 512 512"
+                                                        overflow="visible"
+                                                        enable-background="new -16.011 -17.945 512 512"
+                                                        xml:space="preserve">
+                                                        <defs>
+                                                        </defs>
+                                                        <path class="bar-1" fill="#99d6ff"
+                                                                d="M259.996,255.99h31.999c0-35.343-28.655-63.998-63.998-63.998v31.999C245.636,223.992,259.996,238.366,259.996,255.99z" />
+                                                        <path class="bar-2" fill="#80ccff"
+                                                                d="M387.992,255.992c0-88.374-71.623-159.997-159.995-159.997v32c70.592,0,127.996,57.437,127.996,127.997H387.992z" />
+                                                        <path class="bar-3" fill="#66c2ff"
+                                                                d="M227.997,0v31.999c123.496,0,223.993,100.497,223.993,223.993h31.999C483.989,114.622,369.368,0,227.997,0z" />
+                                                        <path fill="#386ad0"
+                                                                d="M462.479,433.261l-33.938,33.937c-6.062,6.031-23.812,9.844-24.343,9.844c-107.435,0.905-210.869-41.279-286.883-117.31
+                                                                                                                                                C41.085,283.515-1.148,179.674,0.024,71.927c0-0.063,3.891-17.312,9.938-23.312l33.937-33.968
+                                                                                                                                                C56.352,2.21,80.194-3.415,96.897,2.146l7.156,2.406c16.703,5.562,34.155,23.999,38.78,40.967l17.093,62.717
+                                                                                                                                                c4.64,17-1.594,41.186-14.031,53.623l-22.687,22.687c22.25,82.467,86.919,147.121,169.34,169.402l22.687-22.688
+                                                                                                                                                c12.438-12.438,36.687-18.656,53.687-14.031l62.718,17.125c16.937,4.594,35.374,22.03,40.968,38.748l2.375,7.156
+                                                                                                                                                C480.541,396.98,474.917,420.823,462.479,433.261z" />
+                                                </svg>
+                                        </div>
+                                        <mat-card-header class="mt-4">
                                                 <mat-card-title>
                                                         <h3>Contact Me</h3>
                                                 </mat-card-title>
@@ -82,14 +177,25 @@
                                 </mat-card>
 
                         </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 d-sm-block d-xs-block d-lg-none d-xl-none">
+                        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 d-sm-block d-xs-block d-lg-none d-xl-none">
 
                                 <mat-card class="home-card my-2 py-5" [routerLink]='[""]'
                                         [queryParams]="{modal: 'aboutApp'}" matRipple>
-                                        <mat-card-header>
-                                                <mat-icon mat-card-avatar class="mr-4 card-icon">help
-                                                </mat-icon>
-                                                <mat-card-title>
+                                        <svg viewBox="0 0 94 94" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <defs></defs>
+                                                <g id="Page-1" stroke="none" stroke-width="1" fill="none"
+                                                        fill-rule="evenodd">
+                                                        <g id="gear">
+                                                                <path d="M20.2046846,29.5001201 C18.0614795,32.7750597 16.5024593,36.4668344 15.6756448,40.4274233 L6,41.3837732 L6,52.6162268 L15.6756448,53.5725767 C16.5024593,57.5331656 18.0614795,61.2249403 20.2046846,64.4998799 L14.0373499,72.0201059 L21.9798941,79.9626501 L29.5001201,73.7953154 C32.7750597,75.9385205 36.4668344,77.4975407 40.4274233,78.3243552 L41.3837732,88 L52.6162268,88 L53.5725767,78.3243552 C57.5331656,77.4975407 61.2249403,75.9385205 64.4998799,73.7953154 L72.0201059,79.9626501 L79.9626501,72.0201059 L73.7953154,64.4998799 C75.9385205,61.2249403 77.4975407,57.5331656 78.3243552,53.5725767 L88,52.6162268 L88,41.3837732 L78.3243552,40.4274233 C77.4975407,36.4668344 75.9385205,32.7750597 73.7953154,29.5001201 L79.9626501,21.9798941 L72.0201059,14.0373499 L64.4998799,20.2046846 C61.2249403,18.0614795 57.5331656,16.5024593 53.5725767,15.6756448 L52.6162268,6 L41.3837732,6 L40.4274233,15.6756448 C36.4668344,16.5024593 32.7750597,18.0614795 29.5001201,20.2046846 L21.9798941,14.0373499 L14.0373499,21.9798941 L20.2046846,29.5001201 L20.2046846,29.5001201 Z M47,56 C51.9705627,56 56,51.9705627 56,47 C56,42.0294373 51.9705627,38 47,38 C42.0294373,38 38,42.0294373 38,47 C38,51.9705627 42.0294373,56 47,56 L47,56 Z"
+                                                                        id="gear-icon" fill="#6594EE"></path>
+                                                                <path d="M47,65 C56.9411255,65 65,56.9411255 65,47 C65,37.0588745 56.9411255,29 47,29 C37.0588745,29 29,37.0588745 29,47 C29,56.9411255 37.0588745,65 47,65 Z M47,56 C51.9705627,56 56,51.9705627 56,47 C56,42.0294373 51.9705627,38 47,38 C42.0294373,38 38,42.0294373 38,47 C38,51.9705627 42.0294373,56 47,56 Z"
+                                                                        id="gear-center" fill="#93B5F8"></path>
+                                                        </g>
+                                                </g>
+                                        </svg>
+                                        <mat-card-header class="mt-4">
+                                                <mat-card-title style="text-align: center;">
                                                         <h3>About App</h3>
                                                 </mat-card-title>
                                                 <mat-card-subtitle>
@@ -111,5 +217,4 @@
 
 <div class="d-none d-xs-none d-sm-none d-md-none d-lg-block d-xs-block">
         <app-footer></app-footer>
-</div> 
- 
+</div>

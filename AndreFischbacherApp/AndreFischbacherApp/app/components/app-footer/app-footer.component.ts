@@ -39,7 +39,7 @@ export class AppFooter implements OnInit, OnDestroy {
     public openAppInfoDialog(): void {
         let appInfoDialog = this.appInfoDialog.open(AppInfoDialog, {
             height: '325px',
-            closeOnNavigation: true
+            closeOnNavigation: true,
         })
 
         appInfoDialog.backdropClick()

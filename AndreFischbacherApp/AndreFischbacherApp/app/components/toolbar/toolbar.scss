@@ -1,12 +1,15 @@
 .toolbar {
     background-color: transparent;
-
+    
     mat-icon {
         font-size: calc(1vw + 26px);
+        height: calc(1vw + 26px);
+        width: calc(1vw + 26px);
     }
 
-    &:hover {
-        cursor: pointer;
-    }
-    
+        .toolbar-button {
+            &:hover {
+                cursor: pointer;
+            }
+        }
 }
