@@ -4,6 +4,7 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "experimentalDecorators": true,
+    "target": "ES2022",
     "types": []
   },
   "files": [

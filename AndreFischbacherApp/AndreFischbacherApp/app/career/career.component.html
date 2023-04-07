@@ -24,14 +24,14 @@
                                         </div>
                                         <div class="col-sm-12 col-md-10 col-lg-11">
                                             <div class="information-flex-display">
-                                                <h3 class="ml-5">{{careerContent.companyName}}</h3>
-                                                <h4 class="ml-5">{{careerContent.positionTitle}}</h4>
-                                                <h5 class="ml-5">{{careerContent.startDate | date: 'MMM yyyy' }} -
+                                                <h3 class="ms-5">{{careerContent.companyName}}</h3>
+                                                <h4 class="ms-5">{{careerContent.positionTitle}}</h4>
+                                                <h5 class="ms-5">{{careerContent.startDate | date: 'MMM yyyy' }} -
                                                     {{careerContent.endDate == null ? "Now" : careerContent.endDate |
                                                     date:'MMM yyyy' }}
                                                 </h5>
                                             </div>
-                                            <div class="mt-2 mb-2 ml-2"
+                                            <div class="mt-2 mb-2 ms-2"
                                                 *ngFor="let careerInformationContent of careerContent.careerInformationContents">
                                                 <ul>
                                                     <li>

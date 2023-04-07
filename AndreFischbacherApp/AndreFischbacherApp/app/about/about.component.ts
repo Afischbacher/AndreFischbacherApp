@@ -9,7 +9,6 @@ import { LoadingStatus } from '../components/app-loading/app-loading.component';
   selector: 'about-component',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutComponent implements OnInit {
 
@@ -31,7 +30,9 @@ export class AboutComponent implements OnInit {
   }
 
   public getAboutContents() {
+
     this.loadingStatus = LoadingStatus.Loading;
+
     this.aboutService.getAboutInformation().subscribe((aboutResponse: About[]) => {
       
       aboutResponse = this.interpolateAboutMeContentVariables(aboutResponse);

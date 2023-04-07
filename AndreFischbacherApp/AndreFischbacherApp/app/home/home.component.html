@@ -7,10 +7,17 @@
                                         class="profile-image" />
                                 <h1> Andre Fischbacher</h1>
 
-                                <ngx-typed-js *ngIf="!isMobile" [typeSpeed]="50" [strings]="getTypedStrings()">
-                                        <h3 class="typing"></h3>
-                                </ngx-typed-js>
-
+                                <div style="height: 50px;">
+                                        <ngx-typed-js *ngIf="!isMobile" 
+                                        [showCursor]="false" 
+                                        [typeSpeed]="50" 
+                                        [smartBackspace]="true" 
+                                        [fadeOut]="true"
+                                        [strings]="getTypedStrings()"
+                                        >
+                                                <h3 class="typing"></h3>
+                                        </ngx-typed-js>
+                                </div>
                                 <h3 class="typing" *ngIf="isMobile">Lead Software Engineer</h3>
                         </div>
                 </div>

@@ -7,7 +7,6 @@ import { LoadingStatus } from '../components/app-loading/app-loading.component';
   selector: 'career-component',
   templateUrl: './career.component.html',
   styleUrls: ['./career.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CareerComponent implements OnInit {
 

@@ -1,53 +1,67 @@
-<mat-list role="list" class="contact-icons">
+<mat-list role="list" class="contact-icons" style="display:flex; flex-direction: column; flex-wrap: wrap;">
     <a href="tel:+14162724109">
         <mat-list-item matRipple>
-            <mat-icon class="mr-3 phone">phone</mat-icon> Phone
+            <div >
+                <mat-icon class="me-3 phone">phone</mat-icon> Phone
+            </div>
         </mat-list-item>
     </a>
     <a href="sms:+14162724109">
         <mat-list-item matRipple>
-            <mat-icon class="mr-3 phone">message</mat-icon> Message
+            <div >
+                <mat-icon class="me-3 message">message</mat-icon> Message
+            </div>
         </mat-list-item>
     </a>
     <a href="https://api.whatsapp.com/send?phone=14162724109" target="_blank">
         <mat-list-item matRipple>
-            <fa-icon class="mr-3 pr-1 whats-app" [icon]="faWhatsapp">
-            </fa-icon>
-            WhatsApp
+            <div >
+                <fa-icon class="me-3 whats-app" [icon]="faWhatsapp">
+                </fa-icon>
+                WhatsApp
+            </div> 
         </mat-list-item>
     </a>
     <a href="mailto:andrefischbacher95@hotmail.com">
         <mat-list-item matRipple>
-            <mat-icon class="mr-3 mail">mail</mat-icon> Email
+            <div >
+                <mat-icon class="me-3 mail">mail</mat-icon> Email
+            </div> 
         </mat-list-item>
     </a>
     <a href="https://www.linkedin.com/in/andre-fischbacher-91249582/" target="_blank">
 
         <mat-list-item>
-            <fa-icon class="mr-3 linked-in" [icon]="faLinkedIn"></fa-icon>
-            LinkedIn
+            <div >
+                <fa-icon class="me-3 linked-in" [icon]="faLinkedIn"></fa-icon>
+                LinkedIn
+            </div>
         </mat-list-item>
     </a>
     <a href="https://github.com/Afischbacher" target="_blank">
         <mat-list-item matRipple>
-            <fa-icon class="mr-3" [icon]="faGithub">
-
-            </fa-icon>Github
+            <div >
+                <fa-icon class="me-3" [icon]="faGithub">
+                </fa-icon>Github
+            </div>
         </mat-list-item>
     </a>
     <a href="https://twitter.com/Afischbacher" target="_blank">
         <mat-list-item matRipple>
-            <fa-icon class="mr-3 twitter" [icon]="faTwitter">
-
-            </fa-icon>
-            Twitter
+            <div >
+                <fa-icon class="me-3 twitter" [icon]="faTwitter">
+                </fa-icon>
+                Twitter
+            </div>
         </mat-list-item>
     </a>
     <a href="skype:live:ital-andre95?call" target="_blank">
         <mat-list-item matRipple>
-            <fa-icon class="mr-3 pr-1 skype" [icon]="faSkype">
-            </fa-icon>
-            Skype
+            <div >
+                <fa-icon class="me-3 skype" [icon]="faSkype">
+                </fa-icon>
+                Skype
+            </div>
         </mat-list-item>
     </a>
 </mat-list>
