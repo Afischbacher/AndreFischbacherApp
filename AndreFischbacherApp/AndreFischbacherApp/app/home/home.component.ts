@@ -11,7 +11,6 @@ import mobile from 'is-mobile';
     selector: 'home-component',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
 
 })
 export class HomeComponent implements OnInit, OnDestroy {
