@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     public openContactSheet() : void {
         this.navigationService.vibrate([25]);
         let bottomSheet = this.bottomContactSheet.open(ContactBottomSheet, {
-            closeOnNavigation: true
+            closeOnNavigation: true,
         });
 
         bottomSheet.backdropClick()

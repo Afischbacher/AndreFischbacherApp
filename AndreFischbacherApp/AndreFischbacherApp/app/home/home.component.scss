@@ -103,3 +103,151 @@ mat-card-title,
 mat-card-subtitle {
     text-align: center;
 }
+
+@keyframes pulse {
+    10% {
+        transform: scale(1.1);
+    }
+
+    20% {
+        transform: scale(0.9);
+    }
+
+    30% {
+        transform: scale(1.01);
+    }
+
+    40% {
+        transform: scale(0.99);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+svg {
+    width: 25%;
+}
+
+@keyframes turn {
+    10% {
+        transform: rotate(10deg);
+    }
+
+    20% {
+        transform: rotate(-10deg);
+    }
+
+    80% {
+        transform: rotate(2880deg);
+    }
+
+    90% {
+        transform: rotate(2900deg);
+    }
+
+    100% {
+        transform: rotate(2880deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fly {
+    75% {
+        transform: rotate(-360deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+#piece-1,
+#piece-2,
+#piece-3,
+#piece-4 {
+    animation: pulse 3s ease-out infinite;
+    transform-origin: 47px 47px;
+}
+
+#piece-2 {
+    animation-delay: .1s;
+}
+
+#piece-3 {
+    animation-delay: .2s;
+}
+
+#piece-4 {
+    animation-delay: .3s;
+}
+
+#needle {
+    animation: turn 5s ease-out forwards infinite;
+    transform-origin: 47px 47px;
+}
+
+#gear {
+    animation: rotate 5s linear infinite;
+    transform-origin: 47px 47px;
+}
+
+#airplane-icon {
+    animation: fly 3s ease-in-out infinite;
+    transform-origin: 47px -300px;
+}
+
+#phone {
+    display: flex;
+    justify-content: center;
+    svg {
+        .bar-3 {
+            animation: hideshow3 2s ease-in-out infinite;
+        }
+
+        .bar-2 {
+            animation: hideshow2 2s ease-in-out infinite;
+        }
+
+        .bar-1 {
+            animation: hideshow1 2s ease-in-out infinite;
+        }
+    }
+}
+
+
+@keyframes hideshow1 {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+}
+
+@keyframes hideshow2 {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+}
+
+@keyframes hideshow3 {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+    }
+}

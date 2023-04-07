@@ -34,6 +34,5 @@ export class InterestsComponent implements OnInit {
 
   }
 
-
 }
  
