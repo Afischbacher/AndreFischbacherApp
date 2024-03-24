@@ -341,3 +341,6 @@ healthchecksdb
 
 #Angular Cache
 AndreFischbacherApp/.angular/cache/*
+
+#Credentials
+credentials.json

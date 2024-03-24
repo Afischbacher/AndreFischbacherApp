@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using MediatR;
 using AndreFischbacherApp.Services.Features.About.Mediator.Commands;
+using System.Web.Http;
 
 namespace AndreFischbacherApp.Functions.v1.Http
 {
@@ -22,9 +23,17 @@ namespace AndreFischbacherApp.Functions.v1.Http
 		[FunctionName(nameof(AboutMeHttpTriggerFunction))]
 		public async Task<IActionResult> AboutFunction([HttpTrigger(AuthorizationLevel.Anonymous, "GET", Route = "about")] HttpRequest httpRequest, ILogger log)
 		{
-			var aboutInformation = await _mediator.Send(new AboutInformationCommand());
-			return new OkObjectResult(aboutInformation);
-		}
+			try
+			{
+				var aboutInformation = await _mediator.Send(new AboutInformationCommand());
+				return new OkObjectResult(aboutInformation);
 
+			}
+			catch 
+			{
+				return new InternalServerErrorResult();
+				throw;
+			}
+		}
 	}
 }

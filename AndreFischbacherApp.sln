@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29020.237
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreFischbacherApp.Functions", "AppFunctions\AndreFischbacherApp.Functions.csproj", "{976EBA20-EBFC-4685-9692-53B50EACF76F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreFischbacherApp.DataContext", "AndreFischbacherApp.DataContext\AndreFischbacherApp.DataContext.csproj", "{554BCE8A-47E7-405F-B488-AC00BC1A4D59}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreFischbacherApp.Services", "AndreFischbacherApp.Services\AndreFischbacherApp.Services.csproj", "{92B3BD69-7226-4DA1-B849-42DD4998D584}"
@@ -13,16 +11,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreFischbacherApp.Reposit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreFischbacherApp.Common", "AndreFischbacherApp.Common\AndreFischbacherApp.Common.csproj", "{462883C1-FFD7-40C8-BE3B-94C28EFC5344}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndreFischbacherApp.Functions", "AndreFischbacherApp.Functions\AndreFischbacherApp.Functions.csproj", "{6081E3FE-DF39-490E-85A2-D5246C088DB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndreFischbacherApp.Api", "AndreFischbacherApp.Api\AndreFischbacherApp.Api.csproj", "{88ED8C22-75C2-4C8E-86A9-980C381C1113}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{976EBA20-EBFC-4685-9692-53B50EACF76F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{976EBA20-EBFC-4685-9692-53B50EACF76F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{976EBA20-EBFC-4685-9692-53B50EACF76F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{976EBA20-EBFC-4685-9692-53B50EACF76F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{554BCE8A-47E7-405F-B488-AC00BC1A4D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{554BCE8A-47E7-405F-B488-AC00BC1A4D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{554BCE8A-47E7-405F-B488-AC00BC1A4D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +37,14 @@ Global
 		{462883C1-FFD7-40C8-BE3B-94C28EFC5344}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{462883C1-FFD7-40C8-BE3B-94C28EFC5344}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{462883C1-FFD7-40C8-BE3B-94C28EFC5344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6081E3FE-DF39-490E-85A2-D5246C088DB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6081E3FE-DF39-490E-85A2-D5246C088DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6081E3FE-DF39-490E-85A2-D5246C088DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6081E3FE-DF39-490E-85A2-D5246C088DB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88ED8C22-75C2-4C8E-86A9-980C381C1113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88ED8C22-75C2-4C8E-86A9-980C381C1113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88ED8C22-75C2-4C8E-86A9-980C381C1113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88ED8C22-75C2-4C8E-86A9-980C381C1113}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
