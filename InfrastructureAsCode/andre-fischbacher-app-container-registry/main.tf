@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "afapp" {
-  name     = "AndreFischbacherApp"
+  name     = "andrefischbacherapp-rg"
   location = "Canada Central"
 }
 
