@@ -19,5 +19,5 @@ variable "container-app-sku" {
 variable "azure-subscription-id" {
   type        = string
   description = "The subscription id for the Azure resources"
-  default     = "1ecfcae9-7a0a-485b-87e7-0aae535c42cd"
+  default     = "ded32006-1443-4a0d-b1ff-a35afbf641c8"
 }

@@ -11,6 +11,7 @@ terraform {
     }
   }
   backend "azurerm" {
+    subscription_id = var.azure-subscription-id
     resource_group_name  = var.state_resource_group_name
     storage_account_name = var.state_storage_account_name
     container_name       = "tfstate"
