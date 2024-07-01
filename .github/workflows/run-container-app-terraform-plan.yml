@@ -21,14 +21,14 @@ jobs:
   
       steps:
 
+        - name: Checkout
+          uses: actions/checkout@v2
+  
         - name: Get directory
           shell: bash
           run: |
             ls
 
-        - name: Checkout
-          uses: actions/checkout@v2
-  
         - name: Setup Terraform
           uses: hashicorp/setup-terraform@v2
           with:
