@@ -19,7 +19,7 @@ on:
       defaults:
         run:
           shell: bash
-          working-directory: ./terraform
+          working-directory: ../../InfrastructureAsCode/andre-fischbacher-container-app
   
       steps:
         - name: Checkout
