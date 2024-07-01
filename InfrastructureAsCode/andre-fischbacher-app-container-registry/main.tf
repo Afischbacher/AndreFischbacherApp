@@ -9,12 +9,9 @@ resource "azurerm_container_registry" "acr" {
   location            = azurerm_resource_group.afapp.location
   sku                 = "Basic"
   admin_enabled       = true
-  georeplications {
-    location                = "Canada Central"
-    zone_redundancy_enabled = false
-    tags = {
-      Environment = "Production"
-      CreatedBy   = "Terraform"
-    }
+  tags = {
+    Environment = "Production"
+    CreatedBy = "Terraform"
+    Criticality = "High"
   }
 }
