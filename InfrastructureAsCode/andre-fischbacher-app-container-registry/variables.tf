@@ -16,8 +16,7 @@ variable "container-app-sku" {
   default     = "canadacentral"
 }
 
-variable "azure-subscription-id" {
+variable "ARM_SUBSCRIPTION_ID" {
   type        = string
   description = "The subscription id for the Azure resources"
-  default     = "ded32006-1443-4a0d-b1ff-a35afbf641c8"
 }
