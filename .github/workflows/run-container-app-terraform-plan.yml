@@ -1,9 +1,9 @@
 on:
     release:
       types: [published]
-      branches: [main]
+      branches: [master]
   
-  name: On Release Main
+  name: Deploy Azure Container App on Master
   
   jobs:
     terraform:
