@@ -20,6 +20,12 @@ jobs:
           working-directory: ../../InfrastructureAsCode/andre-fischbacher-container-app
   
       steps:
+
+        - name: Get directory
+          shell: bash
+          run: |
+            ls
+
         - name: Checkout
           uses: actions/checkout@v2
   
