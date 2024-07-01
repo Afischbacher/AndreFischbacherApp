@@ -2,7 +2,7 @@ name: Build and Push to Andre Fischbacher App to Azure Container Registry
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
 jobs:
   build:
     name: 'Build and Push to Container Registry'
