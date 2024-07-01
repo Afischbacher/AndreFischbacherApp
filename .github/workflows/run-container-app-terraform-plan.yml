@@ -1,11 +1,9 @@
+name: Deploy Terraform State Bucket for Andre Fischbacher App
+
 on:
-    release:
-      types: [published]
-      branches: [master]
-  
-  name: Deploy Azure Container App on Master
-  
-  jobs:
+  workflow_dispatch:
+
+jobs:
     terraform:
       name: 'Terraform'
       runs-on: ubuntu-latest
