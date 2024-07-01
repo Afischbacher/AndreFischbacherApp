@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "afapp" {
-  name     = "andrefischbacherapp-rg"
+  name     = "cac-test-rg"
   location = "Canada Central"
 }
 
