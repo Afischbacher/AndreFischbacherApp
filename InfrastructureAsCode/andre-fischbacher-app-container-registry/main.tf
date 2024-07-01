@@ -11,7 +11,7 @@ resource "azurerm_container_registry" "acr" {
   admin_enabled       = true
   tags = {
     Environment = "Production"
-    CreatedBy = "Terraform"
+    CreatedBy   = "Terraform"
     Criticality = "High"
   }
 }
