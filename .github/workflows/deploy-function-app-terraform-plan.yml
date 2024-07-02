@@ -19,7 +19,7 @@ jobs:
         TF_VAR_functionAppName: "eus-af-app-func"
         TF_VAR_functionPlanName: "eus-af-app-func-plan"
         TF_VAR_logAnalyticsName: "eus-af-app-func-log-analytics"
-        TF_VAR_storageAccountName: "eus-af-app-func-storage-acc"
+        TF_VAR_storageAccountName: "eusafappfuncstorageacc"
         TF_VAR_functionAppRuntime: "dotnet-isolated"
         TF_VAR_functionAppRuntimeVersion: "8.0"
         TF_VAR_environment: "production"
