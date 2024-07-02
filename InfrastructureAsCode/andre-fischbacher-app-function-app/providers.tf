@@ -1,6 +1,5 @@
 provider "azurerm" {
   features {}
-  subscription_id = var.azure-subscription-id
 }
 
 terraform {
@@ -8,6 +7,9 @@ terraform {
     azurerm = {
       source = "hashicorp/azurerm"
     }
+    azapi = {
+        source = "Azure/azapi"
+      }
   }
   backend "azurerm" {
     resource_group_name  = var.state_resource_group_name
