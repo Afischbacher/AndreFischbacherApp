@@ -44,7 +44,7 @@ jobs:
   
         - name: Terraform plan
           id: plan
-          run: terraform plan -var-file=/environments/production/variables.tfvars -no-color -out main.tfplan
+          run: terraform plan -var-file="/environments/production/variables.tfvars" -no-color -out main.tfplan
   
         - name: Terraform apply
           id: apply
