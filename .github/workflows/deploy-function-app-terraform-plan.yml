@@ -44,8 +44,19 @@ jobs:
   
         - name: Terraform plan
           id: plan
-          run: terraform plan -var-file="../environments/production/variables.tfvars" -no-color -out main.tfplan
+          run: terraform plan -no-color
   
         - name: Terraform apply
           id: apply
-          run: terraform apply main.tfplan -auto-approve
+          run: terraform apply -auto-approve
+          env: 
+            TF_VAR_resourceGroupName: "andrefischbacher-app-rg"
+            TF_VAR_location: "eastus"
+            TF_VAR_applicationInsightsName: "eus-af-app-app-insight"
+            TF_VAR_functionAppName: "eus-af-app-func"
+            TF_VAR_functionPlanName: "eus-af-app-func-plan"
+            TF_VAR_logAnalyticsName: "eus-af-app-func-log-analytics"
+            TF_VAR_storageAccountName: "eus-af-app-func-storage-acc"
+            TF_VAR_functionAppRuntime: "dotnet-isolated"
+            TF_VAR_functionAppRuntimeVersion: "8.0"
+            TF_VAR_environment: "production"
