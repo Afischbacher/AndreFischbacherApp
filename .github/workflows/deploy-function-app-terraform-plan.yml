@@ -27,6 +27,11 @@ jobs:
         - name: Get directory
           shell: bash
           run: |
+            cd ..
+
+        - name: Get directory
+          shell: bash
+          run: |
             ls
 
         - name: Setup Terraform
