@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'https://api.andrefischbacher.com'
+  api: 'https://andre-fischbacher-app-east-us.azurewebsites.net'
 };
