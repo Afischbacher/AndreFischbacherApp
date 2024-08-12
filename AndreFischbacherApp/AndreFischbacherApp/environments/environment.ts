@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'https://andre-fischbacher-app-east-us.azurewebsites.net'
+  api: 'https://af-app-load-balancer-profile.trafficmanager.net'
 };
 
 /*
