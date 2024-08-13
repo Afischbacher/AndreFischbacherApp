@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'https://af-app-load-balancer-profile.trafficmanager.net'
+  api: 'http://af-app-load-balancer-profile.trafficmanager.net'
 };

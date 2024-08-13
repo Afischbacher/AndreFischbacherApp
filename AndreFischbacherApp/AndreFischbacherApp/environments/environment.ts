@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'https://af-app-load-balancer-profile.trafficmanager.net'
+  api: 'http://af-app-load-balancer-profile.trafficmanager.net'
 };
 
 /*
